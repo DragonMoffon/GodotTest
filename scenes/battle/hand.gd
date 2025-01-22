@@ -33,7 +33,7 @@ func add_card() -> void:
 	cards.append(new_card)
 	
 	position_cards()
-	new_card.position = new_card.target
+	# new_card.position = new_card.target
 		
 func position_cards():
 	var count = cards.size()
@@ -53,7 +53,7 @@ func position_cards():
 		card.target = Math.ellipse(width, height, deg_to_rad(angle))
 		if idx == selected_card:
 			card.modulate = Color.ORANGE
-			card.target.x += 100.0
+			card.target.x += 60.0
 		else:
 			card.modulate = Color.WHITE
 		card.z_index = (selected_card - abs(idx - selected_card))	
