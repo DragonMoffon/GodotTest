@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://clypluwos5h8e"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_jf3mf"]
+[ext_resource type="PackedScene" uid="uid://c83bxdcjre7ye" path="res://scenes/battle/battle_scene.tscn" id="2_ajto4"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_jf3mf")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="BattleScene" parent="World" instance=ExtResource("2_ajto4")]
+
+[node name="Gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

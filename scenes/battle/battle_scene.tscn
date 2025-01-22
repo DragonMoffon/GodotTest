@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c83bxdcjre7ye"]
+
+[ext_resource type="PackedScene" uid="uid://bdp8mfsq0dx1c" path="res://scenes/battle/Hand.tscn" id="1_ek0l7"]
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="Deck" type="Node" parent="."]
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="Lyrics" type="Node" parent="."]
+
+[node name="Hand" parent="." instance=ExtResource("1_ek0l7")]
+position = Vector2(0, 360)
+width = 400.0
+height = 500.0
+start = 35.0
