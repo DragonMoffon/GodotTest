@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://urh7nf54rpxx"]
+[gd_scene load_steps=4 format=3 uid="uid://urh7nf54rpxx"]
 
 [ext_resource type="Script" path="res://scenes/battle/card.gd" id="1_hlbmm"]
+[ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/All rights reserved.ttf" id="2_h27xq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f1rhx"]
+font = ExtResource("2_h27xq")
+font_size = 32
 font_color = Color(0, 0, 0, 1)
 
 [node name="Card" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_hlbmm")
-decay = 1.0
 
 [node name="Body" type="Sprite2D" parent="."]
 

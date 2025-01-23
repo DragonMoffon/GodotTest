@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=3 format=3 uid="uid://c83bxdcjre7ye"]
 
+[ext_resource type="Script" path="res://scenes/battle/hands.gd" id="1_5h5le"]
 [ext_resource type="PackedScene" uid="uid://bdp8mfsq0dx1c" path="res://scenes/battle/Hand.tscn" id="1_ek0l7"]
 
 [node name="BattleScene" type="Node2D"]
@@ -10,8 +11,24 @@
 
 [node name="Lyrics" type="Node" parent="."]
 
-[node name="Hand" parent="." instance=ExtResource("1_ek0l7")]
-position = Vector2(0, 360)
-width = 400.0
-height = 500.0
-start = 35.0
+[node name="Hands" type="Node" parent="." node_paths=PackedStringArray("phrase_hand", "word_hand")]
+script = ExtResource("1_5h5le")
+active_target = Vector2(640, 820)
+inactive_target = Vector2(640, 920)
+phrase_hand = NodePath("PhraseHand")
+word_hand = NodePath("WordHand")
+
+[node name="PhraseHand" parent="Hands" instance=ExtResource("1_ek0l7")]
+position = Vector2(640, 920)
+width = 1000.0
+height = 300.0
+start = -120.0
+range = 60.0
+select = Vector2(0, -60)
+
+[node name="WordHand" parent="Hands" instance=ExtResource("1_ek0l7")]
+width = 1000.0
+height = 300.0
+start = -120.0
+range = 60.0
+select = Vector2(0, -60)

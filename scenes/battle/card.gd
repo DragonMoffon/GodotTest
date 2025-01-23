@@ -19,7 +19,3 @@ func create(body_texture: Texture, text: String) -> void:
 
 func _process(delta: float) -> void:
 	self.position = Anim.slerp(self.position, target, decay, delta)
-	if self.position.y > 10.0:
-		self.body.scale.y = -1.0
-	else:
-		self.body.scale.y = 1.0

@@ -8,3 +8,4 @@ script = ExtResource("1_raqxr")
 text_bubble = ExtResource("2_hgbvy")
 width = 200.0
 height = 360.0
+start = -180.0
