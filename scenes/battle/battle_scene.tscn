@@ -25,6 +25,7 @@ height = 300.0
 start = -120.0
 range = 60.0
 select = Vector2(0, -60)
+spawn = Vector2(-640, 0)
 
 [node name="WordHand" parent="Hands" instance=ExtResource("1_ek0l7")]
 width = 1000.0
@@ -32,3 +33,4 @@ height = 300.0
 start = -120.0
 range = 60.0
 select = Vector2(0, -60)
+spawn = Vector2(-640, 0)

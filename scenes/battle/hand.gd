@@ -13,6 +13,8 @@ var start: float
 var range : float
 @export
 var select : Vector2
+@export
+var spawn : Vector2
 
 var cards: Array[Card]
 var active: bool = true
@@ -39,7 +41,7 @@ func add_card() -> void:
 	add_child(new_card)
 	new_card.create(text_bubble, "TEST STRING")
 	cards.append(new_card)
-	
+	new_card.position = spawn
 	position_cards()
 		
 func position_cards():
