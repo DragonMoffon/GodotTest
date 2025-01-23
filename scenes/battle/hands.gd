@@ -1,3 +1,4 @@
+class_name Hands
 extends Node
 
 @export
@@ -27,14 +28,14 @@ func _ready():
 	inactive_hand.deactivate()
 	
 func _process(dt: float):
-	if Input.is_action_just_pressed("ScrollDown") or Input.is_action_just_pressed("ScrollUp"):
-		toggle()
-	
 	active_hand.position = Anim.slerp(active_hand.position, active_target, move_speed, dt)
 	inactive_hand.position = Anim.slerp(inactive_hand.position, inactive_target, move_speed, dt)
 	
-	active_hand.modulate.a = Anim.slerp(active_hand.modulate.a, 1.0, fade_speed, dt)
-	inactive_hand.modulate.a = Anim.slerp(inactive_hand.modulate.a, 0.5, fade_speed, dt)
+	var c = Anim.slerp(active_hand.modulate.r, 1.0, fade_speed, dt)
+	active_hand.modulate = Color(c, c, c)
+	
+	c = Anim.slerp(inactive_hand.modulate.r, 0.5, fade_speed, dt)
+	inactive_hand.modulate = Color(c, c, c)
 
 func toggle():
 	var swap = active_hand
@@ -44,3 +45,11 @@ func toggle():
 	active_hand.activate()
 	inactive_hand.deactivate()
 	
+func select_next():
+	active_hand.select_next()
+
+func select_prev():
+	active_hand.select_prev()
+	
+func select():
+	pass

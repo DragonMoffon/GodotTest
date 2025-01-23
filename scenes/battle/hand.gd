@@ -10,11 +10,15 @@ var height : float
 @export_range(-180.0, 180.0)
 var start: float
 @export_range(-360.0, 360.0)
-var range : float
+var max_shift : float
+@export
+var ideal_step : float
 @export
 var select : Vector2
 @export
 var spawn : Vector2
+@export
+var mirrored : bool = false
 
 var cards: Array[Card]
 var active: bool = true
@@ -24,17 +28,6 @@ var selected_card: int = 0
 
 func _ready() -> void:
 	cards = []
-
-func _process(delta: float) -> void:
-	if not active:
-		return
-
-	if Input.is_action_just_pressed("Select"):
-		add_card()
-	elif Input.is_action_just_pressed("ScrollNext"):
-		select_next()
-	elif Input.is_action_just_pressed("ScrollPrev"):
-		select_prev()
 		
 func add_card() -> void:
 	var new_card: Card = card_scene.instantiate()
@@ -46,23 +39,35 @@ func add_card() -> void:
 		
 func position_cards():
 	var count = cards.size()
+	if active:
+		z_index = count
+		
+	var width_ = width
+	var height_ = height
 	
-	if count == 1:
+	if mirrored:
+		width_ = -width
+	
+	if count == 0:
+		return
+	elif count == 1:
 		var card = cards[0]
-		var angle = start + range / 2.0
-		card.target = Math.ellipse(width, height, deg_to_rad(angle))
+		var angle = start
+		card.target = Math.ellipse(width_, height_, deg_to_rad(angle))
 		
 		if active:
 			card.modulate = Color.ORANGE
 		return
 	
-	var step = range / float(count - 1)
-	var offset = start + selected_card * step
+	var step = max_shift / float(count - 1)
+	if ideal_step < step:
+		step = ideal_step
+	# var offset = start + (count - 1 - selected_card) * step
 	
 	for idx in count:
 		var card = cards[idx]
-		var angle = start + idx * step
-		card.target = Math.ellipse(width, height, deg_to_rad(angle))
+		var angle = start + (count - 1 - idx) * step
+		card.target = Math.ellipse(width_, height_, deg_to_rad(angle))
 		if idx == selected_card and active:
 			card.modulate = Color.ORANGE
 			card.target += select
@@ -71,26 +76,47 @@ func position_cards():
 		card.z_index = (selected_card - abs(idx - selected_card))	
 			
 func select_prev():
-	selected_card -= 1
-	if selected_card < 0:
-		selected_card = cards.size() - 1
-	position_cards()
+	if mirrored:
+		decr()
+	else:
+		incr()
 	
 func select_next():
+	if mirrored:
+		incr()
+	else:
+		decr()
+	
+func remove_card(idx: int):
+	if idx == selected_card and idx + 1 >= cards.size():
+		selected_card = 0
+	
+	var card = cards.pop_at(idx)
+	card.queue_free()
+	position_cards()
+	
+	return card
+	
+func incr():
 	selected_card += 1
 	if selected_card >= cards.size():
 		selected_card = 0
 	position_cards()
 	
-func deactivate():
-	active = false
-	z_index = -10
-	
+func decr():
+	selected_card -= 1
+	if selected_card < 0:
+		selected_card = cards.size() - 1
 	position_cards()
 	
+func get_selected():
+	return cards[selected_card]
+	
+func deactivate():
+	active = false
+	z_index = -cards.size()
+	position_cards()
 	
 func activate():
 	active = true
-	z_index = 10
-	
 	position_cards()

@@ -16,6 +16,7 @@ func create(body_texture: Texture, text: String) -> void:
 	label.text = text
 	label.size = Vector2(body_texture.get_width(), body_texture.get_height())
 	label.position = -label.size / 2.0
+	label.pivot_offset = label.size / 2.0
 
 func _process(delta: float) -> void:
 	self.position = Anim.slerp(self.position, target, decay, delta)

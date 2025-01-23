@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://vowoply3lfex"]
+
+[ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_1vu8g"]
+[ext_resource type="Script" path="res://scenes/battle/hands.gd" id="2_hbjie"]
+[ext_resource type="PackedScene" uid="uid://bdp8mfsq0dx1c" path="res://scenes/battle/Hand.tscn" id="3_b8qhu"]
+[ext_resource type="Texture2D" uid="uid://bdjoh6qk0n7hw" path="res://assets/textures/brain-anatomy-human-health-medical-2cadf4-1024.png" id="4_b38o8"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_1vu8g")
+
+[node name="Decks" type="Node" parent="."]
+
+[node name="deck-brain" type="Sprite2D" parent="Decks"]
+z_index = 100
+position = Vector2(960, 1000)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_b38o8")
+
+[node name="Hands" type="Node" parent="." node_paths=PackedStringArray("phrase_hand", "word_hand")]
+script = ExtResource("2_hbjie")
+active_target = Vector2(960, 1000)
+inactive_target = Vector2(960, 1080)
+phrase_hand = NodePath("PhraseHand")
+word_hand = NodePath("WordHand")
+
+[node name="PhraseHand" parent="Hands" instance=ExtResource("3_b8qhu")]
+position = Vector2(960, 1180)
+width = 800.0
+height = 100.0
+start = -75.0
+max_shift = 65.0
+ideal_step = 8.0
+select = Vector2(0, -60)
+spawn = Vector2(0, -100)
+
+[node name="WordHand" parent="Hands" instance=ExtResource("3_b8qhu")]
+position = Vector2(960, 1180)
+width = 800.0
+height = 100.0
+start = -75.0
+max_shift = 65.0
+ideal_step = 8.0
+select = Vector2(0, -60)
+spawn = Vector2(0, -100)
+mirrored = true
+
+[node name="Lyrics" type="Node" parent="."]
