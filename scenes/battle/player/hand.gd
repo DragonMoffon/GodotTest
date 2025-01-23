@@ -1,6 +1,8 @@
 class_name Hand
 extends Node2D
 
+const card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
+
 @export
 var text_bubble : Texture
 @export
@@ -23,20 +25,12 @@ var mirrored : bool = false
 var cards: Array[Card]
 var active: bool = true
 
-var card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
 var selected_card: int = 0
 
 func _ready() -> void:
 	cards = []
-		
-func add_card() -> void:
-	var new_card: Card = card_scene.instantiate()
-	add_child(new_card)
-	new_card.create(text_bubble, "TEST STRING")
-	cards.append(new_card)
-	new_card.position = spawn
-	position_cards()
-		
+
+
 func position_cards():
 	var count = cards.size()
 	if active:
@@ -74,19 +68,39 @@ func position_cards():
 		else:
 			card.modulate = Color.WHITE
 		card.z_index = (selected_card - abs(idx - selected_card))	
-			
+
+
 func select_prev():
 	if mirrored:
 		decr()
 	else:
 		incr()
-	
+
+
 func select_next():
 	if mirrored:
 		incr()
 	else:
 		decr()
+
+
+func draw_card(content) -> void:
+	var new_card: Card = card_scene.instantiate()
+	add_child(new_card)
+	new_card.create(text_bubble, content)
+	cards.append(new_card)
+	new_card.position = spawn
+	position_cards()
 	
+func draw_cards(contents: Array) -> void:
+	for content in contents:
+		var new_card = card_scene.instantiate()
+		add_child(new_card)
+		new_card.create(text_bubble, content)
+		cards.append(new_card)
+		new_card.position = spawn
+	position_cards()
+
 func remove_card(idx: int):
 	if idx == selected_card and idx + 1 >= cards.size():
 		selected_card = 0
@@ -96,27 +110,30 @@ func remove_card(idx: int):
 	position_cards()
 	
 	return card
-	
+
+
+func get_selected():
+	return cards[selected_card]
+
+
+func deactivate():
+	active = false
+	z_index = -cards.size()
+	position_cards()
+
+
+func activate():
+	active = true
+	position_cards()
+
 func incr():
 	selected_card += 1
 	if selected_card >= cards.size():
 		selected_card = 0
 	position_cards()
-	
+
 func decr():
 	selected_card -= 1
 	if selected_card < 0:
 		selected_card = cards.size() - 1
-	position_cards()
-	
-func get_selected():
-	return cards[selected_card]
-	
-func deactivate():
-	active = false
-	z_index = -cards.size()
-	position_cards()
-	
-func activate():
-	active = true
 	position_cards()

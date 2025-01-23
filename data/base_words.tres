@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_cwiyo")
-words = Array[StringName]([&"simple"])
+words = Array[StringName]([&"simple", &"brain"])

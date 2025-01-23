@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PhraseSet" load_steps=7 format=3 uid="uid://du7eprb1ws78m"]
+[gd_resource type="Resource" script_class="PhraseSet" load_steps=9 format=3 uid="uid://du7eprb1ws78m"]
 
 [ext_resource type="Script" path="res://data/phrase.gd" id="1_n3he3"]
 [ext_resource type="Script" path="res://data/phrase_set.gd" id="2_i2fgt"]
@@ -7,18 +7,28 @@
 [sub_resource type="Resource" id="Resource_6t1w4"]
 script = ExtResource("2_ricnb")
 syllables = 2
-word_type = 0
+types = 1
 
 [sub_resource type="Resource" id="Resource_7oeey"]
 script = ExtResource("2_ricnb")
-syllables = 0
-word_type = 0
+syllables = 1
+types = 1
 
 [sub_resource type="Resource" id="Resource_ceef3"]
 script = ExtResource("1_n3he3")
 text = "fuck %s all my  homies hate %s"
 blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_6t1w4"), SubResource("Resource_7oeey")])
 
+[sub_resource type="Resource" id="Resource_wda7b"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 1
+
+[sub_resource type="Resource" id="Resource_pmkp8"]
+script = ExtResource("1_n3he3")
+text = "smoked by the %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_wda7b")])
+
 [resource]
 script = ExtResource("2_i2fgt")
-phrases = Array[ExtResource("1_n3he3")]([SubResource("Resource_ceef3")])
+phrases = Array[ExtResource("1_n3he3")]([SubResource("Resource_ceef3"), SubResource("Resource_pmkp8")])

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://vowoply3lfex"]
+[gd_scene load_steps=7 format=3 uid="uid://vowoply3lfex"]
 
-[ext_resource type="Script" path="res://scenes/battle/player.gd" id="1_1vu8g"]
-[ext_resource type="Script" path="res://scenes/battle/hands.gd" id="2_hbjie"]
-[ext_resource type="PackedScene" uid="uid://bdp8mfsq0dx1c" path="res://scenes/battle/Hand.tscn" id="3_b8qhu"]
+[ext_resource type="Script" path="res://scenes/battle/player/player.gd" id="1_1vu8g"]
+[ext_resource type="Script" path="res://scenes/battle/player/hands.gd" id="2_hbjie"]
+[ext_resource type="PackedScene" uid="uid://bdp8mfsq0dx1c" path="res://scenes/battle/player/Hand.tscn" id="3_b8qhu"]
 [ext_resource type="Texture2D" uid="uid://bdjoh6qk0n7hw" path="res://assets/textures/brain-anatomy-human-health-medical-2cadf4-1024.png" id="4_b38o8"]
+[ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="8_wqt0q"]
+[ext_resource type="Texture2D" uid="uid://dclvgwdss3li7" path="res://assets/gui/VersePatch.png" id="9_eyhqo"]
 
 [node name="Player" type="Node"]
 script = ExtResource("1_1vu8g")
@@ -23,7 +25,7 @@ inactive_target = Vector2(960, 1080)
 phrase_hand = NodePath("PhraseHand")
 word_hand = NodePath("WordHand")
 
-[node name="PhraseHand" parent="Hands" instance=ExtResource("3_b8qhu")]
+[node name="WordHand" parent="Hands" instance=ExtResource("3_b8qhu")]
 position = Vector2(960, 1180)
 width = 800.0
 height = 100.0
@@ -33,7 +35,7 @@ ideal_step = 8.0
 select = Vector2(0, -60)
 spawn = Vector2(0, -100)
 
-[node name="WordHand" parent="Hands" instance=ExtResource("3_b8qhu")]
+[node name="PhraseHand" parent="Hands" instance=ExtResource("3_b8qhu")]
 position = Vector2(960, 1180)
 width = 800.0
 height = 100.0
@@ -44,4 +46,6 @@ select = Vector2(0, -60)
 spawn = Vector2(0, -100)
 mirrored = true
 
-[node name="Lyrics" type="Node" parent="."]
+[node name="Lyrics" parent="." instance=ExtResource("8_wqt0q")]
+position = Vector2(960, 200)
+card_texture = ExtResource("9_eyhqo")
