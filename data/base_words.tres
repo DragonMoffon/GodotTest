@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WordSet" load_steps=2 format=3 uid="uid://e874jdlf3w5e"]
+
+[ext_resource type="Script" path="res://data/word_set.gd" id="1_cwiyo"]
+
+[resource]
+script = ExtResource("1_cwiyo")
+words = Array[StringName]([&"simple"])
