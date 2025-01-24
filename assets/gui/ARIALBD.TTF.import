@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bib8foqwe6yk0"
-path="res://.godot/imported/All rights reserved.ttf-6ecb7ae4ee2fd323dc478c5baa171df3.fontdata"
+uid="uid://g3y2p3jvdanf"
+path="res://.godot/imported/ARIALBD.TTF-cb1a1e77f06d0322793eb6993c38e7ee.fontdata"
 
 [deps]
 
-source_file="res://assets/gui/All rights reserved.ttf"
-dest_files=["res://.godot/imported/All rights reserved.ttf-6ecb7ae4ee2fd323dc478c5baa171df3.fontdata"]
+source_file="res://assets/gui/ARIALBD.TTF"
+dest_files=["res://.godot/imported/ARIALBD.TTF-cb1a1e77f06d0322793eb6993c38e7ee.fontdata"]
 
 [params]
 
