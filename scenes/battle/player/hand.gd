@@ -1,10 +1,17 @@
 class_name Hand
 extends Node2D
 
-const card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
+const card_scene : PackedScene = preload("res://scenes/battle/card.tscn")
 
+@export_category("Card Details")
 @export
-var text_bubble : Texture
+var texture : Texture
+@export
+var font : Font
+@export
+var font_size : int
+
+@export_category("Placement Details")
 @export
 var width : float
 @export
@@ -87,7 +94,7 @@ func select_next():
 func draw_card(content) -> void:
 	var new_card: Card = card_scene.instantiate()
 	add_child(new_card)
-	new_card.create(text_bubble, content)
+	new_card.create(texture, font, content, font_size)
 	cards.append(new_card)
 	new_card.position = spawn
 	position_cards()
@@ -96,7 +103,7 @@ func draw_cards(contents: Array) -> void:
 	for content in contents:
 		var new_card = card_scene.instantiate()
 		add_child(new_card)
-		new_card.create(text_bubble, content)
+		new_card.create(texture, font, content, font_size)
 		cards.append(new_card)
 		new_card.position = spawn
 	position_cards()

@@ -1,9 +1,11 @@
 extends Node2D
 
-const card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
+const card_scene : PackedScene = preload("res://scenes/battle/card.tscn")
 
 @export
 var card_texture : Texture2D
+@export
+var card_font : Font
 
 var bars: Array[Card] = []
 var uncommited_bar: Card
@@ -18,7 +20,7 @@ func _process(_dt: float):
 func add_card(bar: VerseBar):
 	var new_card = card_scene.instantiate()
 	add_child(new_card)
-	new_card.create(card_texture, bar)
+	new_card.create(card_texture, card_font, bar)
 	bars.append(new_card)
 
 func place_bars():
