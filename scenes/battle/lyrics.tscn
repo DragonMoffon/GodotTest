@@ -1,6 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfp04b2gnqthc"]
+[gd_scene load_steps=3 format=3 uid="uid://dfp04b2gnqthc"]
 
 [ext_resource type="Script" path="res://scenes/battle/lyrics.gd" id="1_2dqy8"]
+[ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_cetyf"]
 
 [node name="Lyrics" type="Node2D"]
 script = ExtResource("1_2dqy8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_cetyf")
+
+[node name="Bars" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -156.0
+offset_right = 248.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bars"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="RichTextLabel" parent="Bars/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
+scroll_active = false
+
+[node name="2" type="RichTextLabel" parent="Bars/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
+scroll_active = false
+
+[node name="3" type="RichTextLabel" parent="Bars/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
+scroll_active = false
+
+[node name="4" type="RichTextLabel" parent="Bars/VBoxContainer"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
+scroll_active = false
