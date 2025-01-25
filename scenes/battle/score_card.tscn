@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://0xafi4choxa8"]
+
+[ext_resource type="Script" path="res://scenes/battle/score_card.gd" id="1_dfura"]
+[ext_resource type="Texture2D" uid="uid://dxxevbn3vwcp3" path="res://assets/gui/ScoreBackground1.png" id="1_x0qbx"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_owrnv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2frke"]
+font = ExtResource("2_owrnv")
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mmcj"]
+font = ExtResource("2_owrnv")
+font_size = 100
+
+[node name="ScoreCard" type="Node2D"]
+script = ExtResource("1_dfura")
+font = "res://assets/gui/EXPOSE-REGULAR.OTF"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x0qbx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -201.0
+offset_top = -175.0
+offset_right = 217.0
+offset_bottom = 170.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Target" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.490431
+anchor_top = 0.468116
+anchor_right = 0.490431
+anchor_bottom = 0.468116
+offset_left = 77.0
+offset_top = 5.5
+offset_right = 277.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.493928
+label_settings = SubResource("LabelSettings_2frke")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Current" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -850.0
+offset_top = -222.5
+offset_right = 62.0
+offset_bottom = -66.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.137881
+bbcode_enabled = true
+text = "[right][/right]"
+
+[node name="Seperator" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.468899
+anchor_top = 0.494203
+anchor_right = 0.4689
+anchor_bottom = 0.494203
+offset_left = 55.0
+offset_top = -120.5
+offset_right = 205.0
+offset_bottom = 166.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.546288
+text = "/"
+label_settings = SubResource("LabelSettings_2mmcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
