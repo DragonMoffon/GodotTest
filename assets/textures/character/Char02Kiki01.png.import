@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf3pf5jbrmqka"
-path="res://.godot/imported/Char01Boba01.png-f26458fc44f4139091954b8d5a403277.ctex"
+uid="uid://bfnockd7nedkb"
+path="res://.godot/imported/Char02Kiki01.png-3299f77f65789be56502cc5ebb4004c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Char01Boba01.png"
-dest_files=["res://.godot/imported/Char01Boba01.png-f26458fc44f4139091954b8d5a403277.ctex"]
+source_file="res://assets/textures/character/Char02Kiki01.png"
+dest_files=["res://.godot/imported/Char02Kiki01.png-3299f77f65789be56502cc5ebb4004c0.ctex"]
 
 [params]
 
