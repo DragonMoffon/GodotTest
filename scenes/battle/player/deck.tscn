@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjpu020g224ng"]
+
+[ext_resource type="Texture2D" uid="uid://gtdi868xg3p" path="res://assets/textures/Deck1.png" id="1_cugyk"]
+[ext_resource type="Script" path="res://scenes/battle/player/deck.gd" id="2_p0fox"]
+
+[node name="deck-brain" type="Sprite2D"]
+z_index = 100
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_cugyk")
+script = ExtResource("2_p0fox")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -319.0
+offset_top = -252.0
+offset_right = -319.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+
+[node name="discard" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 252.0
+grow_horizontal = 2
+grow_vertical = 2

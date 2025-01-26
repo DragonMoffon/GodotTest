@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfp04b2gnqthc"]
+[gd_scene load_steps=5 format=3 uid="uid://dfp04b2gnqthc"]
 
 [ext_resource type="Script" path="res://scenes/battle/lyrics.gd" id="1_2dqy8"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_14sco"]
 [ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_cetyf"]
+[ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="3_q200j"]
 
 [node name="Lyrics" type="Node2D"]
 script = ExtResource("1_2dqy8")
+base_font = ExtResource("2_14sco")
+base_size = 20
+inline_font = ExtResource("3_q200j")
+inline_size = 28
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_cetyf")
@@ -22,6 +28,7 @@ offset_right = 248.0
 offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Bars"]
 layout_mode = 1
@@ -30,10 +37,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="1" type="RichTextLabel" parent="Bars/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
@@ -41,6 +50,7 @@ scroll_active = false
 [node name="2" type="RichTextLabel" parent="Bars/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
@@ -48,6 +58,7 @@ scroll_active = false
 [node name="3" type="RichTextLabel" parent="Bars/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
@@ -55,6 +66,7 @@ scroll_active = false
 [node name="4" type="RichTextLabel" parent="Bars/VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
