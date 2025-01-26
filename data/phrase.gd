@@ -10,6 +10,10 @@ extends Resource
 		
 @export var blanks : Array[Blank]
 
+var count = 0:
+	get:
+		return blanks.size()
+
 
 func _init(text_: String = "", blanks_: Array[Blank] = []):
 	blanks = blanks_

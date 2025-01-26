@@ -1,6 +1,10 @@
 class_name Card
 extends Node2D
 
+signal card_entered(card : Card)
+signal card_exited(card : Card)
+signal card_clicked(card : Card, pressed : bool)
+
 @export_category("Customisation")
 @export var decay : float = 0.30
 @export var rate : float = 0.6
@@ -26,7 +30,10 @@ var shake_BBCode_text = "[shake level=%s rate=%s]%s[/shake]" % [level, rate, "%s
 var body : Sprite2D = $"Body"
 
 @onready
-var label : RichTextLabel = $"Label"
+var control : Control = $"Hover"
+
+@onready
+var label : RichTextLabel = $"Hover/Label"
 
 @onready
 var highlight : Sprite2D = $"Highlight"
@@ -41,10 +48,11 @@ var shaking : bool = false
 func _process(delta: float) -> void:
 	self.position = Anim.slerp(self.position, target, decay, delta)
 
-func create(body_texture: Texture, content_) -> void:
+func create(content_) -> void:
 	if created:
 		push_warning ("Attempting to create an already created card")
 		return
+	created = true
 
 	var font : FontFile
 	var size : int
@@ -55,17 +63,12 @@ func create(body_texture: Texture, content_) -> void:
 		font = word_font
 		size = word_size
 	base_BBCode_text = base_BBCode_text % [color, font.resource_path, size, "%s"]
-	
 	content = content_
-	body.texture = body_texture
-	
-	var h_scale = (body_texture.get_width() + 60.0) / highlight.texture.get_width()
-	highlight.scale = Vector2(h_scale, h_scale)
-
-	label.size = Vector2(body_texture.get_width(), body_texture.get_height())
-	label.position = Vector2(-label.size.x/2, -15)
-	
 	update_text()
+	
+func flip():
+	body.flip_h = not body.flip_h
+	label.rotation = -label.rotation
 	
 func update_text():
 	var text : String = base_BBCode_text
@@ -94,4 +97,14 @@ func shake():
 	
 func still():
 	shaking = false
-	update_text()
+	update_text()		
+
+func _on_mouse_entered() -> void:
+	card_entered.emit(self)
+
+func _on_mouse_exited() -> void:
+	card_exited.emit(self)
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		card_clicked.emit(self, event.pressed)

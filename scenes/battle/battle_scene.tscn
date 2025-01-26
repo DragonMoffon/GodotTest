@@ -17,7 +17,9 @@ script = ExtResource("1_kup78")
 [node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
 position = Vector2(139, 107)
 scale = Vector2(0.6, 0.6)
-font = "res://assets/gui/EXPOSE-REGULAR.OTF"
 
 [node name="Lyrics" parent="." instance=ExtResource("4_y614f")]
 position = Vector2(960, 400)
+
+[connection signal="phrase_selected" from="Player" to="." method="_on_player_phrase_selected"]
+[connection signal="words_selected" from="Player" to="." method="_on_player_words_selected"]

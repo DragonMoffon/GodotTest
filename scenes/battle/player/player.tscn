@@ -1,29 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://vowoply3lfex"]
+[gd_scene load_steps=4 format=3 uid="uid://vowoply3lfex"]
 
 [ext_resource type="Script" path="res://scenes/battle/player/player.gd" id="1_1vu8g"]
+[ext_resource type="PackedScene" uid="uid://bjpu020g224ng" path="res://scenes/battle/player/deck.tscn" id="2_7eyay"]
 [ext_resource type="Script" path="res://scenes/battle/player/hand.gd" id="3_rey4x"]
-[ext_resource type="Texture2D" uid="uid://bdjoh6qk0n7hw" path="res://assets/textures/brain-anatomy-human-health-medical-2cadf4-1024.png" id="4_b38o8"]
-[ext_resource type="Texture2D" uid="uid://cs1hxxtiojowc" path="res://assets/gui/TextPatch2.png" id="4_gwn57"]
 
 [node name="Player" type="Node"]
 script = ExtResource("1_1vu8g")
 active_target = Vector2(960, 1000)
 inactive_target = Vector2(960, 1080)
 
-[node name="deck-brain" type="Sprite2D" parent="."]
-z_index = 100
+[node name="Deck" parent="." instance=ExtResource("2_7eyay")]
 position = Vector2(960, 1000)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_b38o8")
 
 [node name="PhraseHand" type="Node2D" parent="."]
 position = Vector2(960, 1080)
 script = ExtResource("3_rey4x")
-texture = ExtResource("4_gwn57")
-width = 900.0
+width = 800.0
 height = 100.0
-start = -80.0
-max_shift = 60.0
+start = -75.0
+max_shift = 65.0
 ideal_step = 8.0
 select = Vector2(0, -60)
 mirrored = true
@@ -31,10 +26,16 @@ mirrored = true
 [node name="WordHand" type="Node2D" parent="."]
 position = Vector2(960, 1080)
 script = ExtResource("3_rey4x")
-texture = ExtResource("4_gwn57")
-width = 900.0
+width = 800.0
 height = 100.0
-start = -80.0
-max_shift = 60.0
+start = -75.0
+max_shift = 65.0
 ideal_step = 8.0
 select = Vector2(0, -60)
+
+[connection signal="commit_clicked" from="Deck" to="." method="_on_commit_clicked"]
+[connection signal="discard_clicked" from="Deck" to="." method="_on_discard_clicked"]
+[connection signal="card_hovered" from="PhraseHand" to="." method="_on_phrase_hand_hovered"]
+[connection signal="content_selected" from="PhraseHand" to="." method="_on_phrase_content_selected"]
+[connection signal="card_hovered" from="WordHand" to="." method="_on_word_hand_hovered"]
+[connection signal="content_selected" from="WordHand" to="." method="_on_word_content_selected"]
