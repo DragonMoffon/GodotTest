@@ -3,40 +3,50 @@
 [ext_resource type="Script" path="res://data/dictionary.gd" id="1_o1n2e"]
 [ext_resource type="Script" path="res://data/word.gd" id="2_wn7hm"]
 
-[sub_resource type="Resource" id="Resource_wrc0j"]
+[sub_resource type="Resource" id="Resource_7qo03"]
 script = ExtResource("2_wn7hm")
-text = "simple"
-type = 4
-phonemes = "ˈsɪm pəl"
-syllables = 2
-
-[sub_resource type="Resource" id="Resource_1uuru"]
-script = ExtResource("2_wn7hm")
-text = "smoked"
-type = 4
-phonemes = "smoʊkt"
+text = "brain"
+type = 1
 syllables = 1
+rhyme = 1
+alliteration = 22
+assonance = 7
 
 [sub_resource type="Resource" id="Resource_ot12p"]
 script = ExtResource("2_wn7hm")
 text = "by"
 type = 16
-phonemes = "baɪ"
 syllables = 1
+rhyme = 0
+alliteration = 0
+assonance = 0
+
+[sub_resource type="Resource" id="Resource_wrc0j"]
+script = ExtResource("2_wn7hm")
+text = "simple"
+type = 4
+syllables = 2
+rhyme = 0
+alliteration = 0
+assonance = 0
+
+[sub_resource type="Resource" id="Resource_1uuru"]
+script = ExtResource("2_wn7hm")
+text = "smoked"
+type = 4
+syllables = 1
+rhyme = 0
+alliteration = 0
+assonance = 0
 
 [sub_resource type="Resource" id="Resource_acwht"]
 script = ExtResource("2_wn7hm")
 text = "the"
 type = 16
-phonemes = "ðə"
 syllables = 1
-
-[sub_resource type="Resource" id="Resource_7qo03"]
-script = ExtResource("2_wn7hm")
-text = "brain"
-type = 1
-phonemes = "breɪn"
-syllables = 1
+rhyme = 0
+alliteration = 0
+assonance = 0
 
 [resource]
 script = ExtResource("1_o1n2e")

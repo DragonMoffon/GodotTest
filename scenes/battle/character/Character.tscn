@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://j154bka1btpo"]
+
+[ext_resource type="SpriteFrames" uid="uid://coqxd0rt7e0ae" path="res://assets/textures/TestCharacter.tres" id="1_ajuro"]
+
+[node name="Character" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_ajuro")
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="."]

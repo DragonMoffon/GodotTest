@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://xpkjd1a8313t"]
+
+[ext_resource type="Script" path="res://scenes/battle/player/card.gd" id="1_irm6f"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_50p13"]
+[ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_glp5w"]
+[ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="3_xclhr"]
+[ext_resource type="Texture2D" uid="uid://cs1hxxtiojowc" path="res://assets/gui/TextPatch2.png" id="5_cjt56"]
+
+[node name="Card" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_irm6f")
+decay = 0.1
+rate = 5.0
+phrase_font = ExtResource("2_50p13")
+phrase_size = 20
+word_font = ExtResource("3_xclhr")
+word_size = 48
+inline_font = ExtResource("3_xclhr")
+inline_size = 28
+
+[node name="Highlight" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_glp5w")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("5_cjt56")
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -30.0
+offset_right = 95.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0872665
+bbcode_enabled = true
+fit_content = true
+scroll_active = false

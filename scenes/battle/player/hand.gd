@@ -1,10 +1,13 @@
 class_name Hand
 extends Node2D
 
-const card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
+const card_scene : PackedScene = preload("res://scenes/battle/player/card.tscn")
 
+@export_category("Card Details")
 @export
-var text_bubble : Texture
+var texture : Texture
+
+@export_category("Placement Details")
 @export
 var width : float
 @export
@@ -22,13 +25,15 @@ var spawn : Vector2
 @export
 var mirrored : bool = false
 
-var cards: Array[Card]
+var cards: Array[Card] = []
+var selected: Array[Card] = []
 var active: bool = true
 
-var selected_card: int = 0
+var highlighted: int = 0
 
 func _ready() -> void:
 	cards = []
+	selected = []
 
 
 func position_cards():
@@ -49,8 +54,8 @@ func position_cards():
 		var angle = start
 		card.target = Math.ellipse(width_, height_, deg_to_rad(angle))
 		
-		if active:
-			card.modulate = Color.ORANGE
+		# if active:
+		# 	card.modulate = Color.ORANGE
 		return
 	
 	var step = max_shift / float(count - 1)
@@ -62,32 +67,38 @@ func position_cards():
 		var card = cards[idx]
 		var angle = start + (count - 1 - idx) * step
 		card.target = Math.ellipse(width_, height_, deg_to_rad(angle))
-		if idx == selected_card and active:
-			card.modulate = Color.ORANGE
+		if idx == highlighted and active:
+			# card.modulate = Color.ORANGE
 			card.target += select
+			card.z_index = count + 1
 		else:
 			card.modulate = Color.WHITE
-		card.z_index = (selected_card - abs(idx - selected_card))	
+			card.z_index = idx
+		# card.z_index = (selected_card - abs(idx - selected_card))	
 
 
 func select_prev():
+	cards[highlighted].deselect()
 	if mirrored:
 		decr()
 	else:
 		incr()
+	cards[highlighted].select()
 
 
 func select_next():
+	cards[highlighted].deselect()
 	if mirrored:
 		incr()
 	else:
 		decr()
+	cards[highlighted].select()
 
 
 func draw_card(content) -> void:
 	var new_card: Card = card_scene.instantiate()
 	add_child(new_card)
-	new_card.create(text_bubble, content)
+	new_card.create(texture, content)
 	cards.append(new_card)
 	new_card.position = spawn
 	position_cards()
@@ -96,44 +107,52 @@ func draw_cards(contents: Array) -> void:
 	for content in contents:
 		var new_card = card_scene.instantiate()
 		add_child(new_card)
-		new_card.create(text_bubble, content)
+		new_card.create(texture, content)
 		cards.append(new_card)
 		new_card.position = spawn
+	if active:
+		cards[highlighted].select()
 	position_cards()
 
 func remove_card(idx: int):
-	if idx == selected_card and idx + 1 >= cards.size():
-		selected_card = 0
+	if idx == highlighted and idx + 1 >= cards.size():
+		highlighted = 0
 	
 	var card = cards.pop_at(idx)
 	card.queue_free()
 	position_cards()
 	
+	if active and cards.size() > 0:
+		cards[highlighted].select()
+		
 	return card
 
-
 func get_selected():
-	return cards[selected_card]
+	return cards[highlighted]
 
+func activate():
+	active = true
+	position_cards()
+	if cards.size() > 0:
+		cards[highlighted].select()
+		cards[highlighted].shake()
 
 func deactivate():
 	active = false
 	z_index = -cards.size()
 	position_cards()
-
-
-func activate():
-	active = true
-	position_cards()
+	if cards.size() > 0:
+		cards[highlighted].deselect()
+		cards[highlighted].still()
 
 func incr():
-	selected_card += 1
-	if selected_card >= cards.size():
-		selected_card = 0
+	highlighted += 1
+	if highlighted >= cards.size():
+		highlighted = 0
 	position_cards()
 
 func decr():
-	selected_card -= 1
-	if selected_card < 0:
-		selected_card = cards.size() - 1
+	highlighted -= 1
+	if highlighted < 0:
+		highlighted = cards.size() - 1
 	position_cards()

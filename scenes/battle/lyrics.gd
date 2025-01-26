@@ -1,37 +1,21 @@
 extends Node2D
 
-const card_scene : PackedScene = preload("res://scenes/battle/Card.tscn")
+@onready
+var line_1 = $"Bars/VBoxContainer/1"
+@onready
+var line_2 = $"Bars/VBoxContainer/2"
+@onready
+var line_3 = $"Bars/VBoxContainer/3"
+@onready
+var line_4 = $"Bars/VBoxContainer/4"
+@onready
+var line_text = [line_1, line_2, line_3, line_4]
+var bars : Array[VerseBar] = [null, null, null, null]
+var verse : Verse
+var current_line = 0
 
-@export
-var card_texture : Texture2D
-
-var bars: Array[Card] = []
-var uncommited_bar: Card
-
-func _process(_dt: float):
-	if uncommited_bar != null:
-		uncommited_bar.label.text = uncommited_bar.content.text
-
-	for bar in bars:
-		bar.label.text = bar.content.text
-
-func add_card(bar: VerseBar):
-	var new_card = card_scene.instantiate()
-	add_child(new_card)
-	new_card.create(card_texture, bar)
-	bars.append(new_card)
-
-func place_bars():
+func commit_bar(bar: VerseBar):
 	pass
-
-func start_bar(bar: VerseBar):
-	pass
-
-func validate_bar() -> bool:
-	return false
-
-func commit_bar():
-	pass
-
-func discard_bar():
+	
+func uncommit_bar(bar: VerseBar):
 	pass

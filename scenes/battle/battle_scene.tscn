@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=5 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
+[ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
+[ext_resource type="PackedScene" uid="uid://0xafi4choxa8" path="res://scenes/battle/score_card.tscn" id="2_sawi2"]
+[ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="4_y614f"]
 
 [node name="BattleScene" type="Node2D"]
+script = ExtResource("1_kup78")
+
+[node name="Opponent" type="Node" parent="."]
 
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_5w4lb")]
+
+[node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
+position = Vector2(139, 107)
+scale = Vector2(0.6, 0.6)
+font = "res://assets/gui/EXPOSE-REGULAR.OTF"
+
+[node name="Lyrics" parent="." instance=ExtResource("4_y614f")]
+position = Vector2(960, 400)
