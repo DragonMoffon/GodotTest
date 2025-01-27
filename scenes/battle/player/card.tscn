@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://xpkjd1a8313t"]
+[gd_scene load_steps=8 format=3 uid="uid://xpkjd1a8313t"]
 
 [ext_resource type="Script" path="res://scenes/battle/player/card.gd" id="1_irm6f"]
 [ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_50p13"]
 [ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_glp5w"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="3_xclhr"]
 [ext_resource type="Texture2D" uid="uid://cs1hxxtiojowc" path="res://assets/gui/TextPatch2.png" id="5_cjt56"]
+[ext_resource type="Script" path="res://scenes/battle/player/card_body.gd" id="6_t5b73"]
+[ext_resource type="Texture2D" uid="uid://duma7cysyugf1" path="res://assets/gui/TextPatch2Highlight.png" id="7_ge7ji"]
 
 [node name="Card" type="Node2D"]
 texture_filter = 1
@@ -26,6 +28,9 @@ texture = ExtResource("2_glp5w")
 [node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_cjt56")
+script = ExtResource("6_t5b73")
+base_texture = ExtResource("5_cjt56")
+select_texture = ExtResource("7_ge7ji")
 
 [node name="Hover" type="Control" parent="."]
 layout_mode = 3

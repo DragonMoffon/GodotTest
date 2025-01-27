@@ -1,7 +1,7 @@
 class_name WordSet
 extends Resource
 
-@export var words : Array[StringName] 
+@export var words : Array[Word] 
 
 func _init(words_: Array[StringName] = []) -> void:
-	words = words_
+	words.assign(words_.map(Dict.fetch))

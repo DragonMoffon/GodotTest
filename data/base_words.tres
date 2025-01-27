@@ -1,7 +1,26 @@
-[gd_resource type="Resource" script_class="WordSet" load_steps=2 format=3 uid="uid://e874jdlf3w5e"]
+[gd_resource type="Resource" script_class="WordSet" load_steps=5 format=3 uid="uid://e874jdlf3w5e"]
 
-[ext_resource type="Script" path="res://data/word_set.gd" id="1_cwiyo"]
+[ext_resource type="Script" path="res://data/word_set.gd" id="1_h3aqi"]
+[ext_resource type="Script" path="res://data/word.gd" id="2_o4k7h"]
+
+[sub_resource type="Resource" id="Resource_wrc0j"]
+script = ExtResource("2_o4k7h")
+text = "simple"
+type = 4
+syllables = 2
+rhyme = 0
+alliteration = 0
+assonance = 0
+
+[sub_resource type="Resource" id="Resource_7qo03"]
+script = ExtResource("2_o4k7h")
+text = "brain"
+type = 1
+syllables = 1
+rhyme = 1
+alliteration = 22
+assonance = 7
 
 [resource]
-script = ExtResource("1_cwiyo")
-words = Array[StringName]([&"simple", &"brain"])
+script = ExtResource("1_h3aqi")
+words = Array[ExtResource("2_o4k7h")]([SubResource("Resource_wrc0j"), SubResource("Resource_7qo03")])

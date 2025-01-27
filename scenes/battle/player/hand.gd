@@ -76,22 +76,22 @@ func position_cards():
 
 func select_prev():
 	if highlighted != null:
-		highlighted.deselect()
+		highlighted.unhover()
 	if mirrored:
 		decr()
 	else:
 		incr()
-	highlighted.select()
+	highlighted.hover()
 
 
 func select_next():
 	if highlighted != null:
-		highlighted.deselect()
+		highlighted.unhover()
 	if mirrored:
 		incr()
 	else:
 		decr()
-	highlighted.select()
+	highlighted.hover()
 
 func make_card(content) -> Card:
 	var new_card : Card = card_scene.instantiate()
@@ -116,30 +116,58 @@ func draw_cards(contents: Array) -> void:
 		make_card(content)
 	position_cards()
 
-func remove_card(card):
+func remove_card(card : Card):
 	var idx = cards.find(card)
 	if card == highlighted and idx >= cards.size() - 1:
 		idx = 0
-
+	
+	if card in selected:
+		selected.erase(card)
+		content_selected.emit(selected)
 	cards.erase(card)
-	card.deselect()
-	card.still()
 	card.card_clicked.disconnect(_on_card_clicked)
 	card.card_entered.disconnect(_on_card_entered)
 	card.card_exited.disconnect(_on_card_exited)
 	
-	card.queue_free()
-	position_cards()
 	
 	if card == highlighted and cards.size() > 0:
 		highlighted = cards[idx]
 		if active:
-			highlighted.select()
-			highlighted.shake()
+			highlighted.hover()
+	
+	card.queue_free()
+	position_cards()
 
+func remove_cards(items: Array[Card]):
+	var selected_removed := false
+	for card in items:
+		var idx = cards.find(card)
+		if card in selected:
+			selected_removed = true
+		selected.erase(card)
+		cards.remove_at(idx)
+		card.card_clicked.disconnect(_on_card_clicked)
+		card.card_entered.disconnect(_on_card_entered)
+		card.card_exited.disconnect(_on_card_exited)
+		
+		card.queue_free()
+		if card == highlighted and cards.size() > 0:
+			if idx >= cards.size():
+				idx = 0
+			highlighted = cards[idx]
+			if active:
+				highlighted.hover()
+	
+	position_cards()
+	if selected_removed:
+		content_selected.emit(selected)
+	
 func set_selected_count(count: int):
 	selected_count = count
 	if 0 <= count and count < selected.size():
+		var diff = selected.size() - count
+		for card in selected.slice(count):
+			card.deselect()
 		selected.resize(count)
 	position_cards()
 
@@ -152,11 +180,16 @@ func select_card(card: Card = null):
 	
 	if card in selected:
 		selected.erase(card)
+		card.deselect()
 	elif 0 <= selected_count and selected_count <= selected.size():
+		for card_ in selected.slice(selected_count - 1):
+			card_.deselect()
+		card.select()
 		selected.resize(selected_count)
 		selected[selected_count - 1] = card
 	else:
 		selected.append(card)
+		card.select()
 	
 	content_selected.emit(selected)
 	position_cards()
@@ -169,6 +202,7 @@ func deselect_card(card: Card = null):
 		return
 
 	selected.erase(card)
+	card.deselect()
 	
 	content_selected.emit(selected)
 	position_cards()
@@ -177,16 +211,14 @@ func activate():
 	active = true
 	position_cards()
 	if cards.size() > 0 and highlighted != null:
-		highlighted.select()
-		highlighted.shake()
+		highlighted.hover()
 
 func deactivate():
 	active = false
 	z_index = -cards.size()
 	position_cards()
 	if cards.size() > 0 and highlighted != null:
-		highlighted.deselect()
-		highlighted.still()
+		highlighted.unhover()
 
 func incr():
 	if cards.size() <= 0:
@@ -219,7 +251,7 @@ func decr():
 	position_cards()
 	
 func _on_card_clicked(card: Card, pressed: bool):
-	if pressed or card not in cards:
+	if pressed or card not in cards or not active:
 		# We work on release to be nice
 		return
 		
@@ -228,26 +260,24 @@ func _on_card_clicked(card: Card, pressed: bool):
 func _on_card_entered(card: Card):
 	if card not in cards:
 		return
-
+	card_hovered.emit()
+	
 	if highlighted != null:
-		highlighted.deselect()
-		highlighted.still()
+		highlighted.unhover()
 		
 	highlighted = card
-	card.select()
-	card.shake()
+	if active:
+		card.hover()
 	
 	position_cards()
 	
-	card_hovered.emit()
 	
 func _on_card_exited(card: Card):
 	if card not in cards:
 		return
 	
 	if highlighted != null:
-		highlighted.deselect()
-		highlighted.still()
+		highlighted.unhover()
 	
 	highlighted = null
 	position_cards()

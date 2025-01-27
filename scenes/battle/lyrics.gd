@@ -43,6 +43,16 @@ func _ready():
 	for line in lines:
 		line.text = base_BBCode % empty_BBCode
 
+func clear():
+	for line in lines:
+		line.text = empty_BBCode
+	
+	bars = [null, null, null, null]
+	current_line = 0
+	
+	current_phrase = null
+	current_words = []
+
 func set_current_phrase(phrase: Phrase):
 	current_phrase = phrase
 	format_line()
@@ -56,7 +66,7 @@ func format_line():
 	if current_phrase == null:
 		line.text = empty_BBCode
 		return
-	var blanks: Array[Word] = current_words
+	var blanks: Array[Word] = current_words.duplicate()
 	var inserts: Array[String] = []
 	blanks.resize(current_phrase.count)
 	inserts.resize(current_phrase.count)
@@ -69,6 +79,25 @@ func format_line():
 		else:
 			inserts[idx] = inline_BBCode % [word.text]
 	line.text = base_BBCode % [current_phrase.text % inserts]
+
+func has_full_bar() -> bool:
+	if current_phrase == null:
+		return false
+	return current_phrase.count == current_words.size()
+
+func get_bar() -> VerseBar:
+	return VerseBar.new(current_phrase, current_words)
+	
+func commit_bar() -> VerseBar:
+	if current_line >= 4:
+		return null
+	var bar = get_bar()
+	bars[current_line] = bar
+	current_line += 1
+	
+	current_phrase = null
+	current_words = []
+	return bar
 
 func has_full_verse() -> bool:
 	for bar in bars:

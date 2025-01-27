@@ -33,8 +33,8 @@ max_shift = 65.0
 ideal_step = 8.0
 select = Vector2(0, -60)
 
-[connection signal="commit_clicked" from="Deck" to="." method="_on_commit_clicked"]
 [connection signal="discard_clicked" from="Deck" to="." method="_on_discard_clicked"]
+[connection signal="play_clicked" from="Deck" to="." method="_on_play_clicked"]
 [connection signal="card_hovered" from="PhraseHand" to="." method="_on_phrase_hand_hovered"]
 [connection signal="content_selected" from="PhraseHand" to="." method="_on_phrase_content_selected"]
 [connection signal="card_hovered" from="WordHand" to="." method="_on_word_hand_hovered"]

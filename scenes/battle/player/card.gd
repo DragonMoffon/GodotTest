@@ -42,7 +42,7 @@ var target : Vector2
 var content = null
 
 var created : bool = false
-var selected : bool = false
+var highlighted : bool = false
 var shaking : bool = false
 
 func _process(delta: float) -> void:
@@ -83,13 +83,15 @@ func update_text():
 	else:
 		label.text = text % content.text
 	
-func select():
-	selected = true
+func hover():
+	highlighted = true
 	highlight.visible = true
+	shake()
 	
-func deselect():
-	selected = false
+func unhover():
+	highlighted = false
 	highlight.visible = false
+	still()
 
 func shake():
 	shaking = true
@@ -97,7 +99,13 @@ func shake():
 	
 func still():
 	shaking = false
-	update_text()		
+	update_text()
+	
+func select():
+	body.select()
+
+func deselect():
+	body.deselect()
 
 func _on_mouse_entered() -> void:
 	card_entered.emit(self)
@@ -106,5 +114,5 @@ func _on_mouse_exited() -> void:
 	card_exited.emit(self)
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.button_index == 1:
 		card_clicked.emit(self, event.pressed)
