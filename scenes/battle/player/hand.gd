@@ -165,7 +165,6 @@ func remove_cards(items: Array[Card]):
 func set_selected_count(count: int):
 	selected_count = count
 	if 0 <= count and count < selected.size():
-		var diff = selected.size() - count
 		for card in selected.slice(count):
 			card.deselect()
 		selected.resize(count)

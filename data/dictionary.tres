@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dict" load_steps=8 format=3 uid="uid://c4i8qyp2k3icm"]
+[gd_resource type="Resource" script_class="DictData" load_steps=11 format=3 uid="uid://c4i8qyp2k3icm"]
 
 [ext_resource type="Script" path="res://data/dictionary.gd" id="1_o1n2e"]
 [ext_resource type="Script" path="res://data/word.gd" id="2_wn7hm"]
@@ -48,12 +48,42 @@ rhyme = 0
 alliteration = 0
 assonance = 0
 
+[sub_resource type="Resource" id="Resource_7qoie"]
+script = ExtResource("2_wn7hm")
+text = "you"
+type = 16
+syllables = 1
+rhyme = 6
+alliteration = 31
+assonance = 13
+
+[sub_resource type="Resource" id="Resource_igv3u"]
+script = ExtResource("2_wn7hm")
+text = "truck"
+type = 1
+syllables = 1
+rhyme = 0
+alliteration = 44
+assonance = 15
+
+[sub_resource type="Resource" id="Resource_dwamy"]
+script = ExtResource("2_wn7hm")
+text = "duck"
+type = 1
+syllables = 1
+rhyme = 0
+alliteration = 23
+assonance = 15
+
 [resource]
 script = ExtResource("1_o1n2e")
 words = {
 "brain": SubResource("Resource_7qo03"),
 "by": SubResource("Resource_ot12p"),
+"duck": SubResource("Resource_dwamy"),
 "simple": SubResource("Resource_wrc0j"),
 "smoked": SubResource("Resource_1uuru"),
-"the": SubResource("Resource_acwht")
+"the": SubResource("Resource_acwht"),
+"truck": SubResource("Resource_igv3u"),
+"you": SubResource("Resource_7qoie")
 }

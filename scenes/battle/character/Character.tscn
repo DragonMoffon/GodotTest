@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://j154bka1btpo"]
+[gd_scene load_steps=4 format=3 uid="uid://j154bka1btpo"]
 
 [ext_resource type="SpriteFrames" uid="uid://coqxd0rt7e0ae" path="res://assets/textures/TestCharacter.tres" id="1_ajuro"]
+[ext_resource type="Script" path="res://scenes/battle/character/character.gd" id="2_dxkkr"]
+[ext_resource type="AudioStream" uid="uid://b1n2qchdno4rh" path="res://assets/sfx/honk.wav" id="3_5tdua"]
 
 [node name="Character" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_ajuro")
+script = ExtResource("2_dxkkr")
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5tdua")
+volume_db = -30.0
+
+[connection signal="finished" from="Voice" to="." method="_on_voice_finished"]

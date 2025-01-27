@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5ltwksbywtsu"
-path="res://.godot/imported/PlayPatch1.png-c2563a699b576a00081628f594c50225.ctex"
+path="res://.godot/imported/PlayPatch1.png-4b459259c366cb34655bea54f3ded321.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/character/PlayPatch1.png"
-dest_files=["res://.godot/imported/PlayPatch1.png-c2563a699b576a00081628f594c50225.ctex"]
+source_file="res://assets/textures/PlayPatch1.png"
+dest_files=["res://.godot/imported/PlayPatch1.png-4b459259c366cb34655bea54f3ded321.ctex"]
 
 [params]
 

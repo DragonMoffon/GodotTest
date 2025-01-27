@@ -1,16 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=12 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
 [ext_resource type="PackedScene" uid="uid://0xafi4choxa8" path="res://scenes/battle/score_card.tscn" id="2_sawi2"]
 [ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="4_y614f"]
-[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="5_ms6ae"]
+[ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="5_vtqjp"]
 [ext_resource type="Script" path="res://scenes/battle/audio.gd" id="6_1c6vl"]
 [ext_resource type="AudioStream" uid="uid://d17k6kmdoiv" path="res://assets/sfx/city_street_loop.wav" id="6_k5xf7"]
 [ext_resource type="AudioStream" uid="uid://dacxj1ptl5ryw" path="res://assets/sfx/beat_loop.wav" id="7_qhvl7"]
+[ext_resource type="Texture2D" uid="uid://cf3pf5jbrmqka" path="res://assets/textures/character/Char01Boba01.png" id="9_76p0s"]
+[ext_resource type="Texture2D" uid="uid://bfnockd7nedkb" path="res://assets/textures/character/Char02Kiki01.png" id="10_2nky2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5toyo"]
-font = ExtResource("5_ms6ae")
+font = ExtResource("5_vtqjp")
 font_size = 64
 
 [node name="BattleScene" type="Node2D"]
@@ -19,6 +21,16 @@ script = ExtResource("1_kup78")
 [node name="Opponent" type="Node" parent="."]
 
 [node name="Characters" type="Node" parent="."]
+
+[node name="Char01Boba01" type="Sprite2D" parent="Characters"]
+position = Vector2(170, 570)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_76p0s")
+
+[node name="Char02Kiki01" type="Sprite2D" parent="Characters"]
+position = Vector2(1750, 570)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_2nky2")
 
 [node name="Player" parent="." instance=ExtResource("1_5w4lb")]
 
@@ -30,11 +42,13 @@ scale = Vector2(0.6, 0.6)
 position = Vector2(960, 400)
 
 [node name="Condition" type="Label" parent="."]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_right = 1920.0
 offset_bottom = 80.0
 grow_horizontal = 2
+pivot_offset = Vector2(960, 40)
 label_settings = SubResource("LabelSettings_5toyo")
 horizontal_alignment = 1
 vertical_alignment = 1
