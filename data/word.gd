@@ -26,3 +26,12 @@ enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ
 @export var rhyme: Rhyme = Rhyme.NONE
 @export var alliteration: Sounds = Sounds.NONE
 @export var assonance: Vowel = Vowel.NONE
+
+
+func _init(text_: String = "", type_: Type = Type.NONE, syllables_: int = 0, rhyme_ : Rhyme = Rhyme.NONE, alliteration_ : Sounds = Sounds.NONE, assonance_ : Vowel = Vowel.NONE):
+	text = text_.to_lower()
+	type = type_
+	syllables = syllables_
+	rhyme = rhyme_
+	alliteration = alliteration_
+	assonance = assonance_
