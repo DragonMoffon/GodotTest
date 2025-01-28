@@ -1,20 +1,22 @@
 class_name Character
 extends Resource
 
-var animations: SpriteFrames
-var voice: Resource # ???
+@export
+var animations: SpriteFrames = null
+@export
+var voice: Array[AudioStream] = []
+@export
+var intro: AudioStream = null
 
-var phrase_deck: PhraseSet
-var word_deck: WordSet
+@export
+var phrase_deck: PhraseSet = null
+@export
+var word_deck: WordSet = null
 
+@export
 var phrase_size: int = 8
+@export
 var word_size: int = 10
 
+@export
 var discard_count: int = 8
-
-func _init() -> void:
-	animations = null
-	voice = null
-	
-	word_deck = load("res://data/base_words.tres")
-	phrase_deck = load("res://data/base_phrases.tres")

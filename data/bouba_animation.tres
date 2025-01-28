@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://b8d2alnvpimsh"]
+
+[ext_resource type="Texture2D" uid="uid://cf3pf5jbrmqka" path="res://assets/textures/character/Char01Boba01.png" id="1_haa06"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_haa06")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
