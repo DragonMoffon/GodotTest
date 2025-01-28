@@ -42,9 +42,6 @@ func set_player(data : Character):
 	phrase_pool = data.phrase_deck.phrases.duplicate()
 	phrase_pool.shuffle()
 	
-	draw_phrases(data.phrase_size)
-	draw_words(data.word_size)
-	
 	discards = data.discard_count
 	deck.set_discard_count(discards)
 	

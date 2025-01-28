@@ -58,6 +58,7 @@ stretch_mode = 5
 script = ExtResource("2_ekd0m")
 
 [node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
+z_index = 1000
 position = Vector2(139, 107)
 scale = Vector2(0.6, 0.6)
 

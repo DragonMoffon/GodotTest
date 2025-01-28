@@ -99,6 +99,7 @@ var words : Array[Word] = [
 	Word.new("Rhymes", Word.Type.NOUN, 1),
 	Word.new("songs", Word.Type.NOUN, 1),
 	Word.new("verses", Word.Type.NOUN, 2),
+	Word.new("fan", Word.Type.NOUN, 1),
 	Word.new("dog", Word.Type.NOUN, 1),
 	Word.new("cat", Word.Type.NOUN, 1),
 	Word.new("rat", Word.Type.NOUN, 1),
@@ -309,9 +310,9 @@ var word_set : Array[StringName] = [
 
 
 func _ready() -> void:
-	#var dict = DictData.new(words)
-	#ResourceSaver.save(dict, "res://data/dictionary.tres")
+	var dict = DictData.new(words)
+	ResourceSaver.save(dict, "res://data/dictionary.tres")
 	# var phrase_data = PhraseSet.new(phrase_set)
 	# ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
-	var word_data = WordSet.new(word_set)
-	ResourceSaver.save(word_data, "res://data/base_words.tres")
+	# var word_data = WordSet.new(word_set)
+	# ResourceSaver.save(word_data, "res://data/base_words.tres")

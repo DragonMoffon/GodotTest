@@ -73,7 +73,6 @@ func score_bar(bar: VerseBar) -> Score.LineScore:
 	var words : Array[Word] = []
 	var blank_idx: int = 0
 	for word in bar.phrase.text.split(" "):
-		print(word)
 		if word == "%s":
 			words.append(bar.words[blank_idx])
 			blank_idx += 1

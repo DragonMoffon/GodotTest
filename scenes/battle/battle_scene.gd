@@ -80,7 +80,7 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	
 	await get_tree().create_timer(turn_delay).timeout
 	
-	start_turn(Turn.PLAYER_WIN)
+	start_turn(Turn.BATTLE_CALLOUT)
 	
 func start_turn(turn_: Turn):
 	turn = turn_
@@ -101,6 +101,7 @@ func start_turn(turn_: Turn):
 			lyrics.fade_in()
 			player.enable()
 			lyrics.clear()
+			player.refill_hand()
 			lyrics.set_current_phrase(player.get_selected_phrase())
 			lyrics.set_current_words(player.get_selected_words())
 		Turn.PLAYER_SING:
@@ -220,10 +221,8 @@ func _on_play_selected() -> void:
 		player_scores.append(verse_score)
 		player_score += verse_score.total
 		score.set_current(player_score)
-
 		start_turn(Turn.PLAYER_SING)
 		player.discard_cards()
-		player.refill_hand()
 	else:
 		player.discard_cards()
 
