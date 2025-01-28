@@ -1,6 +1,22 @@
 extends Node
 
 var words : Array[Word] = [
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("bet", Word.Type.VERB, 1),
+	Word.new("i", Word.Type.NOUN, 1),
+	Word.new("i'd", Word.Type.OTHER, 1),
+	Word.new("i'll", Word.Type.OTHER, 1),
+	Word.new("i'm", Word.Type.OTHER, 1),
+	Word.new("only", Word.Type.OTHER, 1),
+	Word.new("so", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
+	Word.new("and", Word.Type.OTHER, 1),
 	Word.new("by", Word.Type.OTHER, 1),
 	Word.new("the", Word.Type.OTHER, 1),
 	Word.new("brain", Word.Type.NOUN, 1, Word.Rhyme.AIN, Word.Sounds.b, Word.Vowel.aɪ),
@@ -108,6 +124,36 @@ var words : Array[Word] = [
 	Word.new("mid", Word.Type.ADJECTIVE, 1),
 ]
 
+var phrase_set : Array[Phrase] = [
+	Phrase.new("you look like a %s", []),
+	Phrase.new("you smell like a %s", []),
+	Phrase.new("i'd rather be %s", []),
+	Phrase.new("you're taking the %s", []),
+	Phrase.new("i'm better than %s", []),
+	Phrase.new("i'm cooler than %s", []),
+	Phrase.new("you're lamer than %s", []),
+	Phrase.new("i'm smarter than %s", []),
+	Phrase.new("you're stupider than %s", []),
+	Phrase.new("where did you %s?", []),
+	Phrase.new("why are you %s?", []),
+	Phrase.new("stop being %s", []),
+	Phrase.new("I'll %s you for real", []),
+	Phrase.new("you cannot %s me", []),
+	Phrase.new("take a %s %s", []),
+	Phrase.new("you are %s %s", []),
+	Phrase.new("you look like my %s", []),
+	Phrase.new("your momma so %s", []),
+	Phrase.new("%s", []),
+	Phrase.new("and those shoes? %s", []),
+	Phrase.new("only %s could be your fan", []),
+	Phrase.new("you can't even %s", []),
+	Phrase.new("you couldn't even afford %s", []),
+	Phrase.new("you seem like a love child born of %s", []),
+	Phrase.new("i see you drove here in a %s", []),
+	Phrase.new("you're fake as hell you'll only ever be a %s", []),
+	Phrase.new("you %s like a %s", []),
+]
+
 var word_set : Array[StringName] = [
 	"brain",
 	"simple",
@@ -198,7 +244,7 @@ var word_set : Array[StringName] = [
 	"Great",
 	"Lame",
 	"Stupid",
-	"SIlly",
+	"Silly",
 	"Crazy",
 	"Amazing",
 	"Spooky",
@@ -218,5 +264,7 @@ var word_set : Array[StringName] = [
 func _ready() -> void:
 	# var dict = DictData.new(words)
 	# ResourceSaver.save(dict, "res://data/dictionary.tres")
+	var phrase_data = PhraseSet.new(phrase_set)
+	ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
 	var word_data = WordSet.new(word_set)
 	ResourceSaver.save(word_data, "res://data/base_words.tres")

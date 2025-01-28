@@ -7,6 +7,8 @@ var animations: SpriteFrames = null
 var voice: Array[AudioStream] = []
 @export
 var intro: AudioStream = null
+@export
+var pitch: float = 1.0
 
 @export
 var phrase_deck: PhraseSet = null

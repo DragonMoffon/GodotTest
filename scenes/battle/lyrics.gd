@@ -122,14 +122,14 @@ func set_verse(verse: Verse):
 		format_line(line, verse.bars[idx].phrase, verse.bars[idx].words)
 	bars = verse.bars
 
-func score_line(line: int = 0, alliteration: bool = false, assonance: bool = false, rhyme: bool = false, group: String = "", score: int = 0):
-	lines[line].set_labels(alliteration, assonance, rhyme, group, score)
+func score_line(line: int, score: Score.LineScore):
+	lines[line].set_labels(score.alliteration, score.assonance, score.rhyme, score.group, score.score)
 	score_audio.pitch_scale = 1.0 + line / 16.0
 	score_audio.play()
 	
-func set_score(score: int):
+func set_score(score: Score):
 	score_total.visible = true
-	score_total.text = "%s" % [score]
+	score_total.text = "%s" % [score.total]
 
 func fade_out():
 	var tween = get_tree().create_tween()

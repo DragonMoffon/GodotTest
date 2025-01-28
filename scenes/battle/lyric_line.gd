@@ -23,7 +23,7 @@ func set_labels(alliteration: bool = false, assonance: bool = false, rhyme: bool
 	assonance_tag.visible = assonance
 	rhyme_tag.visible = rhyme
 	group_tag.visible = group != ""
-	score_tag.visible = score != 0
+	score_tag.visible = true
 	
 	group_tag.text = group
 	score_tag.text = "%s" % [score]

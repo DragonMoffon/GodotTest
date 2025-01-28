@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=25 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
@@ -12,10 +12,17 @@
 [ext_resource type="AudioStream" uid="uid://dacxj1ptl5ryw" path="res://assets/sfx/beat_loop.wav" id="7_qhvl7"]
 [ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="11_0jstl"]
 [ext_resource type="Script" path="res://scenes/battle/bout.gd" id="12_ahgql"]
-[ext_resource type="AudioStream" uid="uid://dgl66e3sbfpwo" path="res://assets/sfx/bout/bout_start_crush.ogg" id="13_1qxa1"]
 [ext_resource type="Script" path="res://scenes/battle/vs.gd" id="13_2obuc"]
-[ext_resource type="AudioStream" uid="uid://dujio6c5lnqwb" path="res://assets/sfx/bout/1_crush.ogg" id="14_bs08n"]
-[ext_resource type="AudioStream" uid="uid://d2i08rqaebv7d" path="res://assets/sfx/bout/2_crush.ogg" id="15_5eg02"]
+[ext_resource type="AudioStream" uid="uid://c5figk45shakp" path="res://assets/sfx/bout_start.ogg" id="13_mkk52"]
+[ext_resource type="AudioStream" uid="uid://vof4tn3fd3nv" path="res://assets/sfx/bout/1.ogg" id="14_1dwrt"]
+[ext_resource type="AudioStream" uid="uid://cyjgx4ajdwifb" path="res://assets/sfx/bout/2.ogg" id="15_lsvah"]
+[ext_resource type="AudioStream" uid="uid://xynbudg0bvat" path="res://assets/sfx/bout/3.ogg" id="16_cwoys"]
+[ext_resource type="AudioStream" uid="uid://nj14r2fet3fj" path="res://assets/sfx/bout/4.ogg" id="17_uwso4"]
+[ext_resource type="AudioStream" uid="uid://iocjxl1tay4n" path="res://assets/sfx/bout/5.ogg" id="18_vtahj"]
+[ext_resource type="AudioStream" uid="uid://chu1eeoeou4jn" path="res://assets/sfx/bout/6.ogg" id="19_6uw13"]
+[ext_resource type="AudioStream" uid="uid://cmp5duoimjrts" path="res://assets/sfx/bout/7.ogg" id="20_6xxa0"]
+[ext_resource type="AudioStream" uid="uid://dc2nk7r0vwmuv" path="res://assets/sfx/bout/8.wav" id="21_e1ktq"]
+[ext_resource type="AudioStream" uid="uid://drhomgpeheq28" path="res://assets/sfx/versus.wav" id="23_i5xb0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5toyo"]
 font = ExtResource("5_vtqjp")
@@ -49,6 +56,10 @@ stretch_mode = 5
 [node name="Opponent" type="Node" parent="."]
 script = ExtResource("2_ekd0m")
 
+[node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
+position = Vector2(139, 107)
+scale = Vector2(0.6, 0.6)
+
 [node name="Characters" type="Node" parent="."]
 
 [node name="Player" parent="Characters" instance=ExtResource("2_8bbij")]
@@ -62,15 +73,12 @@ flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("1_5w4lb")]
 
-[node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
-position = Vector2(139, 107)
-scale = Vector2(0.6, 0.6)
-
 [node name="Lyrics" parent="." instance=ExtResource("4_y614f")]
 visible = false
 position = Vector2(960, 400)
 
 [node name="Condition" type="Label" parent="."]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_right = 1920.0
@@ -86,25 +94,27 @@ script = ExtResource("6_1c6vl")
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("6_k5xf7")
-volume_db = -20.0
+volume_db = -25.0
 autoplay = true
 panning_strength = 0.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("7_qhvl7")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 panning_strength = 0.0
 
 [node name="Bout" type="AudioStreamPlayer2D" parent="Audio"]
 panning_strength = 0.0
 script = ExtResource("12_ahgql")
-start = ExtResource("13_1qxa1")
-numbers = Array[AudioStream]([ExtResource("14_bs08n"), ExtResource("15_5eg02")])
+start = ExtResource("13_mkk52")
+numbers = Array[AudioStream]([ExtResource("14_1dwrt"), ExtResource("15_lsvah"), ExtResource("16_cwoys"), ExtResource("17_uwso4"), ExtResource("18_vtahj"), ExtResource("19_6uw13"), ExtResource("20_6xxa0"), ExtResource("21_e1ktq")])
 
 [node name="Vs" type="AudioStreamPlayer2D" parent="Audio"]
+volume_db = 12.0
 panning_strength = 0.0
 script = ExtResource("13_2obuc")
+versus = ExtResource("23_i5xb0")
 
 [connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
 [connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]
@@ -118,4 +128,5 @@ script = ExtResource("13_2obuc")
 [connection signal="finished" from="Audio/Music" to="Audio" method="_on_music_finished"]
 [connection signal="callout_finished" from="Audio/Bout" to="." method="_on_bout_callout_finished"]
 [connection signal="finished" from="Audio/Bout" to="Audio/Bout" method="_on_finished"]
-[connection signal="finished" from="Audio/Vs" to="Audio/Vs" method="_on_finished"]
+[connection signal="finished_callout" from="Audio/Vs" to="." method="_on_finished_callout"]
+[connection signal="finished_winner" from="Audio/Vs" to="." method="_on_finished_winner"]

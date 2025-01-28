@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Character" load_steps=73 format=3 uid="uid://s5m0ev27lm1i"]
+[gd_resource type="Resource" script_class="Character" load_steps=74 format=3 uid="uid://s5m0ev27lm1i"]
 
 [ext_resource type="Script" path="res://data/character.gd" id="1_afgug"]
 [ext_resource type="SpriteFrames" uid="uid://bqi4mwo47mg14" path="res://data/kiki_animation.tres" id="1_t622k"]
 [ext_resource type="Resource" uid="uid://du7eprb1ws78m" path="res://data/base_phrases.tres" id="2_5xo32"]
+[ext_resource type="AudioStream" uid="uid://clqf40dfjt1f6" path="res://assets/sfx/keekee.wav" id="2_b8nw0"]
 [ext_resource type="Resource" uid="uid://e874jdlf3w5e" path="res://data/base_words.tres" id="4_qp2t6"]
 [ext_resource type="AudioStream" uid="uid://np5yef5o1ms4" path="res://assets/sfx/kiki/a.wav" id="4_rphmq"]
 [ext_resource type="AudioStream" uid="uid://dlwtyvpf7mclr" path="res://assets/sfx/kiki/ba.wav" id="5_bu1j1"]
@@ -77,6 +78,8 @@
 script = ExtResource("1_afgug")
 animations = ExtResource("1_t622k")
 voice = Array[AudioStream]([ExtResource("4_rphmq"), ExtResource("5_bu1j1"), ExtResource("6_mxrvk"), ExtResource("7_4hu0q"), ExtResource("8_hm5ni"), ExtResource("9_4mpit"), ExtResource("10_g1gma"), ExtResource("11_hn1jc"), ExtResource("12_q14o0"), ExtResource("13_s7uo3"), ExtResource("14_wt47u"), ExtResource("15_pmw23"), ExtResource("16_wvaoh"), ExtResource("17_0tnno"), ExtResource("18_rv5iv"), ExtResource("19_a7fqo"), ExtResource("20_2n3dw"), ExtResource("21_xqwuj"), ExtResource("22_hlukb"), ExtResource("23_6e7fr"), ExtResource("24_hqdck"), ExtResource("25_ux87w"), ExtResource("26_lcb67"), ExtResource("27_mx51e"), ExtResource("28_fd5ik"), ExtResource("29_bfut2"), ExtResource("30_b06tf"), ExtResource("31_qivv1"), ExtResource("32_ebw6u"), ExtResource("33_5plyu"), ExtResource("34_gak8r"), ExtResource("35_kqhly"), ExtResource("36_h77yi"), ExtResource("37_6v6sy"), ExtResource("38_kya2q"), ExtResource("39_8j8mo"), ExtResource("40_we16p"), ExtResource("41_fobnl"), ExtResource("42_8qtef"), ExtResource("43_rcfvm"), ExtResource("44_5mu7e"), ExtResource("45_e8itp"), ExtResource("46_5tgln"), ExtResource("47_726he"), ExtResource("48_d2q73"), ExtResource("49_8d6rc"), ExtResource("50_xpk31"), ExtResource("51_86dce"), ExtResource("52_mhe3o"), ExtResource("53_wcm4j"), ExtResource("54_nkl6u"), ExtResource("55_yj1ks"), ExtResource("56_1ch8p"), ExtResource("57_46gvi"), ExtResource("58_jpgfx"), ExtResource("59_tgno8"), ExtResource("60_3sux6"), ExtResource("61_e2k4b"), ExtResource("62_18drp"), ExtResource("63_s2e4e"), ExtResource("64_ggcue"), ExtResource("65_38gwk"), ExtResource("66_78mxb"), ExtResource("67_78wbq"), ExtResource("68_pg2ba"), ExtResource("69_4f76h"), ExtResource("70_dvnee"), ExtResource("71_43k80")])
+intro = ExtResource("2_b8nw0")
+pitch = 0.9
 phrase_deck = ExtResource("2_5xo32")
 word_deck = ExtResource("4_qp2t6")
 phrase_size = 8

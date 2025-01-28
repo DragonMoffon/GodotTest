@@ -40,6 +40,7 @@ var enemy_data : Character = null
 var battle_data : Battle = null
 
 var player_score : int = 0
+var player_scores : Array[Score] = []
 var bout : int = 0
 
 func _ready() -> void:
@@ -59,6 +60,9 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	
 	bout = 1
 	
+	player_score = 0
+	player_scores = []
+	
 	player_character.update_data(player_data_)
 	opponent_character.update_data(enemy_data_)
 	
@@ -68,17 +72,27 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	score.set_current(0)
 	score.set_target(battle_data_.target_score)
 	
-	start_turn(Turn.BOUT_CALLOUT)
-	
 	condition.text = battle_data.algorithm.get_score_text()
+	
+	await get_tree().create_timer(turn_delay).timeout
+	
+	start_turn(Turn.BATTLE_CALLOUT)
 	
 func start_turn(turn_: Turn):
 	turn = turn_
 	match turn:
 		Turn.INSTRUCTIONS:
-			pass
+			lyrics.fade_out()
+			player.disable()
+			player.deck.disable_commit()
+			player.deck.disable_discard()
 		Turn.BATTLE_CALLOUT:
-			pass
+			lyrics.fade_out()
+			player.disable()
+			player.deck.disable_commit()
+			player.deck.disable_discard()
+			
+			vs_audio.callout(player_data, enemy_data)
 		Turn.PLAYER_PICK:
 			lyrics.fade_in()
 			player.enable()
@@ -117,13 +131,19 @@ func start_turn(turn_: Turn):
 			
 			bout_audio.start_bout(bout)
 		Turn.PLAYER_WIN:
+			lyrics.fade_out()
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			vs_audio.call_winner(player_data)
 		Turn.PLAYER_LOSE:
+			lyrics.fade_out()
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			vs_audio.call_winner(enemy_data)
 
 func _on_player_phrase_selected(phrase: Phrase) -> void:
 	if turn != Turn.PLAYER_PICK:
@@ -180,7 +200,7 @@ func _on_discard_selected() -> void:
 	
 	if player.discards <= 0:
 		player.deck.disable_discard()
-	
+
 
 func _on_play_selected() -> void:
 	if not lyrics.has_full_bar():
@@ -192,8 +212,11 @@ func _on_play_selected() -> void:
 	if lyrics.has_full_verse():
 		var verse = lyrics.get_verse()
 		player.verses.append(verse)
+		var verse_score := battle_data.algorithm.score_verse(verse)
+		player_scores.append(verse_score)
+		player_score += verse_score.total
 		score.set_current(player_score)
-		
+
 		start_turn(Turn.PLAYER_SING)
 		player.discard_cards()
 		player.refill_hand()
@@ -204,14 +227,15 @@ func _on_play_selected() -> void:
 func _on_player_finished_line(line: int) -> void:
 	if turn != Turn.PLAYER_SING:
 		return
-		
-	lyrics.score_line(line, true, true, true, "A", 10)
+	
+	var score_line = player_scores[-1].lines[line]
+	lyrics.score_line(line, score_line)
 
 
 func _on_player_finished_singing() -> void:
 	if turn != Turn.PLAYER_SING:
 		return
-	lyrics.set_score(40)
+	lyrics.set_score(player_scores[-1])
 	
 	await get_tree().create_timer(turn_delay).timeout
 	
@@ -227,9 +251,9 @@ func _on_opponent_finished_line(line: int) -> void:
 func _on_opponent_finished_singing() -> void:
 	if turn != Turn.ENEMY_SING:
 		return
-	if bout >= 2:
+	if bout >= 8:
 		# Determine if the player has Won or not
-		pass
+		start_turn(Turn.PLAYER_WIN)
 	else:
 		bout += 1
 		start_turn(Turn.BOUT_CALLOUT)
@@ -238,3 +262,13 @@ func _on_bout_callout_finished() -> void:
 	if turn != Turn.BOUT_CALLOUT:
 		return
 	start_turn(Turn.PLAYER_PICK)
+
+func _on_finished_callout() -> void:
+	if turn != Turn.BATTLE_CALLOUT:
+		return
+	start_turn(Turn.PLAYER_PICK)
+
+func _on_finished_winner() -> void:
+	if turn != Turn.PLAYER_WIN or turn != Turn.PLAYER_LOSE:
+		return
+	print("Game Over Man, Game Over!")

@@ -17,6 +17,7 @@ var current_line: int = 0
 func update_data(data_: Character):
 	data = data_
 	sprite_frames = data_.animations
+	voice.pitch_scale = data_.pitch
 
 func sing_verse(verse: Verse):
 	current_verse = verse

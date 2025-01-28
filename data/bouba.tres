@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Character" load_steps=31 format=3 uid="uid://da2cwtlcewhca"]
+[gd_resource type="Resource" script_class="Character" load_steps=32 format=3 uid="uid://da2cwtlcewhca"]
 
 [ext_resource type="Script" path="res://data/character.gd" id="1_0ac5m"]
 [ext_resource type="SpriteFrames" uid="uid://b8d2alnvpimsh" path="res://data/bouba_animation.tres" id="1_0xqcm"]
 [ext_resource type="Resource" uid="uid://du7eprb1ws78m" path="res://data/base_phrases.tres" id="2_etp67"]
+[ext_resource type="AudioStream" uid="uid://cilxbklw5u80i" path="res://assets/sfx/bouba.wav" id="2_xfld5"]
 [ext_resource type="AudioStream" uid="uid://8yuoj41t2qe3" path="res://assets/sfx/bouba/a.wav" id="4_2waua"]
 [ext_resource type="Resource" uid="uid://e874jdlf3w5e" path="res://data/base_words.tres" id="4_ivd52"]
 [ext_resource type="AudioStream" uid="uid://bsjs7aemcxf6a" path="res://assets/sfx/bouba/b.wav" id="5_yax2f"]
@@ -35,6 +36,7 @@
 script = ExtResource("1_0ac5m")
 animations = ExtResource("1_0xqcm")
 voice = Array[AudioStream]([ExtResource("4_2waua"), ExtResource("5_yax2f"), ExtResource("6_3y8xa"), ExtResource("7_t7s2l"), ExtResource("8_caph4"), ExtResource("9_kbwcq"), ExtResource("10_shk8p"), ExtResource("11_k4ect"), ExtResource("12_6otbx"), ExtResource("13_brtin"), ExtResource("14_ggnd4"), ExtResource("15_lgqrh"), ExtResource("16_qfsj4"), ExtResource("17_t3u63"), ExtResource("18_vp5yu"), ExtResource("19_ccs45"), ExtResource("20_04bwp"), ExtResource("21_yuv27"), ExtResource("22_3873l"), ExtResource("23_8h0lm"), ExtResource("24_iva0f"), ExtResource("25_kxu44"), ExtResource("26_83024"), ExtResource("27_rjfco"), ExtResource("28_mjtj0"), ExtResource("29_iyv2y")])
+intro = ExtResource("2_xfld5")
 phrase_deck = ExtResource("2_etp67")
 word_deck = ExtResource("4_ivd52")
 phrase_size = 8
