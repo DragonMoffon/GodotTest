@@ -72,11 +72,15 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	score.set_current(0)
 	score.set_target(battle_data_.target_score)
 	
+	player.disable()
+	player.deck.disable_commit()
+	player.deck.disable_discard()
+	
 	condition.text = battle_data.algorithm.get_score_text()
 	
 	await get_tree().create_timer(turn_delay).timeout
 	
-	start_turn(Turn.BATTLE_CALLOUT)
+	start_turn(Turn.PLAYER_WIN)
 	
 func start_turn(turn_: Turn):
 	turn = turn_

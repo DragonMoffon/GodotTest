@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=26 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://cmp5duoimjrts" path="res://assets/sfx/bout/7.ogg" id="20_6xxa0"]
 [ext_resource type="AudioStream" uid="uid://dc2nk7r0vwmuv" path="res://assets/sfx/bout/8.wav" id="21_e1ktq"]
 [ext_resource type="AudioStream" uid="uid://drhomgpeheq28" path="res://assets/sfx/versus.wav" id="23_i5xb0"]
+[ext_resource type="AudioStream" uid="uid://b0wgjqij8pwnj" path="res://assets/sfx/winner.wav" id="24_w88v5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5toyo"]
 font = ExtResource("5_vtqjp")
@@ -115,6 +116,7 @@ volume_db = 12.0
 panning_strength = 0.0
 script = ExtResource("13_2obuc")
 versus = ExtResource("23_i5xb0")
+winner = ExtResource("24_w88v5")
 
 [connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
 [connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]
