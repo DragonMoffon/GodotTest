@@ -2,6 +2,7 @@ class_name Battle
 extends Resource
 
 var target_score: int
+var battle_length: int
 
 var algorithm : ScoreAlgorithm
 

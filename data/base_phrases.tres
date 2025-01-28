@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PhraseSet" load_steps=9 format=3 uid="uid://du7eprb1ws78m"]
+[gd_resource type="Resource" script_class="PhraseSet" load_steps=19 format=3 uid="uid://du7eprb1ws78m"]
 
 [ext_resource type="Script" path="res://data/phrase.gd" id="1_n3he3"]
 [ext_resource type="Script" path="res://data/phrase_set.gd" id="2_i2fgt"]
@@ -29,6 +29,56 @@ script = ExtResource("1_n3he3")
 text = "smoked by the %s"
 blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_wda7b")])
 
+[sub_resource type="Resource" id="Resource_rs4pv"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 1
+
+[sub_resource type="Resource" id="Resource_rx8so"]
+script = ExtResource("1_n3he3")
+text = "you look like a %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_rs4pv")])
+
+[sub_resource type="Resource" id="Resource_celnn"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 1
+
+[sub_resource type="Resource" id="Resource_xoy65"]
+script = ExtResource("1_n3he3")
+text = "you smell like a %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_celnn")])
+
+[sub_resource type="Resource" id="Resource_bfu3a"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 6
+
+[sub_resource type="Resource" id="Resource_f45a5"]
+script = ExtResource("1_n3he3")
+text = "i'd rather be %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_bfu3a")])
+
+[sub_resource type="Resource" id="Resource_v60k1"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 1
+
+[sub_resource type="Resource" id="Resource_mcksa"]
+script = ExtResource("1_n3he3")
+text = "You're taking the %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_v60k1")])
+
+[sub_resource type="Resource" id="Resource_pb0a2"]
+script = ExtResource("2_ricnb")
+syllables = 1
+types = 1
+
+[sub_resource type="Resource" id="Resource_l27sl"]
+script = ExtResource("1_n3he3")
+text = "I'm better than %s"
+blanks = Array[ExtResource("2_ricnb")]([SubResource("Resource_pb0a2")])
+
 [resource]
 script = ExtResource("2_i2fgt")
-phrases = Array[ExtResource("1_n3he3")]([SubResource("Resource_ceef3"), SubResource("Resource_pmkp8")])
+phrases = Array[ExtResource("1_n3he3")]([SubResource("Resource_ceef3"), SubResource("Resource_pmkp8"), SubResource("Resource_rx8so"), SubResource("Resource_xoy65"), SubResource("Resource_f45a5"), SubResource("Resource_mcksa"), SubResource("Resource_l27sl")])

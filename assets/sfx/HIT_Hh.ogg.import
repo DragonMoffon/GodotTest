@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/HIT_Hh.ogg-da4dd75fb9118ab5fa537968d058bc61.o
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

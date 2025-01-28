@@ -27,6 +27,7 @@ var enemy_data : Character = null
 var battle_data : Battle = null
 
 var player_score : int = 0
+var bout : int = 0
 
 func _ready() -> void:
 	start(
@@ -35,7 +36,7 @@ func _ready() -> void:
 		Battle.new()
 	)
 
-func _process(_dt: float) -> void:
+func _process(dt: float) -> void:
 	pass
 
 func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle):
@@ -45,6 +46,8 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	player_data = player_data_
 	enemy_data = enemy_data_
 	battle_data = battle_data_
+	
+	bout = 0
 	
 	player.set_player(player_data_)
 	
@@ -119,7 +122,6 @@ func _on_player_words_selected(words: Array[Word]) -> void:
 	else:
 		player.deck.disable_discard()
 		
-
 
 func _on_discard_selected() -> void:
 	if turn != Turn.PLAYER_PICK or player.discards <= 0:

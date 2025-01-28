@@ -10,6 +10,9 @@ extends Node2D
 @export var inline_size : int
 
 @onready
+var score_audio = $ScoreBam
+
+@onready
 var line_1 = $"Bars/VBoxContainer/1"
 @onready
 var line_2 = $"Bars/VBoxContainer/2"
@@ -45,6 +48,7 @@ func _ready():
 
 func clear():
 	for line in lines:
+		line.hide_labels()
 		line.text = empty_BBCode
 	
 	bars = [null, null, null, null]
@@ -89,14 +93,17 @@ func get_bar() -> VerseBar:
 	return VerseBar.new(current_phrase, current_words)
 	
 func commit_bar() -> VerseBar:
+	score_line(current_line)
 	if current_line >= 4:
 		return null
 	var bar = get_bar()
 	bars[current_line] = bar
+	score_line(current_line, true, true, true, "A", 10)
 	current_line += 1
 	
 	current_phrase = null
 	current_words = []
+	
 	return bar
 
 func has_full_verse() -> bool:
@@ -107,3 +114,8 @@ func has_full_verse() -> bool:
 	
 func get_verse() -> Verse:
 	return Verse.new(bars)
+
+func score_line(line: int = 0, alliteration: bool = false, assonance: bool = false, rhyme: bool = false, group: String = "", score: int = 0):
+	lines[line].set_labels(alliteration, assonance, rhyme, group, score)
+	score_audio.pitch_scale = 1.0 + line / 16.0
+	score_audio.play()

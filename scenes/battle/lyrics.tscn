@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfp04b2gnqthc"]
+[gd_scene load_steps=10 format=3 uid="uid://dfp04b2gnqthc"]
 
 [ext_resource type="Script" path="res://scenes/battle/lyrics.gd" id="1_2dqy8"]
 [ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_14sco"]
 [ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_cetyf"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="3_q200j"]
+[ext_resource type="Script" path="res://scenes/battle/lyric_line.gd" id="5_1vr1y"]
+[ext_resource type="FontFile" uid="uid://lm5ye7p2vdv7" path="res://assets/gui/EXPOSE-REGULAR.OTF" id="5_miivx"]
+[ext_resource type="AudioStream" uid="uid://ert0or2kpykx" path="res://assets/sfx/HIT_1.ogg" id="6_1xt81"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbikx"]
+font = ExtResource("5_miivx")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_45j24"]
+font = ExtResource("5_miivx")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
 
 [node name="Lyrics" type="Node2D"]
 script = ExtResource("1_2dqy8")
@@ -11,6 +24,10 @@ base_font = ExtResource("2_14sco")
 base_size = 20
 inline_font = ExtResource("3_q200j")
 inline_size = 28
+
+[node name="ScoreBam" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1xt81")
+volume_db = -30.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_cetyf")
@@ -40,33 +57,417 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="1" type="RichTextLabel" parent="Bars/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
+script = ExtResource("5_1vr1y")
+
+[node name="Alliteration" type="Label" parent="Bars/VBoxContainer/1"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 230.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ALLITERATION!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assonance" type="Label" parent="Bars/VBoxContainer/1"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -15.0
+offset_right = 230.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ASSONANCE!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rhyme" type="Label" parent="Bars/VBoxContainer/1"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 5.0
+offset_right = 230.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "RHYME!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Group" type="Label" parent="Bars/VBoxContainer/1"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -60.0
+offset_right = 282.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Bars/VBoxContainer/1"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -60.0
+offset_right = -35.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "000"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="2" type="RichTextLabel" parent="Bars/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
+script = ExtResource("5_1vr1y")
+
+[node name="Alliteration" type="Label" parent="Bars/VBoxContainer/2"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 230.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ALLITERATION!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assonance" type="Label" parent="Bars/VBoxContainer/2"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -15.0
+offset_right = 230.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ASSONANCE!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rhyme" type="Label" parent="Bars/VBoxContainer/2"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 5.0
+offset_right = 230.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "RHYME!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Group" type="Label" parent="Bars/VBoxContainer/2"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -60.0
+offset_right = 282.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Bars/VBoxContainer/2"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -60.0
+offset_right = -35.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "000"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="3" type="RichTextLabel" parent="Bars/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
+script = ExtResource("5_1vr1y")
+
+[node name="Alliteration" type="Label" parent="Bars/VBoxContainer/3"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 230.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ALLITERATION!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assonance" type="Label" parent="Bars/VBoxContainer/3"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -15.0
+offset_right = 230.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ASSONANCE!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rhyme" type="Label" parent="Bars/VBoxContainer/3"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 5.0
+offset_right = 230.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "RHYME!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Group" type="Label" parent="Bars/VBoxContainer/3"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -60.0
+offset_right = 282.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Bars/VBoxContainer/3"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -60.0
+offset_right = -35.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "000"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="4" type="RichTextLabel" parent="Bars/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 mouse_filter = 2
 bbcode_enabled = true
 text = "[center][color=black][font n=res://assets/gui/AllRightsReserved.ttf s=30][???][/font][/color][/center]"
 scroll_active = false
+script = ExtResource("5_1vr1y")
+
+[node name="Alliteration" type="Label" parent="Bars/VBoxContainer/4"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 230.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ALLITERATION!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assonance" type="Label" parent="Bars/VBoxContainer/4"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -15.0
+offset_right = 230.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "ASSONANCE!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rhyme" type="Label" parent="Bars/VBoxContainer/4"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = 5.0
+offset_right = 230.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+text = "RHYME!"
+label_settings = SubResource("LabelSettings_rbikx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Group" type="Label" parent="Bars/VBoxContainer/4"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = -60.0
+offset_right = 282.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Bars/VBoxContainer/4"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -60.0
+offset_right = -35.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "000"
+label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1

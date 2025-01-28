@@ -23,6 +23,7 @@ enum Conditions { NONE }
 const condition_text = {
 	Conditions.NONE: "Beat the target score!!"
 }
+
 var condition_algo = {
 	Conditions.NONE: default
 }
@@ -49,14 +50,7 @@ func _init(
 	internal_rhyme_factor = internal
 	rhyme_factor = rhyme
 	
-func score_bar(bar: VerseBar) -> int:
-	return int(10.0)
-	
-func score_verse(verse: Verse) -> int:
-	var score = 0
-	for bar in verse.bars:
-		score += score_bar(bar)
-	return int(score)
+
 
 func get_verse_rhyme_group(verse: Verse) -> String:
 	# This assumes the last word is always the last in the bar
@@ -72,6 +66,15 @@ func get_verse_rhyme_group(verse: Verse) -> String:
 
 func get_score_text() -> String:
 	return condition_text[condition]
+
+func score_bar(bar: VerseBar) -> int:
+	return int(10.0)
+	
+func score_verse(verse: Verse) -> int:
+	var score = 0
+	for bar in verse.bars:
+		score += score_bar(bar)
+	return int(score)
 
 func meets_special_condition(verses: Array[Verse]) -> bool:
 	return condition_algo[condition].call(verses)
