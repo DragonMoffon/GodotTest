@@ -67,6 +67,7 @@ position = Vector2(139, 107)
 scale = Vector2(0.6, 0.6)
 
 [node name="Lyrics" parent="." instance=ExtResource("4_y614f")]
+visible = false
 position = Vector2(960, 400)
 
 [node name="Condition" type="Label" parent="."]
@@ -86,11 +87,13 @@ script = ExtResource("6_1c6vl")
 [node name="Ambience" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("6_k5xf7")
 volume_db = -20.0
+autoplay = true
 panning_strength = 0.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("7_qhvl7")
 volume_db = -15.0
+autoplay = true
 panning_strength = 0.0
 
 [node name="Bout" type="AudioStreamPlayer2D" parent="Audio"]
