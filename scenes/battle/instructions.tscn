@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ovgkdyqcoylo"]
+[gd_scene load_steps=8 format=3 uid="uid://ovgkdyqcoylo"]
 
 [ext_resource type="Script" path="res://scenes/battle/instructions.gd" id="1_wc6bf"]
 [ext_resource type="Texture2D" uid="uid://5ltwksbywtsu" path="res://assets/textures/PlayPatch1.png" id="2_4k7w7"]
 [ext_resource type="Texture2D" uid="uid://24foxt5j2k82" path="res://assets/textures/DiscardPatch1.png" id="3_25xne"]
-[ext_resource type="Texture2D" uid="uid://q21qb713cg2s" path="res://assets/textures/deck-brain.png" id="4_4rbo6"]
+[ext_resource type="Texture2D" uid="uid://b36cjwb6474pr" path="res://assets/textures/PlayPatch1Normal.png" id="4_khm66"]
+[ext_resource type="Texture2D" uid="uid://cqa3qr7mow5mp" path="res://assets/textures/PlayPatch1Click.png" id="5_jcjf0"]
+[ext_resource type="Texture2D" uid="uid://c2pdn5juw0f8f" path="res://assets/textures/PlayPatch1hover.png" id="6_hj8rl"]
+[ext_resource type="Texture2D" uid="uid://n0l5f1d50kav" path="res://assets/textures/PlayPatch1Disable.png" id="7_g1mtw"]
 
 [node name="Instructions" type="Node2D"]
 z_index = 4000
@@ -45,7 +48,10 @@ offset_left = 864.0
 offset_top = 807.0
 offset_right = 1078.0
 offset_bottom = 958.0
-texture_normal = ExtResource("4_4rbo6")
+texture_normal = ExtResource("4_khm66")
+texture_pressed = ExtResource("5_jcjf0")
+texture_hover = ExtResource("6_hj8rl")
+texture_disabled = ExtResource("7_g1mtw")
 ignore_texture_size = true
 stretch_mode = 5
 
