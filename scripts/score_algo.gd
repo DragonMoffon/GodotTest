@@ -34,15 +34,17 @@ var condition : Conditions
 var syllable_factor : float = 1.0
 var alliteration_factor : float = 4.3
 var assonance_factor : float = 3.8
+var type_factor : float = 0.0
+var topic_factor : float = 0.0
 var internal_rhyme_factor : float = 5.5
 var rhyme_factor : float = 1.0
 
 func _init(
 		condition_: Conditions = Conditions.NONE,
 		syllable: float = 1.0,
-		alliteration: float = 1.0,
-		assonance: float = 1.0,
-		internal: float = 1.0,
+		alliteration: float = 4.3,
+		assonance: float = 3.8,
+		internal: float = 5.5,
 		rhyme: float = 1.0
 ):
 	condition = condition_

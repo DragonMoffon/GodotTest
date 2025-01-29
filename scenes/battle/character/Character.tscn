@@ -12,5 +12,6 @@ script = ExtResource("2_dxkkr")
 [node name="Voice" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_5tdua")
 volume_db = -10.0
+bus = &"Voice"
 
 [connection signal="finished" from="Voice" to="." method="_on_voice_finished"]

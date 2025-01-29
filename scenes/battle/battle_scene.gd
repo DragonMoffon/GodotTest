@@ -22,6 +22,9 @@ var opponent = $Opponent
 var condition = $Condition
 
 @onready
+var instructions = $Instructions
+
+@onready
 var player_character : CharacterSprite = $Characters/Player
 @onready
 var opponent_character : CharacterSprite = $Characters/Opponent
@@ -78,9 +81,7 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	
 	condition.text = battle_data.algorithm.get_score_text()
 	
-	await get_tree().create_timer(turn_delay).timeout
-	
-	start_turn(Turn.BATTLE_CALLOUT)
+	start_turn(Turn.INSTRUCTIONS)
 	
 func start_turn(turn_: Turn):
 	turn = turn_
@@ -90,6 +91,7 @@ func start_turn(turn_: Turn):
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			instructions.visible = true
 		Turn.BATTLE_CALLOUT:
 			lyrics.fade_out()
 			player.disable()
@@ -102,6 +104,10 @@ func start_turn(turn_: Turn):
 			player.enable()
 			lyrics.clear()
 			player.refill_hand()
+			
+			player_character.select()
+			opponent_character.deselect()
+			
 			lyrics.set_current_phrase(player.get_selected_phrase())
 			lyrics.set_current_words(player.get_selected_words())
 		Turn.PLAYER_SING:
@@ -115,6 +121,9 @@ func start_turn(turn_: Turn):
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			opponent_character.select()
+			player_character.deselect()
 			
 			await get_tree().create_timer(turn_delay).timeout
 			
@@ -275,3 +284,11 @@ func _on_finished_winner() -> void:
 	if turn != Turn.PLAYER_WIN or turn != Turn.PLAYER_LOSE:
 		return
 	print("Game Over Man, Game Over!")
+	
+func _on_instructions_pressed():
+	if turn != Turn.INSTRUCTIONS:
+		return
+	
+	instructions.visible = false
+	start_turn(Turn.BATTLE_CALLOUT)
+	
