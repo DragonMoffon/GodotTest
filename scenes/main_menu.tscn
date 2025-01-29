@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bey31gvcx7fsv"]
+[gd_scene load_steps=7 format=3 uid="uid://bey31gvcx7fsv"]
 
 [ext_resource type="Texture2D" uid="uid://wur0lc3a5tpy" path="res://assets/textures/logo.png" id="1_jvvrf"]
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_r88s5"]
+[ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="2_b4tje"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="4_wfbs2"]
+[ext_resource type="Script" path="res://scenes/volume.gd" id="5_472fe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gble2"]
+font = ExtResource("4_wfbs2")
+font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_r88s5")
@@ -16,27 +23,116 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.5688
+offset_right = 22.5688
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b4tje")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="TextureRect" parent="Control/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_jvvrf")
+stretch_mode = 3
+
+[node name="Buttons" type="Control" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.2
-anchor_right = 0.5
-anchor_bottom = 0.2
-offset_left = -138.0
-offset_top = -76.0
-offset_right = 1159.0
-offset_bottom = 764.0
-scale = Vector2(0.2, 0.2)
-pivot_offset = Vector2(12, 0)
-texture = ExtResource("1_jvvrf")
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control"]
-offset_left = 910.0
-offset_top = 340.0
-offset_right = 1006.0
-offset_bottom = 371.0
-text = "Start Game
-"
+[node name="PlayButton" type="Button" parent="Control/VBoxContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PLAY"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="Master Volume" type="HBoxContainer" parent="Control/VBoxContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Buttons/VBoxContainer/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/VBoxContainer/Buttons/VBoxContainer/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Master"
+
+[node name="Music Volume" type="HBoxContainer" parent="Control/VBoxContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Buttons/VBoxContainer/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/VBoxContainer/Buttons/VBoxContainer/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Music"
+
+[node name="Voice Volume" type="HBoxContainer" parent="Control/VBoxContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Buttons/VBoxContainer/Voice Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Voice Volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/VBoxContainer/Buttons/VBoxContainer/Voice Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Voice"
+
+[node name="SFX Volume" type="HBoxContainer" parent="Control/VBoxContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Buttons/VBoxContainer/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/VBoxContainer/Buttons/VBoxContainer/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "SFX"
+
+[connection signal="pressed" from="Control/VBoxContainer/Buttons/VBoxContainer/PlayButton" to="." method="_on_button_pressed"]
