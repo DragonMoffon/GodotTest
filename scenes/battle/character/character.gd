@@ -41,11 +41,11 @@ func sing_verse(verse: Verse):
 	current_line = 0
 	
 	voice.stream = current_bar[current_word]
-	voice.pitch_scale = 1.0 + random.randf_range(-data.pitch, data.pitch)
+	voice.pitch_scale = data.pitch + random.randf_range(-data.pitch_variation, data.pitch_variation)
 	voice.play()
 	
 func decompose_bar(bar: VerseBar):
-	var strings = (bar.phrase.text % bar.words.map(func(word): word.text)).split(" ")
+	var strings = (bar.phrase.text % bar.words.map(func(word): return word.text)).split(" ")
 	var words: Array[Word] = [] 
 	for string in strings:
 		if string == "?":
@@ -56,16 +56,13 @@ func decompose_bar(bar: VerseBar):
 		words.append(word)
 	
 	var sounds : Array[AudioStream] = []
-	for word in words.slice(0, words.size() - 1):
+	for word in words:
 		for s in word.syllables:
 				sounds.append(data.voice.pick_random())
-				
-	if words[-1].rhyme not in rhyme_sounds:
-		rhyme_sounds[words[-1].rhyme] = data.rhymes.pick_random()
 	
-	for s in words[-1].syllables - 1:
-		sounds.append(data.voice.pick_random())
-	sounds.append(rhyme_sounds[words[-1].rhyme])
+	if bar.words[-1].rhyme not in rhyme_sounds:
+		rhyme_sounds[bar.words[-1].rhyme] = data.rhymes.pick_random()
+	sounds.append(rhyme_sounds[bar.words[-1].rhyme])
 	
 	return sounds
 
@@ -110,5 +107,5 @@ func _on_voice_finished():
 		current_bar = decompose_bar(current_verse.bars[current_line])
 	# play next word
 	voice.stream = current_bar[current_word]
-	voice.pitch_scale = 1.0 + random.randf_range(-data.pitch, data.pitch)
+	voice.pitch_scale = data.pitch + random.randf_range(-data.pitch_variation, data.pitch_variation)
 	voice.play()

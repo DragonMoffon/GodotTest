@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://data/character.gd" id="1_afgug"]
 [ext_resource type="SpriteFrames" uid="uid://bqi4mwo47mg14" path="res://data/kiki_animation.tres" id="1_t622k"]
 [ext_resource type="Resource" uid="uid://du7eprb1ws78m" path="res://data/base_phrases.tres" id="2_5xo32"]
-[ext_resource type="AudioStream" uid="uid://clqf40dfjt1f6" path="res://assets/sfx/keekee.wav" id="2_b8nw0"]
+[ext_resource type="AudioStream" uid="uid://cl5dqjm2oxw2c" path="res://assets/sfx/kiki.ogg" id="2_mxwf5"]
 [ext_resource type="AudioStream" uid="uid://87hiw6y070y4" path="res://assets/sfx/kiki/rhyme/rhyme_1.ogg" id="4_enu51"]
 [ext_resource type="Resource" uid="uid://e874jdlf3w5e" path="res://data/base_words.tres" id="4_qp2t6"]
 [ext_resource type="AudioStream" uid="uid://7q43ix78j0qe" path="res://assets/sfx/kiki/rhyme/rhyme_2.ogg" id="5_u0igx"]
@@ -59,8 +59,9 @@ script = ExtResource("1_afgug")
 animations = ExtResource("1_t622k")
 voice = Array[AudioStream]([ExtResource("42_sd8gw"), ExtResource("43_mesrg"), ExtResource("44_evaw0"), ExtResource("45_mat6q"), ExtResource("46_qydxv"), ExtResource("47_4yo2t"), ExtResource("48_7noag"), ExtResource("49_kdy4k"), ExtResource("50_vvfi4"), ExtResource("51_swary"), ExtResource("52_piwnd")])
 rhymes = Array[AudioStream]([ExtResource("4_enu51"), ExtResource("5_u0igx"), ExtResource("6_xgphu"), ExtResource("7_ogi77"), ExtResource("8_iw64p"), ExtResource("9_5ar0u"), ExtResource("10_uoqkf"), ExtResource("11_0p60k"), ExtResource("12_gs0wp"), ExtResource("13_0qvms"), ExtResource("14_t234s"), ExtResource("15_gdvna"), ExtResource("16_6v6l7"), ExtResource("17_mqh5h"), ExtResource("18_hxm4o"), ExtResource("19_2y3xw"), ExtResource("20_ulix8"), ExtResource("21_3gmtu"), ExtResource("22_t8r7m"), ExtResource("23_odckn"), ExtResource("24_ffinb"), ExtResource("25_w2k52"), ExtResource("26_vp2rv"), ExtResource("27_11nqk"), ExtResource("28_vxj45"), ExtResource("29_3b86l"), ExtResource("30_y0ykn"), ExtResource("31_jlx26"), ExtResource("32_u50gu"), ExtResource("33_juryd"), ExtResource("34_pe771"), ExtResource("35_ptkm0"), ExtResource("36_dhjcc"), ExtResource("37_nrdgd"), ExtResource("38_unrn7"), ExtResource("39_5muau"), ExtResource("40_rorn5")])
-intro = ExtResource("2_b8nw0")
-pitch = 0.01
+intro = ExtResource("2_mxwf5")
+pitch = 1.0
+pitch_variation = 0.05
 phrase_deck = ExtResource("2_5xo32")
 word_deck = ExtResource("4_qp2t6")
 phrase_size = 8

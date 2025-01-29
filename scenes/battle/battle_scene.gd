@@ -151,6 +151,7 @@ func start_turn(turn_: Turn):
 			player.deck.disable_discard()
 			
 			vs_audio.call_winner(player_data)
+			
 		Turn.PLAYER_LOSE:
 			lyrics.fade_out()
 			player.disable()
@@ -158,6 +159,8 @@ func start_turn(turn_: Turn):
 			player.deck.disable_discard()
 			
 			vs_audio.call_winner(enemy_data)
+			
+			
 
 func _on_player_phrase_selected(phrase: Phrase) -> void:
 	if turn != Turn.PLAYER_PICK:
@@ -269,7 +272,7 @@ func _on_opponent_finished_singing() -> void:
 	else:
 		bout += 1
 
-		await get_tree().create_timer(turn_delay).timeout
+		await get_tree().create_timer(0.5).timeout
 
 		opponent_character.deselect()
 		start_turn(Turn.BOUT_CALLOUT)
@@ -285,9 +288,10 @@ func _on_finished_callout() -> void:
 	start_turn(Turn.PLAYER_PICK)
 
 func _on_finished_winner() -> void:
-	if turn != Turn.PLAYER_WIN or turn != Turn.PLAYER_LOSE:
+	if not (turn == Turn.PLAYER_WIN or turn == Turn.PLAYER_LOSE):
 		return
-	print("Game Over Man, Game Over!")
+	
+	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self)
 	
 func _on_instructions_pressed():
 	if turn != Turn.INSTRUCTIONS:

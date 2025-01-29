@@ -67,6 +67,18 @@ func get_verse_rhyme_group(verse: Verse) -> Array[int]:
 	var grouping : Array[int] = []
 	grouping.assign(words.map(func(wrd): return unique.find(wrd.rhyme)))
 	return grouping
+	
+func get_verse_relevancies(verse: Verse) -> Array[int]:
+	var each = []
+	var unique = []
+	for bar in verse.bars:
+		for word in bar.words:
+			each.append(word.group)
+			if word.group not in unique:
+				unique.append(word.group)
+	var topics : Array[int] = []
+	topics.assign(unique.map(func(item): return each.count(item)))
+	return topics
 
 func get_score_text() -> String:
 	return condition_text[condition]
@@ -87,7 +99,7 @@ func score_bar(bar: VerseBar) -> Score.LineScore:
 	var assonance = words.map(func(word): return word.assonance)
 	var rhyme = words.map(func(word): return word.rhyme)
 	
-	var score := 0
+	var score := 0.0
 	var has_alliteration = false
 	var has_assonance = false
 	var has_rhyme = false
@@ -97,16 +109,19 @@ func score_bar(bar: VerseBar) -> Score.LineScore:
 		
 		if word.syllables == blank.syllables:
 			score += syllable_factor
+			
+		if word.type & blank.types:
+			score += type_factor
 		
-		if alliteration.count(word.alliteration) > 2:
+		if alliteration.count(word.alliteration) >= 2:
 			score += alliteration_factor * alliteration.count(word.alliteration)
 			has_alliteration = true
 			
-		if assonance.count(word.assonance) > 2:
+		if assonance.count(word.assonance) >= 2:
 			score += assonance_factor * assonance.count(word.assonance)
 			has_assonance = true
 			
-		if rhyme.count(word.rhyme) > 2:
+		if rhyme.count(word.rhyme) >= 2:
 			score += internal_rhyme_factor * rhyme.count(word.rhyme)
 			has_rhyme = true
 	
@@ -115,12 +130,16 @@ func score_bar(bar: VerseBar) -> Score.LineScore:
 func score_verse(verse: Verse) -> Score:
 	var scores : Array[Score.LineScore] = []
 	var grouping = get_verse_rhyme_group(verse)
-	var total := 0
+	var relevancy = get_verse_relevancies(verse)
+	var total := 0.0
 	for idx in 4:
 		var score = score_bar(verse.bars[idx])
 		scores.append(score)
 		score.group = rhyme_labels[grouping[idx]]
 		total += score.score
+	for topic in relevancy:
+		if topic > 2:
+			total += topic * topic_factor
 	total += rhyme_groupings["%s%s%s%s" % grouping] * rhyme_factor
 	return Score.new(int(total), scores)
 

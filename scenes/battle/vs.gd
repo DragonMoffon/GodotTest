@@ -35,4 +35,6 @@ func call_winner(win: Character):
 	stream = winner
 	play()
 	
+	await finished
+	
 	finished_winner.emit()

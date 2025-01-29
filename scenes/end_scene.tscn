@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh5rqv7421y84"]
+
+[ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_j0e3d"]
+[ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="1_jhrfp"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_55828"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnv1f"]
+font = ExtResource("2_55828")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndScene" type="Node2D"]
+script = ExtResource("1_j0e3d")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_jhrfp")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer"]
+layout_mode = 2
+text = "thank you for playing!"
+label_settings = SubResource("LabelSettings_qnv1f")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -10,7 +10,9 @@ var rhymes: Array[AudioStream] = []
 @export
 var intro: AudioStream = null
 @export
-var pitch: float = 0.05
+var pitch: float = 1.0
+@export
+var pitch_variation: float = 0.05
 
 @export
 var phrase_deck: PhraseSet = null
