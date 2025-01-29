@@ -5,10 +5,12 @@ extends Resource
 var animations: SpriteFrames = null
 @export
 var voice: Array[AudioStream] = []
+@export 
+var rhymes: Array[AudioStream] = []
 @export
 var intro: AudioStream = null
 @export
-var pitch: float = 1.0
+var pitch: float = 0.05
 
 @export
 var phrase_deck: PhraseSet = null

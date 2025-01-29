@@ -268,6 +268,10 @@ func _on_opponent_finished_singing() -> void:
 		start_turn(Turn.PLAYER_WIN)
 	else:
 		bout += 1
+
+		await get_tree().create_timer(turn_delay).timeout
+
+		opponent_character.deselect()
 		start_turn(Turn.BOUT_CALLOUT)
 
 func _on_bout_callout_finished() -> void:

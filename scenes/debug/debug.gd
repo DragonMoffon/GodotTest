@@ -200,6 +200,8 @@ var phrase_set : Array[Phrase] = [
 	Phrase.new("i see you drove here in a %s", [Blank.new(2)]),
 	Phrase.new("you're fake as hell you'll only ever be a %s", [Blank.new(1)]),
 	Phrase.new("you %s like a %s", [Blank.new(1), Blank.new(1)]),
+	Phrase.new("smoked by the %s", [Blank.new(1)]),
+	Phrase.new("fuck %s all my homies hate %s", [Blank.new(1), Blank.new(1)])
 ]
 
 var word_set : Array[StringName] = [

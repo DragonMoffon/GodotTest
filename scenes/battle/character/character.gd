@@ -6,6 +6,8 @@ signal finished_singing
 
 @onready
 var voice: AudioStreamPlayer2D = $Voice
+@onready
+var random := RandomNumberGenerator.new()
 
 var data: Character
 
@@ -21,6 +23,8 @@ var current_line: int = 0
 
 var selected: bool = false
 
+var rhyme_sounds: Dictionary = {}
+
 func _ready() -> void:
 	_highlight(0.0)
 
@@ -30,25 +34,41 @@ func update_data(data_: Character):
 	voice.pitch_scale = data_.pitch
 
 func sing_verse(verse: Verse):
+	rhyme_sounds = {}
 	current_verse = verse
 	current_bar = decompose_bar(verse.bars[0])
 	current_word = 0
 	current_line = 0
 	
 	voice.stream = current_bar[current_word]
+	voice.pitch_scale = 1.0 + random.randf_range(-data.pitch, data.pitch)
 	voice.play()
 	
 func decompose_bar(bar: VerseBar):
-	var sounds : Array[AudioStream] = []
-	var words = (bar.phrase.text % bar.words.map(func(word): word.text)).split(" ")
-	for word in words:
-		var word_data = Dict.fetch(word)
-		if word_data == null:
-			word_data = Dict.fetch("by")
-		for s in word_data.syllables:
-			sounds.append(data.voice.pick_random())
-	return sounds
+	var strings = (bar.phrase.text % bar.words.map(func(word): word.text)).split(" ")
+	var words: Array[Word] = [] 
+	for string in strings:
+		if string == "?":
+			continue
+		var word = Dict.fetch(string)
+		if word == null:
+			word = Dict.fetch("by")
+		words.append(word)
 	
+	var sounds : Array[AudioStream] = []
+	for word in words.slice(0, words.size() - 1):
+		for s in word.syllables:
+				sounds.append(data.voice.pick_random())
+				
+	if words[-1].rhyme not in rhyme_sounds:
+		rhyme_sounds[words[-1].rhyme] = data.rhymes.pick_random()
+	
+	for s in words[-1].syllables - 1:
+		sounds.append(data.voice.pick_random())
+	sounds.append(rhyme_sounds[words[-1].rhyme])
+	
+	return sounds
+
 func select():
 	if selected:
 		return
@@ -90,4 +110,5 @@ func _on_voice_finished():
 		current_bar = decompose_bar(current_verse.bars[current_line])
 	# play next word
 	voice.stream = current_bar[current_word]
+	voice.pitch_scale = 1.0 + random.randf_range(-data.pitch, data.pitch)
 	voice.play()
