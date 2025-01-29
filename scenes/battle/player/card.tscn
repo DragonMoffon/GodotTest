@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://xpkjd1a8313t"]
+[gd_scene load_steps=14 format=3 uid="uid://xpkjd1a8313t"]
 
 [ext_resource type="Script" path="res://scenes/battle/player/card.gd" id="1_irm6f"]
 [ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_50p13"]
 [ext_resource type="Texture2D" uid="uid://f57fkgxqs148" path="res://assets/gui/VersePatch2.png" id="2_glp5w"]
+[ext_resource type="AudioStream" uid="uid://s745dwuoauva" path="res://assets/sfx/flip_1.wav" id="2_q3n6g"]
+[ext_resource type="AudioStream" uid="uid://o7ci4jp3xr6f" path="res://assets/sfx/flip_2.wav" id="3_ov8fv"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="3_xclhr"]
+[ext_resource type="AudioStream" uid="uid://djt1fe675fe6p" path="res://assets/sfx/flip_3.wav" id="4_jst3x"]
+[ext_resource type="AudioStream" uid="uid://dxgrsrbou2orm" path="res://assets/sfx/flip_4.wav" id="5_0jghc"]
 [ext_resource type="Texture2D" uid="uid://cs1hxxtiojowc" path="res://assets/gui/TextPatch2.png" id="5_cjt56"]
 [ext_resource type="Script" path="res://scenes/battle/player/card_body.gd" id="6_t5b73"]
+[ext_resource type="AudioStream" uid="uid://du5quv1bocb81" path="res://assets/sfx/flip_5.wav" id="6_u8gmh"]
+[ext_resource type="AudioStream" uid="uid://d1qtqh1dpe0r1" path="res://assets/sfx/HIT_select.ogg" id="7_5nsvl"]
 [ext_resource type="Texture2D" uid="uid://duma7cysyugf1" path="res://assets/gui/TextPatch2Highlight.png" id="7_ge7ji"]
 
 [node name="Card" type="Node2D"]
@@ -13,6 +19,8 @@ texture_filter = 1
 script = ExtResource("1_irm6f")
 decay = 0.1
 rate = 5.0
+hovers = Array[AudioStream]([ExtResource("2_q3n6g"), ExtResource("3_ov8fv"), ExtResource("4_jst3x"), ExtResource("5_0jghc"), ExtResource("6_u8gmh")])
+click = Array[AudioStream]([ExtResource("7_5nsvl")])
 phrase_font = ExtResource("2_50p13")
 phrase_size = 20
 word_font = ExtResource("3_xclhr")
@@ -65,6 +73,10 @@ mouse_filter = 2
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
+
+[node name="FlipSound" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="gui_input" from="Hover" to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="Hover" to="." method="_on_mouse_entered"]

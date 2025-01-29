@@ -2,9 +2,159 @@ class_name Word
 extends Resource
 
 enum Type { NONE = 0, NOUN = 1, VERB = 2, ADJECTIVE = 4, ADVERB = 8, OTHER = 16 }
-enum Rhyme { NONE, AIN, PLE, OKED, AD, ICKY, OU}
-enum Sounds { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, əl, ən, əm, b, d, dj, dʒ, ð, f, ɡ, h, hw, j, k, l, lj, m, n, nj, ŋ, p, r, s, sj, ʃ, t, tj, tʃ, θ, θj, v, w, z, zj, ʒ}
-enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, əl, ən, əm }
+enum Group {
+	NONE,
+	
+}
+enum Rhyme {
+	NONE,
+	AIN,
+	PLE,
+	OKED,
+	AD,
+	ICKY,
+	OU,
+	OK,
+	IKE,
+	OTHER,
+	ETTER,
+	ATHER,
+	ARTER,
+	AND,
+	ET,
+	IED,
+	ILL,
+	ONLY,
+	OP,
+	AKE,
+	AIR,
+	HY,
+	URE,
+	AYE,
+	ORD,
+	ARE,
+	AZ,
+	EE,
+	EING,
+	ORN,
+	OKE,
+	OT,
+	ANT,
+	ILD,
+	OLER,
+	OULD,
+	INT,
+	ID,
+	UVE,
+	OVE,
+	EVEN,
+	EVER,
+	OR,
+	UT,
+	ED,
+	ELL,
+	EAR,
+	IN,
+	AMER,
+	OOK,
+	AA,
+	OF,
+	EAL,
+	EEM,
+	EW,
+	O,
+	UPIDER,
+	UH,
+	AKING,
+	AN,
+	OSE,
+	ULL,
+	OUR,
+	UCK,
+	ICK,
+	ISH,
+	AGE,
+	UMPSTER,
+	EESE,
+	ONE,
+	OSER,
+	INNER,
+	ICKEN,
+	ATO,
+	ASTER,
+	ISTER,
+	OOL,
+	AR,
+	OW,
+	YRIC,
+	YME,
+	ONG,
+	ERSE,
+	OG,
+	AT,
+	UN,
+	IFE,
+	ALL,
+	IZZA,
+	ODA,
+	URGER,
+	OASTER,
+	ENDER,
+	AVE,
+	IDGE,
+	OARD,
+	EN,
+	ENCIL,
+	ANE,
+	ALK,
+	AP,
+	OUNCE,
+	EAT,
+	INK,
+	OOP,
+	EARN,
+	ING,
+	ITE,
+	ATE,
+	ASH,
+	APPING,
+	ITING,
+	INNING,
+	OSING,
+	EEING,
+	INGING,
+	EATING,
+	INKING,
+	UVING,
+	ATING,
+	ATER,
+	ALLING,
+	OOPING,
+	INKY,
+	ELLY,
+	OME,
+	EATEST,
+	AMEST,
+	AME,
+	UPID,
+	IMPLE,
+	AZY,
+	AZING,
+	OOKY,
+	UNNY,
+	AWFUL,
+	ERRIBLE,
+	OOD,
+	OCKING,
+	USING,
+	OCRE,
+	ILLY,
+	IM,
+	AH
+}
+
+enum Sounds { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, əl, ən, əm, b, d, dj, dʒ, ð, f, g, h, hw, j, k, l, lj, m, n, nj, ŋ, p, r, s, sj, ʃ, t, tj, tʃ, θ, θj, v, w, z, zj, ʒ}
+enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, əl, ən, əm }
 
 @export var text: String = ""
 @export_flags("NOUN", "VERB", "ADJECTIVE", "ADVERB", "OTHER") var type = 0
@@ -12,3 +162,17 @@ enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ
 @export var rhyme: Rhyme = Rhyme.NONE
 @export var alliteration: Sounds = Sounds.NONE
 @export var assonance: Vowel = Vowel.NONE
+@export var group: Group = Group.NONE
+
+
+func _init(text_: String = "", type_: Type = Type.NONE, syllables_: int = 0, rhyme_ : Rhyme = Rhyme.NONE, alliteration_ : Sounds = Sounds.NONE, assonance_ : Vowel = Vowel.NONE, group_: Group = Group.NONE):
+	text = text_.to_lower()
+	type = type_
+	syllables = syllables_
+	rhyme = rhyme_
+	alliteration = alliteration_
+	assonance = assonance_
+	group = group_
+	
+func _to_string():
+	return text

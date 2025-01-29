@@ -1,5 +1,8 @@
 extends Node2D
 
+@export
+var turn_delay : float = 1.5
+
 @onready
 var player : Player = $Player
 
@@ -18,7 +21,20 @@ var opponent = $Opponent
 @onready
 var condition = $Condition
 
-enum Turn { INSTRUCTIONS, PLAYER_PICK, PLAYER_SING, ENEMY_PICK, ENEMY_SING, PLAYER_WIN, PLAYER_LOSE }
+@onready
+var instructions = $Instructions
+
+@onready
+var player_character : CharacterSprite = $Characters/Player
+@onready
+var opponent_character : CharacterSprite = $Characters/Opponent
+
+@onready
+var bout_audio: AudioStreamPlayer2D = $Audio/Bout
+@onready
+var vs_audio: AudioStreamPlayer2D = $Audio/Vs
+
+enum Turn { INSTRUCTIONS, BATTLE_CALLOUT, PLAYER_PICK, PLAYER_SING, ENEMY_PICK, ENEMY_SING, BOUT_CALLOUT, PLAYER_WIN, PLAYER_LOSE }
 
 var turn := Turn.PLAYER_PICK
 
@@ -27,17 +43,15 @@ var enemy_data : Character = null
 var battle_data : Battle = null
 
 var player_score : int = 0
+var player_scores : Array[Score] = []
 var bout : int = 0
 
 func _ready() -> void:
 	start(
-		Character.new(),
-		Character.new(),
+		load('res://data/bouba.tres'),
+		load('res://data/kiki.tres'),
 		Battle.new()
 	)
-
-func _process(dt: float) -> void:
-	pass
 
 func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle):
 	# Player data has the details about the player's decks etc
@@ -47,47 +61,106 @@ func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle
 	enemy_data = enemy_data_
 	battle_data = battle_data_
 	
-	bout = 0
+	bout = 1
+	
+	player_score = 0
+	player_scores = []
+	
+	player_character.update_data(player_data_)
+	opponent_character.update_data(enemy_data_)
 	
 	player.set_player(player_data_)
+	opponent.set_data(enemy_data_)
 	
 	score.set_current(0)
 	score.set_target(battle_data_.target_score)
 	
-	start_turn(Turn.PLAYER_PICK)
+	player.disable()
+	player.deck.disable_commit()
+	player.deck.disable_discard()
 	
 	condition.text = battle_data.algorithm.get_score_text()
+	
+	start_turn(Turn.INSTRUCTIONS)
 	
 func start_turn(turn_: Turn):
 	turn = turn_
 	match turn:
 		Turn.INSTRUCTIONS:
-			pass
+			lyrics.fade_out()
+			player.disable()
+			player.deck.disable_commit()
+			player.deck.disable_discard()
+			instructions.visible = true
+		Turn.BATTLE_CALLOUT:
+			lyrics.fade_out()
+			player.disable()
+			player.deck.disable_commit()
+			player.deck.disable_discard()
+			
+			vs_audio.callout(player_data, enemy_data)
 		Turn.PLAYER_PICK:
+			lyrics.fade_in()
 			player.enable()
 			lyrics.clear()
+			player.refill_hand()
+			
+			player_character.select()
+			opponent_character.deselect()
+			
 			lyrics.set_current_phrase(player.get_selected_phrase())
 			lyrics.set_current_words(player.get_selected_words())
 		Turn.PLAYER_SING:
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			player_character.sing_verse(player.verses[-1])
 		Turn.ENEMY_PICK:
+			lyrics.fade_out()
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			opponent_character.select()
+			player_character.deselect()
+			
+			await get_tree().create_timer(turn_delay).timeout
+			
+			start_turn(Turn.ENEMY_SING)
 		Turn.ENEMY_SING:
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			var verse = opponent.get_verse()
+			lyrics.set_verse(verse)
+			lyrics.fade_in()
+			opponent_character.sing_verse(verse)
+		Turn.BOUT_CALLOUT:
+			lyrics.fade_out()
+			player.disable()
+			player.deck.disable_commit()
+			player.deck.disable_discard()
+			
+			bout_audio.start_bout(bout)
 		Turn.PLAYER_WIN:
+			lyrics.fade_out()
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			vs_audio.call_winner(player_data)
+			
 		Turn.PLAYER_LOSE:
+			lyrics.fade_out()
 			player.disable()
 			player.deck.disable_commit()
 			player.deck.disable_discard()
+			
+			vs_audio.call_winner(enemy_data)
+			
+			
 
 func _on_player_phrase_selected(phrase: Phrase) -> void:
 	if turn != Turn.PLAYER_PICK:
@@ -144,7 +217,7 @@ func _on_discard_selected() -> void:
 	
 	if player.discards <= 0:
 		player.deck.disable_discard()
-	
+
 
 func _on_play_selected() -> void:
 	if not lyrics.has_full_bar():
@@ -154,15 +227,76 @@ func _on_play_selected() -> void:
 	player.deck.play_play()
 	
 	if lyrics.has_full_verse():
-		print('FULL VERSE!')
 		var verse = lyrics.get_verse()
 		player.verses.append(verse)
-		player_score += battle_data.algorithm.score_verse(verse)
+		var verse_score := battle_data.algorithm.score_verse(verse)
+		player_scores.append(verse_score)
+		player_score += verse_score.total
 		score.set_current(player_score)
-		
 		start_turn(Turn.PLAYER_SING)
 		player.discard_cards()
-		player.refill_hand()
 	else:
 		player.discard_cards()
+
+
+func _on_player_finished_line(line: int) -> void:
+	if turn != Turn.PLAYER_SING:
+		return
+	
+	var score_line = player_scores[-1].lines[line]
+	lyrics.score_line(line, score_line)
+
+
+func _on_player_finished_singing() -> void:
+	if turn != Turn.PLAYER_SING:
+		return
+	lyrics.set_score(player_scores[-1])
+	
+	await get_tree().create_timer(turn_delay).timeout
+	
+	start_turn(Turn.ENEMY_PICK)
+
+
+func _on_opponent_finished_line(line: int) -> void:
+	if turn != Turn.ENEMY_SING:
+		return
+	# Maybe do a HypeCrew callout?
+
+
+func _on_opponent_finished_singing() -> void:
+	if turn != Turn.ENEMY_SING:
+		return
+	if bout >= 8:
+		# Determine if the player has Won or not
+		start_turn(Turn.PLAYER_WIN)
+	else:
+		bout += 1
+
+		await get_tree().create_timer(0.5).timeout
+
+		opponent_character.deselect()
+		start_turn(Turn.BOUT_CALLOUT)
+
+func _on_bout_callout_finished() -> void:
+	if turn != Turn.BOUT_CALLOUT:
+		return
+	start_turn(Turn.PLAYER_PICK)
+
+func _on_finished_callout() -> void:
+	if turn != Turn.BATTLE_CALLOUT:
+		return
+	start_turn(Turn.PLAYER_PICK)
+
+func _on_finished_winner() -> void:
+	if not (turn == Turn.PLAYER_WIN or turn == Turn.PLAYER_LOSE):
+		return
+	
+	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self)
+	
+func _on_instructions_pressed():
+	if turn != Turn.INSTRUCTIONS:
+		return
+	
+	instructions.visible = false
+	start_turn(Turn.BATTLE_CALLOUT)
 	

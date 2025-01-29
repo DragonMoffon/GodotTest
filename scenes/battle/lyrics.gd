@@ -11,6 +11,8 @@ extends Node2D
 
 @onready
 var score_audio = $ScoreBam
+@onready
+var score_total = $Bars/Total
 
 @onready
 var line_1 = $"Bars/VBoxContainer/1"
@@ -50,6 +52,7 @@ func clear():
 	for line in lines:
 		line.hide_labels()
 		line.text = empty_BBCode
+	score_total.visible = false
 	
 	bars = [null, null, null, null]
 	current_line = 0
@@ -59,30 +62,29 @@ func clear():
 
 func set_current_phrase(phrase: Phrase):
 	current_phrase = phrase
-	format_line()
+	format_line(lines[current_line], current_phrase, current_words)
 
 func set_current_words(words: Array[Word]):
 	current_words = words
-	format_line()
+	format_line(lines[current_line], current_phrase, current_words)
 
-func format_line():
-	var line = lines[current_line]
-	if current_phrase == null:
+func format_line(line: RichTextLabel, phrase, words):
+	if phrase == null:
 		line.text = empty_BBCode
 		return
-	var blanks: Array[Word] = current_words.duplicate()
+	var blanks: Array[Word] = words.duplicate()
 	var inserts: Array[String] = []
-	blanks.resize(current_phrase.count)
-	inserts.resize(current_phrase.count)
+	blanks.resize(phrase.count)
+	inserts.resize(phrase.count)
 	var current = true
-	for idx in current_phrase.count:
+	for idx in phrase.count:
 		var word = blanks[idx]
 		if word == null:
 			inserts[idx] = current_BBCode if current else unset_BBCode
 			current = false
 		else:
 			inserts[idx] = inline_BBCode % [word.text]
-	line.text = base_BBCode % [current_phrase.text % inserts]
+	line.text = base_BBCode % [phrase.text % inserts]
 
 func has_full_bar() -> bool:
 	if current_phrase == null:
@@ -93,12 +95,10 @@ func get_bar() -> VerseBar:
 	return VerseBar.new(current_phrase, current_words)
 	
 func commit_bar() -> VerseBar:
-	score_line(current_line)
 	if current_line >= 4:
 		return null
 	var bar = get_bar()
 	bars[current_line] = bar
-	score_line(current_line, true, true, true, "A", 10)
 	current_line += 1
 	
 	current_phrase = null
@@ -115,7 +115,32 @@ func has_full_verse() -> bool:
 func get_verse() -> Verse:
 	return Verse.new(bars)
 
-func score_line(line: int = 0, alliteration: bool = false, assonance: bool = false, rhyme: bool = false, group: String = "", score: int = 0):
-	lines[line].set_labels(alliteration, assonance, rhyme, group, score)
+func set_verse(verse: Verse):
+	clear()
+	for idx in 4:
+		var line = lines[idx]
+		format_line(line, verse.bars[idx].phrase, verse.bars[idx].words)
+	bars = verse.bars
+
+func score_line(line: int, score: Score.LineScore):
+	lines[line].set_labels(score.alliteration, score.assonance, score.rhyme, score.group, score.score)
 	score_audio.pitch_scale = 1.0 + line / 16.0
 	score_audio.play()
+	
+func set_score(score: Score):
+	score_total.visible = true
+	score_total.text = "%s" % [score.total]
+
+func fade_out():
+	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "scale", Vector2(), 0.8).from(Vector2(1.0, 1.0))
+	tween.tween_callback(func(): self.visible = false)
+	
+func fade_in():
+	visible = true
+	var tween = get_tree().create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.8).from(Vector2(0.0, 0.0))

@@ -10,6 +10,8 @@ signal card_clicked(card : Card, pressed : bool)
 @export var rate : float = 0.6
 @export var level : int = 5
 @export var color : String = "#000000"
+@export var hovers : Array[AudioStream] = []
+@export var click : Array[AudioStream] = []
 
 @export_category("Font Data")
 @export var phrase_font : FontFile
@@ -37,6 +39,9 @@ var label : RichTextLabel = $"Hover/Label"
 
 @onready
 var highlight : Sprite2D = $"Highlight"
+
+@onready
+var flip_sound : AudioStreamPlayer2D = $FlipSound
 
 var target : Vector2
 var content = null
@@ -88,6 +93,9 @@ func hover():
 	highlight.visible = true
 	shake()
 	
+	flip_sound.stream = hovers.pick_random()
+	flip_sound.play()
+	
 func unhover():
 	highlighted = false
 	highlight.visible = false
@@ -103,6 +111,9 @@ func still():
 	
 func select():
 	body.select()
+	
+	flip_sound.stream = click.pick_random()
+	flip_sound.play()
 
 func deselect():
 	body.deselect()

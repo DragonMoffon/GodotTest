@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfp04b2gnqthc"]
+[gd_scene load_steps=11 format=3 uid="uid://dfp04b2gnqthc"]
 
 [ext_resource type="Script" path="res://scenes/battle/lyrics.gd" id="1_2dqy8"]
 [ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_14sco"]
@@ -16,6 +16,11 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_45j24"]
 font = ExtResource("5_miivx")
 font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44jfv"]
+font = ExtResource("5_miivx")
+font_size = 80
 font_color = Color(0, 0, 0, 1)
 
 [node name="Lyrics" type="Node2D"]
@@ -67,16 +72,15 @@ scroll_active = false
 script = ExtResource("5_1vr1y")
 
 [node name="Alliteration" type="Label" parent="Bars/VBoxContainer/1"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -35.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -87,16 +91,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Assonance" type="Label" parent="Bars/VBoxContainer/1"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -15.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -107,16 +110,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rhyme" type="Label" parent="Bars/VBoxContainer/1"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = 5.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -127,16 +129,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Group" type="Label" parent="Bars/VBoxContainer/1"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 222.0
-offset_top = -60.0
-offset_right = 282.0
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 162.0
+offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "A"
@@ -171,16 +173,15 @@ scroll_active = false
 script = ExtResource("5_1vr1y")
 
 [node name="Alliteration" type="Label" parent="Bars/VBoxContainer/2"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -35.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -191,16 +192,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Assonance" type="Label" parent="Bars/VBoxContainer/2"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -15.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -211,16 +211,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rhyme" type="Label" parent="Bars/VBoxContainer/2"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = 5.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -231,16 +230,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Group" type="Label" parent="Bars/VBoxContainer/2"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 222.0
-offset_top = -60.0
-offset_right = 282.0
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 162.0
+offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "A"
@@ -275,16 +274,15 @@ scroll_active = false
 script = ExtResource("5_1vr1y")
 
 [node name="Alliteration" type="Label" parent="Bars/VBoxContainer/3"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -35.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -295,16 +293,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Assonance" type="Label" parent="Bars/VBoxContainer/3"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -15.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -315,16 +312,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rhyme" type="Label" parent="Bars/VBoxContainer/3"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = 5.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -335,16 +331,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Group" type="Label" parent="Bars/VBoxContainer/3"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 222.0
-offset_top = -60.0
-offset_right = 282.0
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 162.0
+offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "A"
@@ -379,16 +375,15 @@ scroll_active = false
 script = ExtResource("5_1vr1y")
 
 [node name="Alliteration" type="Label" parent="Bars/VBoxContainer/4"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -35.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -399,16 +394,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Assonance" type="Label" parent="Bars/VBoxContainer/4"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = -15.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 15.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -419,16 +413,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rhyme" type="Label" parent="Bars/VBoxContainer/4"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 102.0
+offset_left = 152.0
 offset_top = 5.0
-offset_right = 230.0
+offset_right = 280.0
 offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -439,16 +432,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Group" type="Label" parent="Bars/VBoxContainer/4"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 222.0
-offset_top = -60.0
-offset_right = 282.0
+offset_left = 102.0
+offset_top = -35.0
+offset_right = 162.0
+offset_bottom = 25.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "A"
@@ -469,5 +462,24 @@ offset_bottom = 15.0
 grow_vertical = 2
 text = "000"
 label_settings = SubResource("LabelSettings_45j24")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total" type="Label" parent="Bars"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = 81.0
+offset_right = 57.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "000"
+label_settings = SubResource("LabelSettings_44jfv")
 horizontal_alignment = 1
 vertical_alignment = 1

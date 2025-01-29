@@ -1,4 +1,3 @@
-@tool
 class_name Dict
 
 const _dict: DictData = preload("res://data/dictionary.tres")

@@ -1,15 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=27 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
+[ext_resource type="PackedScene" uid="uid://j154bka1btpo" path="res://scenes/battle/character/Character.tscn" id="2_8bbij"]
+[ext_resource type="Script" path="res://scenes/battle/opponent.gd" id="2_ekd0m"]
 [ext_resource type="PackedScene" uid="uid://0xafi4choxa8" path="res://scenes/battle/score_card.tscn" id="2_sawi2"]
 [ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="4_y614f"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="5_vtqjp"]
-[ext_resource type="Script" path="res://scenes/battle/audio.gd" id="6_1c6vl"]
-[ext_resource type="AudioStream" uid="uid://d17k6kmdoiv" path="res://assets/sfx/city_street_loop.wav" id="6_k5xf7"]
-[ext_resource type="AudioStream" uid="uid://dacxj1ptl5ryw" path="res://assets/sfx/beat_loop.wav" id="7_qhvl7"]
-[ext_resource type="Texture2D" uid="uid://cf3pf5jbrmqka" path="res://assets/textures/character/Char01Boba01.png" id="9_76p0s"]
-[ext_resource type="Texture2D" uid="uid://bfnockd7nedkb" path="res://assets/textures/character/Char02Kiki01.png" id="10_2nky2"]
+[ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="11_0jstl"]
+[ext_resource type="Script" path="res://scenes/battle/bout.gd" id="12_ahgql"]
+[ext_resource type="Script" path="res://scenes/battle/vs.gd" id="13_2obuc"]
+[ext_resource type="AudioStream" uid="uid://6elhexuqnu2d" path="res://assets/sfx/bout/bout_start_bot.ogg" id="13_qbqa1"]
+[ext_resource type="AudioStream" uid="uid://ckv65cj0h4eg5" path="res://assets/sfx/bout/1_bot.ogg" id="14_io8ye"]
+[ext_resource type="AudioStream" uid="uid://cbmkaw1o6s06c" path="res://assets/sfx/bout/2_bot.ogg" id="15_yocr8"]
+[ext_resource type="AudioStream" uid="uid://cilejye8atanw" path="res://assets/sfx/bout/3_bot.ogg" id="16_u447f"]
+[ext_resource type="AudioStream" uid="uid://c5i5orag78o" path="res://assets/sfx/bout/4_bot.ogg" id="17_fvdrb"]
+[ext_resource type="AudioStream" uid="uid://ixt8wsfrl8sj" path="res://assets/sfx/bout/5_bot.ogg" id="18_ssp82"]
+[ext_resource type="AudioStream" uid="uid://cfkwer886iro8" path="res://assets/sfx/bout/6_bot.ogg" id="19_sia2j"]
+[ext_resource type="AudioStream" uid="uid://cfqh55smyxri4" path="res://assets/sfx/bout/7_bot.ogg" id="20_pgxi3"]
+[ext_resource type="AudioStream" uid="uid://c1xlkcd2r224o" path="res://assets/sfx/bout/8_bot.ogg" id="21_1gngw"]
+[ext_resource type="AudioStream" uid="uid://2ux5b83hs843" path="res://assets/sfx/versus.ogg" id="23_g7s6g"]
+[ext_resource type="AudioStream" uid="uid://dehjac3lgxl4j" path="res://assets/sfx/wins.ogg" id="24_s2r75"]
+[ext_resource type="PackedScene" uid="uid://ovgkdyqcoylo" path="res://scenes/battle/instructions.tscn" id="25_ouomb"]
+[ext_resource type="Texture2D" uid="uid://c0h8rcm4lpn2m" path="res://assets/textures/deubug.png" id="26_du2au"]
+[ext_resource type="Texture2D" uid="uid://bw0b4sgb1hnlp" path="res://assets/gui/DeckPatch1.png" id="27_xilmh"]
+[ext_resource type="Texture2D" uid="uid://dxxevbn3vwcp3" path="res://assets/gui/ScoreBackground1.png" id="28_e3o5y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5toyo"]
 font = ExtResource("5_vtqjp")
@@ -18,27 +33,51 @@ font_size = 64
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_kup78")
 
+[node name="Backgrounds" type="Control" parent="."]
+z_index = -1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Backgrounds"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_0jstl")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="Opponent" type="Node" parent="."]
-
-[node name="Characters" type="Node" parent="."]
-
-[node name="Char01Boba01" type="Sprite2D" parent="Characters"]
-position = Vector2(170, 570)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_76p0s")
-
-[node name="Char02Kiki01" type="Sprite2D" parent="Characters"]
-position = Vector2(1750, 570)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("10_2nky2")
-
-[node name="Player" parent="." instance=ExtResource("1_5w4lb")]
+script = ExtResource("2_ekd0m")
 
 [node name="ScoreCard" parent="." instance=ExtResource("2_sawi2")]
+z_index = 1000
 position = Vector2(139, 107)
 scale = Vector2(0.6, 0.6)
 
+[node name="Characters" type="Node" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource("2_8bbij")]
+position = Vector2(170, 540)
+sprite_frames = null
+
+[node name="Opponent" parent="Characters" instance=ExtResource("2_8bbij")]
+position = Vector2(1770, 540)
+sprite_frames = null
+flip_h = true
+
+[node name="Player" parent="." instance=ExtResource("1_5w4lb")]
+
 [node name="Lyrics" parent="." instance=ExtResource("4_y614f")]
+visible = false
 position = Vector2(960, 400)
 
 [node name="Condition" type="Label" parent="."]
@@ -53,20 +92,36 @@ label_settings = SubResource("LabelSettings_5toyo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Instructions" parent="." instance=ExtResource("25_ouomb")]
+instructions = Array[Texture2D]([ExtResource("26_du2au"), ExtResource("27_xilmh"), ExtResource("28_e3o5y")])
+
 [node name="Audio" type="Node" parent="."]
-script = ExtResource("6_1c6vl")
 
-[node name="Ambience" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("6_k5xf7")
-volume_db = -20.0
+[node name="Bout" type="AudioStreamPlayer2D" parent="Audio"]
+panning_strength = 0.0
+bus = &"Voice"
+script = ExtResource("12_ahgql")
+start = ExtResource("13_qbqa1")
+numbers = Array[AudioStream]([ExtResource("14_io8ye"), ExtResource("15_yocr8"), ExtResource("16_u447f"), ExtResource("17_fvdrb"), ExtResource("18_ssp82"), ExtResource("19_sia2j"), ExtResource("20_pgxi3"), ExtResource("21_1gngw")])
 
-[node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("7_qhvl7")
-volume_db = -15.0
+[node name="Vs" type="AudioStreamPlayer2D" parent="Audio"]
+volume_db = 12.0
+panning_strength = 0.0
+bus = &"Voice"
+script = ExtResource("13_2obuc")
+versus = ExtResource("23_g7s6g")
+winner = ExtResource("24_s2r75")
 
+[connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
+[connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]
+[connection signal="finished_line" from="Characters/Opponent" to="." method="_on_opponent_finished_line"]
+[connection signal="finished_singing" from="Characters/Opponent" to="." method="_on_opponent_finished_singing"]
 [connection signal="discard_selected" from="Player" to="." method="_on_discard_selected"]
 [connection signal="phrase_selected" from="Player" to="." method="_on_player_phrase_selected"]
 [connection signal="play_selected" from="Player" to="." method="_on_play_selected"]
 [connection signal="words_selected" from="Player" to="." method="_on_player_words_selected"]
-[connection signal="finished" from="Audio/Ambience" to="Audio" method="_on_ambience_finish"]
-[connection signal="finished" from="Audio/Music" to="Audio" method="_on_music_finished"]
+[connection signal="continue_pressed" from="Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="callout_finished" from="Audio/Bout" to="." method="_on_bout_callout_finished"]
+[connection signal="finished" from="Audio/Bout" to="Audio/Bout" method="_on_finished"]
+[connection signal="finished_callout" from="Audio/Vs" to="." method="_on_finished_callout"]
+[connection signal="finished_winner" from="Audio/Vs" to="." method="_on_finished_winner"]

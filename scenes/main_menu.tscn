@@ -1,3 +1,184 @@
-[gd_scene format=3 uid="uid://bey31gvcx7fsv"]
+[gd_scene load_steps=11 format=3 uid="uid://bey31gvcx7fsv"]
+
+[ext_resource type="Texture2D" uid="uid://wur0lc3a5tpy" path="res://assets/textures/logo.png" id="1_jvvrf"]
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_r88s5"]
+[ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="2_b4tje"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="4_wfbs2"]
+[ext_resource type="Script" path="res://scenes/volume.gd" id="5_472fe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss2f6"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awbml"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 0, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpreu"]
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ci1mw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gble2"]
+font = ExtResource("4_wfbs2")
+font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_r88s5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.5688
+offset_right = 22.5688
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_b4tje")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Buttons" type="Control" parent="Control"]
+layout_mode = 2
+anchors_preset = 0
+offset_top = 699.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wfbs2")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ss2f6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_awbml")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ss2f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpreu")
+text = "play"
+
+[node name="Panel" type="Panel" parent="Control/Buttons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ci1mw")
+
+[node name="Master Volume" type="HBoxContainer" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Buttons/VBoxContainer/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "master volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/Buttons/VBoxContainer/Master Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Master"
+
+[node name="Music Volume" type="HBoxContainer" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Buttons/VBoxContainer/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "music volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/Buttons/VBoxContainer/Music Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Music"
+
+[node name="Voice Volume" type="HBoxContainer" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Buttons/VBoxContainer/Voice Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "voice volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/Buttons/VBoxContainer/Voice Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "Voice"
+
+[node name="SFX Volume" type="HBoxContainer" parent="Control/Buttons/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Buttons/VBoxContainer/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "sfx volume"
+label_settings = SubResource("LabelSettings_gble2")
+
+[node name="Volume" type="HSlider" parent="Control/Buttons/VBoxContainer/SFX Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_472fe")
+bus_name = "SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 300)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_jvvrf")
+
+[connection signal="pressed" from="Control/Buttons/VBoxContainer/PlayButton" to="." method="_on_button_pressed"]
