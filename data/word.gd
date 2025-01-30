@@ -4,7 +4,22 @@ extends Resource
 enum Type { NONE = 0, NOUN = 1, VERB = 2, ADJECTIVE = 4, ADVERB = 8, OTHER = 16 }
 enum Group {
 	NONE,
-	
+	ME,
+	YOU,
+	MONEY,
+	PEOPLE,
+	VEHICLE,
+	STYLE,
+	PLACE,
+	SENSE,
+	SMARTS,
+	TRASH,
+	FOOD,
+	OBJECT,
+	RAP,
+	VIOLENCE,
+	ACTION,
+	QUESTION,
 }
 enum Rhyme {
 	NONE,
