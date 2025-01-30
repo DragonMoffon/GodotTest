@@ -13,8 +13,8 @@ var words : Array[Word] = [
 	Word.new("only", Word.Type.OTHER, 1, Word.Rhyme.ONLY, Word.Sounds.oʊ, Word.Vowel.oʊ, Word.Group.ME),
 	Word.new("stop", Word.Type.VERB, 1, Word.Rhyme.OP, Word.Sounds.s, Word.Vowel.ɒ, Word.Group.NONE),
 	Word.new("take", Word.Type.VERB, 1, Word.Rhyme.AKE, Word.Sounds.t, Word.Vowel.eɪ, Word.Group.NONE),
-	Word.new("where", Word.Type.ADVERB, 1, Word.Rhyme.AIR, Word.Sounds.hw, Word.Vowel.e, Word.Group.NONE),
-	Word.new("why", Word.Type.ADVERB, 1, Word.Rhyme.HY, Word.Sounds.hw, Word.Vowel.aɪ, Word.Group.NONE),
+	Word.new("where", Word.Type.ADV, 1, Word.Rhyme.AIR, Word.Sounds.hw, Word.Vowel.e, Word.Group.NONE),
+	Word.new("why", Word.Type.ADV, 1, Word.Rhyme.HY, Word.Sounds.hw, Word.Vowel.aɪ, Word.Group.NONE),
 	Word.new("you're", Word.Type.OTHER, 2, Word.Rhyme.URE, Word.Sounds.j, Word.Vowel.ɔː, Word.Group.YOU),
 	Word.new("your", Word.Type.OTHER, 1, Word.Rhyme.URE, Word.Sounds.j, Word.Vowel.ɔː, Word.Group.YOU),
 	Word.new("a", Word.Type.OTHER, 1, Word.Rhyme.AH, Word.Sounds.ə, Word.Vowel.ə, Word.Group.NONE),
@@ -23,9 +23,9 @@ var words : Array[Word] = [
 	Word.new("as", Word.Type.OTHER, 1, Word.Rhyme.AZ, Word.Sounds.æ, Word.Vowel.æ, Word.Group.NONE),
 	Word.new("be", Word.Type.OTHER, 1, Word.Rhyme.EE, Word.Sounds.b, Word.Vowel.iː, Word.Group.NONE),
 	Word.new("being", Word.Type.VERB, 1, Word.Rhyme.EING, Word.Sounds.b, Word.Vowel.iː, Word.Group.NONE),
-	Word.new("better", Word.Type.ADJECTIVE, 2, Word.Rhyme.ETTER, Word.Sounds.b, Word.Vowel.e, Word.Group.ME),
+	Word.new("better", Word.Type.ADJ, 2, Word.Rhyme.ETTER, Word.Sounds.b, Word.Vowel.e, Word.Group.ME),
 	Word.new("born", Word.Type.VERB, 1, Word.Rhyme.ORN, Word.Sounds.b, Word.Vowel.ɔː, Word.Group.NONE),
-	Word.new("broke", Word.Type.ADJECTIVE, 1, Word.Rhyme.OKE, Word.Sounds.b, Word.Vowel.əʊ, Word.Group.MONEY),
+	Word.new("broke", Word.Type.ADJ, 1, Word.Rhyme.OKE, Word.Sounds.b, Word.Vowel.əʊ, Word.Group.MONEY),
 	Word.new("cannot", Word.Type.OTHER, 2, Word.Rhyme.OT, Word.Sounds.k, Word.Vowel.æ, Word.Group.NONE),
 	Word.new("can't", Word.Type.OTHER, 1, Word.Rhyme.ANT, Word.Sounds.k, Word.Vowel.æ, Word.Group.NONE),
 	Word.new("child", Word.Type.OTHER, 1, Word.Rhyme.ILD, Word.Sounds.tʃ, Word.Vowel.aɪ, Word.Group.PEOPLE),
@@ -40,7 +40,7 @@ var words : Array[Word] = [
 	Word.new("for", Word.Type.OTHER, 1, Word.Rhyme.OR, Word.Sounds.f, Word.Vowel.ɔː, Word.Group.NONE),
 	Word.new("haircut", Word.Type.OTHER, 2, Word.Rhyme.UT, Word.Sounds.h, Word.Vowel.e, Word.Group.STYLE),
 	Word.new("head", Word.Type.OTHER, 1, Word.Rhyme.ED, Word.Sounds.h, Word.Vowel.e, Word.Group.STYLE),
-	Word.new("hell,", Word.Type.OTHER, 1, Word.Rhyme.ELL, Word.Sounds.h, Word.Vowel.e, Word.Group.PLACE),
+	Word.new("hell", Word.Type.OTHER, 1, Word.Rhyme.ELL, Word.Sounds.h, Word.Vowel.e, Word.Group.PLACE),
 	Word.new("here", Word.Type.OTHER, 1, Word.Rhyme.EAR, Word.Sounds.h, Word.Vowel.e, Word.Group.PLACE),
 	Word.new("in", Word.Type.OTHER, 1, Word.Rhyme.IN, Word.Sounds.ɪ, Word.Vowel.ɪ, Word.Group.NONE),
 	Word.new("lamer", Word.Type.OTHER, 2, Word.Rhyme.AMER, Word.Sounds.l, Word.Vowel.eɪ, Word.Group.YOU),
@@ -146,30 +146,30 @@ var words : Array[Word] = [
 	Word.new("drinking", Word.Type.VERB, 2, Word.Rhyme.INKING, Word.Sounds.d, Word.Vowel.ɪ, Word.Group.FOOD),
 	Word.new("loving", Word.Type.VERB, 2, Word.Rhyme.UVING, Word.Sounds.l, Word.Vowel.ʌ, Word.Group.ME),
 	Word.new("hating", Word.Type.VERB, 2, Word.Rhyme.ATING, Word.Sounds.h, Word.Vowel.eɪ, Word.Group.YOU),
-	Word.new("stinky", Word.Type.ADJECTIVE, 2, Word.Rhyme.INKY, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.TRASH),
-	Word.new("smelly", Word.Type.ADJECTIVE, 2, Word.Rhyme.ELLY, Word.Sounds.s, Word.Vowel.e, Word.Group.TRASH),
-	Word.new("awesome", Word.Type.ADJECTIVE, 2, Word.Rhyme.OME, Word.Sounds.ɔː, Word.Vowel.ʌ, Word.Group.ME),
-	Word.new("greatest", Word.Type.ADJECTIVE, 2, Word.Rhyme.EATEST, Word.Sounds.g, Word.Vowel.eɪ, Word.Group.ME),
-	Word.new("lamest", Word.Type.ADJECTIVE, 2, Word.Rhyme.AMEST, Word.Sounds.l, Word.Vowel.eɪ, Word.Group.YOU),
-	Word.new("great", Word.Type.ADJECTIVE, 1, Word.Rhyme.EAT, Word.Sounds.g, Word.Vowel.eɪ, Word.Group.ME),
-	Word.new("lame", Word.Type.ADJECTIVE, 1, Word.Rhyme.AME, Word.Sounds.l, Word.Vowel.eɪ, Word.Group.YOU),
-	Word.new("stupid", Word.Type.ADJECTIVE, 2, Word.Rhyme.UPID, Word.Sounds.s, Word.Vowel.uː, Word.Group.SMARTS),
-	Word.new("smoked", Word.Type.ADJECTIVE, 1, Word.Rhyme.OKED, Word.Sounds.s, Word.Vowel.əʊ, Word.Group.NONE),
-	Word.new("silly", Word.Type.ADJECTIVE, 2, Word.Rhyme.ILLY, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.YOU),
-	Word.new("simple", Word.Type.ADJECTIVE, 1, Word.Rhyme.IMPLE, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.YOU),
-	Word.new("crazy", Word.Type.ADJECTIVE, 2, Word.Rhyme.AZY, Word.Sounds.k, Word.Vowel.eɪ, Word.Group.YOU),
-	Word.new("amazing", Word.Type.ADJECTIVE, 2, Word.Rhyme.AZING, Word.Sounds.ə, Word.Vowel.eɪ, Word.Group.ME),
-	Word.new("spooky", Word.Type.ADJECTIVE, 2, Word.Rhyme.OOKY, Word.Sounds.s, Word.Vowel.uː, Word.Group.NONE),
-	Word.new("funny", Word.Type.ADJECTIVE, 2, Word.Rhyme.UNNY, Word.Sounds.f, Word.Vowel.ʌ, Word.Group.ME),
-	Word.new("awful", Word.Type.ADJECTIVE, 2, Word.Rhyme.AWFUL, Word.Sounds.ɔː, Word.Vowel.ʌ, Word.Group.YOU),
-	Word.new("terrible", Word.Type.ADJECTIVE, 3, Word.Rhyme.ERRIBLE, Word.Sounds.t, Word.Vowel.ə, Word.Group.YOU),
-	Word.new("bad", Word.Type.ADJECTIVE, 1, Word.Rhyme.AD, Word.Sounds.b, Word.Vowel.æ, Word.Group.YOU),
-	Word.new("good", Word.Type.ADJECTIVE, 1, Word.Rhyme.OOD, Word.Sounds.g, Word.Vowel.ʊ, Word.Group.ME),
-	Word.new("so-so", Word.Type.ADJECTIVE, 2, Word.Rhyme.O, Word.Sounds.s, Word.Vowel.əʊ, Word.Group.YOU),
-	Word.new("shocking", Word.Type.ADJECTIVE, 2, Word.Rhyme.OCKING, Word.Sounds.ʃ, Word.Vowel.ɒ, Word.Group.ME),
-	Word.new("confusing", Word.Type.ADJECTIVE, 3, Word.Rhyme.USING, Word.Sounds.k, Word.Vowel.uː, Word.Group.YOU),
-	Word.new("mediocre", Word.Type.ADJECTIVE, 4, Word.Rhyme.OCRE, Word.Sounds.m, Word.Vowel.əʊ, Word.Group.YOU),
-	Word.new("mid", Word.Type.ADJECTIVE, 1, Word.Rhyme.ID, Word.Sounds.m, Word.Vowel.ɪ, Word.Group.YOU),
+	Word.new("stinky", Word.Type.ADJ, 2, Word.Rhyme.INKY, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.TRASH),
+	Word.new("smelly", Word.Type.ADJ, 2, Word.Rhyme.ELLY, Word.Sounds.s, Word.Vowel.e, Word.Group.TRASH),
+	Word.new("awesome", Word.Type.ADJ, 2, Word.Rhyme.OME, Word.Sounds.ɔː, Word.Vowel.ʌ, Word.Group.ME),
+	Word.new("greatest", Word.Type.ADJ, 2, Word.Rhyme.EATEST, Word.Sounds.g, Word.Vowel.eɪ, Word.Group.ME),
+	Word.new("lamest", Word.Type.ADJ, 2, Word.Rhyme.AMEST, Word.Sounds.l, Word.Vowel.eɪ, Word.Group.YOU),
+	Word.new("great", Word.Type.ADJ, 1, Word.Rhyme.EAT, Word.Sounds.g, Word.Vowel.eɪ, Word.Group.ME),
+	Word.new("lame", Word.Type.ADJ, 1, Word.Rhyme.AME, Word.Sounds.l, Word.Vowel.eɪ, Word.Group.YOU),
+	Word.new("stupid", Word.Type.ADJ, 2, Word.Rhyme.UPID, Word.Sounds.s, Word.Vowel.uː, Word.Group.SMARTS),
+	Word.new("smoked", Word.Type.ADJ, 1, Word.Rhyme.OKED, Word.Sounds.s, Word.Vowel.əʊ, Word.Group.NONE),
+	Word.new("silly", Word.Type.ADJ, 2, Word.Rhyme.ILLY, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.YOU),
+	Word.new("simple", Word.Type.ADJ, 1, Word.Rhyme.IMPLE, Word.Sounds.s, Word.Vowel.ɪ, Word.Group.YOU),
+	Word.new("crazy", Word.Type.ADJ, 2, Word.Rhyme.AZY, Word.Sounds.k, Word.Vowel.eɪ, Word.Group.YOU),
+	Word.new("amazing", Word.Type.ADJ, 2, Word.Rhyme.AZING, Word.Sounds.ə, Word.Vowel.eɪ, Word.Group.ME),
+	Word.new("spooky", Word.Type.ADJ, 2, Word.Rhyme.OOKY, Word.Sounds.s, Word.Vowel.uː, Word.Group.NONE),
+	Word.new("funny", Word.Type.ADJ, 2, Word.Rhyme.UNNY, Word.Sounds.f, Word.Vowel.ʌ, Word.Group.ME),
+	Word.new("awful", Word.Type.ADJ, 2, Word.Rhyme.AWFUL, Word.Sounds.ɔː, Word.Vowel.ʌ, Word.Group.YOU),
+	Word.new("terrible", Word.Type.ADJ, 3, Word.Rhyme.ERRIBLE, Word.Sounds.t, Word.Vowel.ə, Word.Group.YOU),
+	Word.new("bad", Word.Type.ADJ, 1, Word.Rhyme.AD, Word.Sounds.b, Word.Vowel.æ, Word.Group.YOU),
+	Word.new("good", Word.Type.ADJ, 1, Word.Rhyme.OOD, Word.Sounds.g, Word.Vowel.ʊ, Word.Group.ME),
+	Word.new("so-so", Word.Type.ADJ, 2, Word.Rhyme.O, Word.Sounds.s, Word.Vowel.əʊ, Word.Group.YOU),
+	Word.new("shocking", Word.Type.ADJ, 2, Word.Rhyme.OCKING, Word.Sounds.ʃ, Word.Vowel.ɒ, Word.Group.ME),
+	Word.new("confusing", Word.Type.ADJ, 3, Word.Rhyme.USING, Word.Sounds.k, Word.Vowel.uː, Word.Group.YOU),
+	Word.new("mediocre", Word.Type.ADJ, 4, Word.Rhyme.OCRE, Word.Sounds.m, Word.Vowel.əʊ, Word.Group.YOU),
+	Word.new("mid", Word.Type.ADJ, 1, Word.Rhyme.ID, Word.Sounds.m, Word.Vowel.ɪ, Word.Group.YOU),
 ]
 
 
@@ -192,7 +192,7 @@ var phrase_set : Array[Phrase] = [
 	Phrase.new("you are %s %s", [Blank.new(2), Blank.new(2)]),
 	Phrase.new("you look like my %s", [Blank.new(1)]),
 	Phrase.new("your momma so %s", [Blank.new(1)]),
-	Phrase.new("%s", [Blank.new(2, Word.Type.NOUN | Word.Type.VERB | Word.Type.ADJECTIVE | Word.Type.ADVERB | Word.Type.OTHER)]),
+	Phrase.new("%s", [Blank.new(2, Word.Type.NOUN | Word.Type.VERB | Word.Type.ADJ | Word.Type.ADV | Word.Type.OTHER)]),
 	Phrase.new("and those shoes ? %s", [Blank.new(2)]),
 	Phrase.new("only %s could be your fan", [Blank.new(1)]),
 	Phrase.new("you can't even %s", [Blank.new(1)]),
@@ -314,12 +314,12 @@ var word_set : Array[StringName] = [
 
 func _ready() -> void:
 	_find_amounts_group()
-	# var dict = DictData.new(words)
-	# ResourceSaver.save(dict, "res://data/dictionary.tres")
-	var phrase_data = PhraseSet.new(phrase_set)
-	ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
-	var word_data = WordSet.new(word_set)
-	ResourceSaver.save(word_data, "res://data/base_words.tres")
+	#var dict = DictData.new(words)
+	#ResourceSaver.save(dict, "res://data/dictionary.tres")
+	# var phrase_data = PhraseSet.new(phrase_set)
+	# ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
+	# var word_data = WordSet.new(word_set)
+	# ResourceSaver.save(word_data, "res://data/base_words.tres")
 
 
 func _find_amounts_rhyme():

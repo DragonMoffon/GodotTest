@@ -7,3 +7,4 @@ temp/
 
 # Dev specific
 .vscode/
+.libs/

@@ -130,12 +130,14 @@ levels = Array[AudioStream]([ExtResource("27_klimt"), ExtResource("28_v7veo"), E
 
 [node name="Continue" type="TextureButton" parent="."]
 visible = false
-offset_left = 810.0
-offset_top = 693.0
-offset_right = 1110.0
-offset_bottom = 893.0
+offset_left = 794.0
+offset_top = 751.0
+offset_right = 1394.0
+offset_bottom = 991.0
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("31_c540c")
 texture_hover = ExtResource("32_0ei7i")
+stretch_mode = 5
 
 [connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
 [connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]

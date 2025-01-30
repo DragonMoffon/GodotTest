@@ -1,7 +1,7 @@
 class_name Word
 extends Resource
 
-enum Type { NONE = 0, NOUN = 1, VERB = 2, ADJECTIVE = 4, ADVERB = 8, OTHER = 16 }
+enum Type { NONE = 0, NOUN = 1, VERB = 2, ADJ = 4, ADV = 8, OTHER = 16, EXTRA = 32 }
 enum Group {
 	NONE,
 	ME,

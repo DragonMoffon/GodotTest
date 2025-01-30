@@ -43,6 +43,16 @@ var highlight : Sprite2D = $"Highlight"
 @onready
 var flip_sound : AudioStreamPlayer2D = $FlipSound
 
+@onready
+var type_group : Control = $Hover/Typywipey
+
+@onready
+var type_labels : Array[Label] = [
+	$Hover/Typywipey/Bwomp/Label1,
+	$Hover/Typywipey/Bwomp/Label2,
+	$Hover/Typywipey/Bwomp/Label3
+]
+
 var target : Vector2
 var content = null
 
@@ -64,15 +74,23 @@ func create(content_) -> void:
 	if content_ is Phrase:
 		font = phrase_font
 		size = phrase_size
-	else:
+		
+		type_group.visible = false
+	elif content_ is Word:
 		font = word_font
 		size = word_size
+		
+		type_labels[0].text = Word.Group.keys()[content_.group]
+		type_labels[1].text = Word.Type.keys()[Word.Type.values().find(content_.type)]
+		type_labels[2].text = "-%s" % [Word.Rhyme.keys()[content_.rhyme]]
+		
 	base_BBCode_text = base_BBCode_text % [color, font.resource_path, size, "%s"]
 	content = content_
 	update_text()
 	
 func flip():
 	body.flip_h = not body.flip_h
+	type_group.rotation = -type_group.rotation
 	label.rotation = -label.rotation
 	
 func update_text():
