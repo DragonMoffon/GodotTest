@@ -32,10 +32,7 @@ var shake_BBCode_text = "[shake level=%s rate=%s]%s[/shake]" % [level, rate, "%s
 var body : Sprite2D = $"Body"
 
 @onready
-var control : Control = $"Hover"
-
-@onready
-var label : RichTextLabel = $"Hover/Label"
+var label : RichTextLabel = $"Hover/Control/Label"
 
 @onready
 var highlight : Sprite2D = $"Highlight"
@@ -44,13 +41,16 @@ var highlight : Sprite2D = $"Highlight"
 var flip_sound : AudioStreamPlayer2D = $FlipSound
 
 @onready
-var type_group : Control = $Hover/Typywipey
+var control : Control = $Hover/Control
+
+@onready
+var bwomp : HBoxContainer = $Hover/Control/Bwomp
 
 @onready
 var type_labels : Array[Label] = [
-	$Hover/Typywipey/Bwomp/Label1,
-	$Hover/Typywipey/Bwomp/Label2,
-	$Hover/Typywipey/Bwomp/Label3
+	$Hover/Control/Bwomp/Label1,
+	$Hover/Control/Bwomp/Label2,
+	$Hover/Control/Bwomp/Label3
 ]
 
 var target : Vector2
@@ -75,7 +75,8 @@ func create(content_) -> void:
 		font = phrase_font
 		size = phrase_size
 		
-		type_group.visible = false
+		bwomp.visible = false
+		label.position += Vector2(0.0, 10.0)
 	elif content_ is Word:
 		font = word_font
 		size = word_size
@@ -90,8 +91,7 @@ func create(content_) -> void:
 	
 func flip():
 	body.flip_h = not body.flip_h
-	type_group.rotation = -type_group.rotation
-	label.rotation = -label.rotation
+	control.rotation = -control.rotation
 	
 func update_text():
 	var text : String = base_BBCode_text
