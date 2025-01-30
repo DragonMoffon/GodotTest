@@ -20,6 +20,7 @@ enum Group {
 	VIOLENCE,
 	ACTION,
 	QUESTION,
+	ANIMAL
 }
 enum Rhyme {
 	NONE,
@@ -168,8 +169,8 @@ enum Rhyme {
 	AH
 }
 
-enum Sounds { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, əl, ən, əm, b, d, dj, dʒ, ð, f, g, h, hw, j, k, l, lj, m, n, nj, ŋ, p, r, s, sj, ʃ, t, tj, tʃ, θ, θj, v, w, z, zj, ʒ}
-enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, əl, ən, əm }
+enum Sounds { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, ɜː, əʊ, b, d, dj, dʒ, ð, f, g, h, hw, j, k, l, lj, m, n, nj, ŋ, p, r, s, sj, ʃ, t, tj, tʃ, θ, θj, v, w, z, zj, ʒ}
+enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ, uː, ʌ, ə, i, u, e, ɜː, əʊ }
 
 @export var text: String = ""
 @export_flags("NOUN", "VERB", "ADJECTIVE", "ADVERB", "OTHER") var type = 0
@@ -180,7 +181,7 @@ enum Vowel { NONE, ɑː, ɒ, æ, aɪ, aʊ, ɛ, eɪ, ɪ, iː, oʊ, ɔː, ɔɪ, ʊ
 @export var group: Group = Group.NONE
 
 
-func _init(text_: String = "", type_: Type = Type.NONE, syllables_: int = 0, rhyme_ : Rhyme = Rhyme.NONE, alliteration_ : Sounds = Sounds.NONE, assonance_ : Vowel = Vowel.NONE, group_: Group = Group.NONE):
+func _init(text_: String = "", type_ := Type.NONE, syllables_: int = 0, rhyme_ := Rhyme.NONE, alliteration_ := Sounds.NONE, assonance_ := Vowel.NONE, group_ := Group.NONE):
 	text = text_.to_lower()
 	type = type_
 	syllables = syllables_

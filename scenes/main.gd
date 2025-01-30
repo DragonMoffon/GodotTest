@@ -9,7 +9,7 @@ var audio = $Audio
 var best_score = 99
 
 func _ready():
-	change_scene(load("res://scenes/main_menu.tscn"), null)
+	change_scene(load("res://scenes/main_menu.tscn"), null, -1)
 
 func change_scene(next: PackedScene, old: Node = null, track: int = -1):
 	cover.cover()
