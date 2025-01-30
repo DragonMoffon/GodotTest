@@ -25,6 +25,9 @@ var condition = $Condition
 var instructions = $Instructions
 
 @onready
+var cont = $Continue
+
+@onready
 var player_character : CharacterSprite = $Characters/Player
 @onready
 var opponent_character : CharacterSprite = $Characters/Opponent
@@ -33,6 +36,8 @@ var opponent_character : CharacterSprite = $Characters/Opponent
 var bout_audio: AudioStreamPlayer2D = $Audio/Bout
 @onready
 var vs_audio: AudioStreamPlayer2D = $Audio/Vs
+@onready
+var hype_audio: AudioStreamPlayer2D = $Audio/Hype
 
 enum Turn { INSTRUCTIONS, BATTLE_CALLOUT, PLAYER_PICK, PLAYER_SING, ENEMY_PICK, ENEMY_SING, BOUT_CALLOUT, PLAYER_WIN, PLAYER_LOSE }
 
@@ -50,7 +55,7 @@ func _ready() -> void:
 	start(
 		load('res://data/bouba.tres'),
 		load('res://data/kiki.tres'),
-		Battle.new()
+		Battle.new($/root/Main.get_next_score())
 	)
 
 func start(player_data_: Character, enemy_data_: Character, battle_data_: Battle):
@@ -152,6 +157,8 @@ func start_turn(turn_: Turn):
 			
 			vs_audio.call_winner(player_data)
 			
+			$/root/Main.update_best_score(battle_data.target_score)
+			
 		Turn.PLAYER_LOSE:
 			lyrics.fade_out()
 			player.disable()
@@ -252,6 +259,17 @@ func _on_player_finished_singing() -> void:
 		return
 	lyrics.set_score(player_scores[-1])
 	
+	var score = player_scores[-1].total
+	var frac = float(score) / float(battle_data.target_score)
+	if frac <= 0.05:
+		hype_audio.play_level(0)
+	elif frac <= 0.25:
+		hype_audio.play_level(1)
+	elif frac <= 1.0:
+		hype_audio.play_level(2)
+	else:
+		hype_audio.play_level(3)
+	
 	await get_tree().create_timer(turn_delay).timeout
 	
 	start_turn(Turn.ENEMY_PICK)
@@ -266,16 +284,16 @@ func _on_opponent_finished_line(line: int) -> void:
 func _on_opponent_finished_singing() -> void:
 	if turn != Turn.ENEMY_SING:
 		return
-	if bout >= 8:
-		# Determine if the player has Won or not
-		start_turn(Turn.PLAYER_WIN)
+	cont.visible = true
+	var frac = float(player_score) / float(battle_data.target_score)
+	if frac <= 0.05:
+		hype_audio.play_level(3)
+	elif frac <= 0.25:
+		hype_audio.play_level(2)
+	elif frac <= 1.0:
+		hype_audio.play_level(1)
 	else:
-		bout += 1
-
-		await get_tree().create_timer(0.5).timeout
-
-		opponent_character.deselect()
-		start_turn(Turn.BOUT_CALLOUT)
+		hype_audio.play_level(0)
 
 func _on_bout_callout_finished() -> void:
 	if turn != Turn.BOUT_CALLOUT:
@@ -299,4 +317,22 @@ func _on_instructions_pressed():
 	
 	instructions.visible = false
 	start_turn(Turn.BATTLE_CALLOUT)
+
+
+func _on_continue_pressed() -> void:
+	if turn != Turn.ENEMY_SING:
+		return
+
+	cont.visible = false
+	if bout >= 8:
+		# Determine if the player has Won or not
+		if battle_data.target_score <= player_score:
+			start_turn(Turn.PLAYER_WIN)
+		else:
+			start_turn(Turn.PLAYER_LOSE)
+	else:
+		bout += 1
+
+		opponent_character.deselect()
+		start_turn(Turn.BOUT_CALLOUT)
 	
