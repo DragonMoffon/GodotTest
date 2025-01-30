@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://clypluwos5h8e"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_jf3mf"]
-[ext_resource type="AudioStream" uid="uid://dacxj1ptl5ryw" path="res://assets/sfx/beat_loop.wav" id="2_5uuso"]
 [ext_resource type="Script" path="res://scenes/hide_rect.gd" id="3_8hhi5"]
 [ext_resource type="AudioStream" uid="uid://d17k6kmdoiv" path="res://assets/sfx/city_street_loop.wav" id="3_bry3w"]
 [ext_resource type="Script" path="res://scenes/battle/audio.gd" id="3_r3uw8"]
+[ext_resource type="AudioStream" uid="uid://c4v7e4f68q8lu" path="res://assets/music/beat_2.ogg" id="4_rnv3k"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jf3mf")
@@ -25,8 +25,7 @@ script = ExtResource("3_8hhi5")
 script = ExtResource("3_r3uw8")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("2_5uuso")
-volume_db = -10.0
+stream = ExtResource("4_rnv3k")
 autoplay = true
 panning_strength = 0.0
 bus = &"Music"
