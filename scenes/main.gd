@@ -3,14 +3,19 @@ extends Node
 @onready
 var cover = $Cover
 
+@onready
+var audio = $Audio
+
 var best_score = 99
 
 func _ready():
 	change_scene(load("res://scenes/main_menu.tscn"), null)
 
-func change_scene(next: PackedScene, old: Node = null):
+func change_scene(next: PackedScene, old: Node = null, track: int = -1):
 	cover.cover()
 	await cover.hide_finished
+	if track >= 0:
+		audio.set_track(track)
 	var node = next.instantiate()
 	add_child(node)
 	if old != null:

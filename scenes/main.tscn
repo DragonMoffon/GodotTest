@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://clypluwos5h8e"]
+[gd_scene load_steps=7 format=3 uid="uid://clypluwos5h8e"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_jf3mf"]
 [ext_resource type="Script" path="res://scenes/hide_rect.gd" id="3_8hhi5"]
 [ext_resource type="AudioStream" uid="uid://d17k6kmdoiv" path="res://assets/sfx/city_street_loop.wav" id="3_bry3w"]
 [ext_resource type="Script" path="res://scenes/battle/audio.gd" id="3_r3uw8"]
 [ext_resource type="AudioStream" uid="uid://c4v7e4f68q8lu" path="res://assets/music/beat_2.ogg" id="4_rnv3k"]
+[ext_resource type="AudioStream" uid="uid://rlct0ojeudyp" path="res://assets/music/beat_3.ogg" id="5_7gm8s"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jf3mf")
@@ -23,12 +24,16 @@ script = ExtResource("3_8hhi5")
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource("3_r3uw8")
+tracks = Array[AudioStream]([ExtResource("4_rnv3k"), ExtResource("5_7gm8s")])
 
-[node name="Music" type="AudioStreamPlayer2D" parent="Audio"]
-stream = ExtResource("4_rnv3k")
+[node name="Music_1" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("5_7gm8s")
 autoplay = true
 panning_strength = 0.0
 bus = &"Music"
+
+[node name="Music_2" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("4_rnv3k")
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("3_bry3w")
@@ -37,5 +42,5 @@ autoplay = true
 panning_strength = 0.0
 bus = &"Music"
 
-[connection signal="finished" from="Audio/Music" to="Audio" method="_on_music_finished"]
+[connection signal="finished" from="Audio/Music_1" to="Audio" method="_on_music_finished"]
 [connection signal="finished" from="Audio/Ambience" to="Audio" method="_on_ambience_finish"]

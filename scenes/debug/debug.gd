@@ -51,7 +51,7 @@ var words : Array[Word] = [
 	Word.new("momma", Word.Type.OTHER, 2, Word.Rhyme.AA, Word.Sounds.m, Word.Vowel.ɒ),  # Word.Group.PEOPLE
 	Word.new("my", Word.Type.OTHER, 1, Word.Rhyme.HY, Word.Sounds.m, Word.Vowel.aɪ),  # Word.Group.ME
 	Word.new("of", Word.Type.OTHER, 1, Word.Rhyme.OF, Word.Sounds.ɒ, Word.Vowel.ə),  # Word.Group.NONE
-	Word.new("rather", Word.Type.OTHER, 2, Word.Rhyme.ATHER, Word.Sounds.r),  # Word.Group.NONE
+	Word.new("rather", Word.Type.OTHER, 2, Word.Rhyme.ATHER, Word.Sounds.r, Word.Vowel.),  # Word.Group.NONE
 	Word.new("real", Word.Type.OTHER, 1, Word.Rhyme.EAL, Word.Sounds.r),  # Word.Group.ME
 	Word.new("see", Word.Type.OTHER, 1, Word.Rhyme.EE, Word.Sounds.s),  # Word.Group.SENSE
 	Word.new("seem", Word.Type.OTHER, 1, Word.Rhyme.EEM, Word.Sounds.s),  # Word.Group.NONE

@@ -308,7 +308,7 @@ func _on_finished_callout() -> void:
 func _on_finished_winner() -> void:
 	if not (turn == Turn.PLAYER_WIN or turn == Turn.PLAYER_LOSE):
 		return
-	
+
 	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self)
 	
 func _on_instructions_pressed():
