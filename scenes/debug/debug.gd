@@ -1,6 +1,8 @@
 extends Node
 
 var words : Array[Word] = [
+	Word.new("fuck", Word.Type.VERB, 1, Word.Rhyme.UCK, Word.Sounds.f, Word.Vowel.ʌ, Word.Group.YOU),
+	Word.new("homies", Word.Type.NOUN, 2, Word.Rhyme.EE, Word.Sounds.h, Word.Vowel.ɒ, Word.Group.ME),
 	Word.new("and", Word.Type.OTHER, 1, Word.Rhyme.AND, Word.Sounds.æ, Word.Vowel.æ, Word.Group.NONE),
 	Word.new("bet", Word.Type.VERB, 1, Word.Rhyme.ET, Word.Sounds.b, Word.Vowel.e, Word.Group.NONE),
 	Word.new("i", Word.Type.NOUN, 1, Word.Rhyme.HY, Word.Sounds.aɪ, Word.Vowel.aɪ),  # Word.Group.ME
