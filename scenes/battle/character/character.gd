@@ -31,6 +31,8 @@ func _ready() -> void:
 func update_data(data_: Character):
 	data = data_
 	sprite_frames = data_.animations
+	animation = "idle"
+	play()
 	voice.pitch_scale = data_.pitch
 
 func sing_verse(verse: Verse):

@@ -8,7 +8,7 @@ enum Group {
 	YOU,
 	MONEY,
 	PEOPLE,
-	CAR,
+	VEHICLE,
 	STYLE,
 	PLACE,
 	SENSE,
@@ -19,8 +19,7 @@ enum Group {
 	RAP,
 	VIOLENCE,
 	ACTION,
-	
-	
+	QUESTION,
 }
 enum Rhyme {
 	NONE,
