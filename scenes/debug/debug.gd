@@ -47,10 +47,10 @@ var words : Array[Word] = [
 	Word.new("look", Word.Type.OTHER, 1, Word.Rhyme.OOK, Word.Sounds.l, Word.Vowel.ʊ),  # Word.Group.SENSE
 	Word.new("looks", Word.Type.OTHER, 1, Word.Rhyme.OOK, Word.Sounds.l, Word.Vowel.ʊ),  # Word.Group.NONE
 	Word.new("love", Word.Type.OTHER, 1, Word.Rhyme.UVE, Word.Sounds.l, Word.Vowel.ʌ),  # Word.Group.ME
-	Word.new("me", Word.Type.OTHER, 1, Word.Rhyme.EE, Word.Sounds.m),  # Word.Group.ME
-	Word.new("momma", Word.Type.OTHER, 2, Word.Rhyme.AA, Word.Sounds.m),  # Word.Group.PEOPLE
-	Word.new("my", Word.Type.OTHER, 1, Word.Rhyme.HY, Word.Sounds.m),  # Word.Group.ME
-	Word.new("of", Word.Type.OTHER, 1, Word.Rhyme.OF, Word.Sounds.ɒ),  # Word.Group.NONE
+	Word.new("me", Word.Type.OTHER, 1, Word.Rhyme.EE, Word.Sounds.m, Word.Vowel.iː),  # Word.Group.ME
+	Word.new("momma", Word.Type.OTHER, 2, Word.Rhyme.AA, Word.Sounds.m, Word.Vowel.ɒ),  # Word.Group.PEOPLE
+	Word.new("my", Word.Type.OTHER, 1, Word.Rhyme.HY, Word.Sounds.m, Word.Vowel.aɪ),  # Word.Group.ME
+	Word.new("of", Word.Type.OTHER, 1, Word.Rhyme.OF, Word.Sounds.ɒ, Word.Vowel.ə),  # Word.Group.NONE
 	Word.new("rather", Word.Type.OTHER, 2, Word.Rhyme.ATHER, Word.Sounds.r),  # Word.Group.NONE
 	Word.new("real", Word.Type.OTHER, 1, Word.Rhyme.EAL, Word.Sounds.r),  # Word.Group.ME
 	Word.new("see", Word.Type.OTHER, 1, Word.Rhyme.EE, Word.Sounds.s),  # Word.Group.SENSE
