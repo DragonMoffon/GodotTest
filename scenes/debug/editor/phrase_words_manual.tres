@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=5 format=3 uid="uid://dbjal8rtws2ef"]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_kmwk2"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_1q7pa"]
@@ -8,9 +8,9 @@ script = ExtResource("1_kmwk2")
 text = "paparazzi'd"
 type = 2
 syllables = 4
-rhyme = 0
+rhyme = 184
 alliteration = 29
-assonance = 3
+assonance = 4
 group = 4
 
 [sub_resource type="Resource" id="Resource_qr0tm"]
@@ -18,9 +18,9 @@ script = ExtResource("1_kmwk2")
 text = "stupider"
 type = 4
 syllables = 3
-rhyme = 0
+rhyme = 183
 alliteration = 31
-assonance = 10
+assonance = 15
 group = 2
 
 [resource]

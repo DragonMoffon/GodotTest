@@ -485,10 +485,16 @@ def main():
         s = len(syllabify(p.split("_")))
         # print(f"    {phrase}(\"{word}\", {t_str}.NONE, {s}, {r_str}.{r}, {all_str}.{all}, {ass_str}.{ass}, {g_str}.NONE),")
 
+    print(wtp['paparazzi'])
+    print(wtp['need'])
+    print(wtp['stupid'])
+    print(wtp['deer'])
+
+
     # print("incomplete words:")
     # print("\n".join(f"{phrase}(\"{word}\", {t_str}.NONE, {0}, {r_str}.NONE, {all_str}.NONE, {ass_str}.NONE, {g_str}.NONE)," for word in incomplete))
-    print("Rhyme Ref:")
-    print("\n".join(f"      \"{rhyme}\" : \"{ref}\"," for rhyme, ref in rhyme_ref.items()))
+    # print("Rhyme Ref:")
+    # print("\n".join(f"      \"{rhyme}\" : \"{ref}\"," for rhyme, ref in rhyme_ref.items()))
     # print("\n".join(f"  {rhyme}" for rhyme in rhyme_ref))
     # print("\n".join(f"  {p}," for p in vowels))
 
