@@ -367,17 +367,16 @@ var word_set : Array[StringName] = [
 var groups = ["phrase_words", "phrase_words_manual", "player_words", "player_words_manual"]
 
 func _ready() -> void:
-	pass
-	# var words : Array[Word] = []
-	# for list in groups:
-	# 	var debug_list = load("res://scenes/debug/editor/%s.tres" % [list])
+	#var words : Array[Word] = []
+	#for list in groups:
+	#	var debug_list = load("res://scenes/debug/editor/%s.tres" % [list])
 	#	words.append_array(debug_list.list)
-	# var dict = DictData.new(words)
-	# ResourceSaver.save(dict, "res://data/dictionary.tres")
-	#var phrase_data = PhraseSet.new(phrase_set)
-	#ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
-	#var word_data = WordSet.new(word_set)
-	#ResourceSaver.save(word_data, "res://data/base_words.tres")
+	#var dict = DictData.new(words)
+	#ResourceSaver.save(dict, "res://data/dictionary.tres")
+	var phrase_data = PhraseSet.new(phrase_set)
+	ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
+	var word_data = WordSet.new(word_set)
+	ResourceSaver.save(word_data, "res://data/base_words.tres")
 
 
 func _find_amounts_rhyme(words: Array[Word]):
