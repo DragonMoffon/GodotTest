@@ -6,17 +6,17 @@
 [sub_resource type="Resource" id="Resource_rrljf"]
 script = ExtResource("1_57fh6")
 text = "back seat"
-type = 0
-syllables = 0
+type = 1
+syllables = 2
 rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+alliteration = 16
+assonance = 2
+group = 5
 
 [sub_resource type="Resource" id="Resource_vw8xs"]
 script = ExtResource("1_57fh6")
 text = "bereft of"
-type = 0
+type = 16
 syllables = 0
 rhyme = 0
 alliteration = 0

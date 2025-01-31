@@ -151,3 +151,11 @@ func _on_group_item_selected(index: int) -> void:
 
 func _on_button_pressed() -> void:
 	save_list(word_list, word_list_name)
+
+
+func _on_delete_pressed() -> void:
+	if current_word == null or word_list == null:
+		return
+	print(current_word.text)
+	word_list.list.erase(current_word)
+	_on_prev_word_pressed()

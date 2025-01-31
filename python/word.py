@@ -474,8 +474,8 @@ def main():
 
     incomplete = []
 
-    fp = open("output.txt", "w+")
-    sys.stdout = fp
+    # fp = open("output.txt", "w+")
+    # sys.stdout = fp
 
     # for phrase in phrase_set:
     #     count = phrase.count("%s")
@@ -506,9 +506,11 @@ def main():
     # print("\n".join(f"  {rhyme}" for rhyme in rhyme_ref))
     # print("\n".join(f"  {p}," for p in vowels))
 
-    string = "\t"+"\n\t".join(f"\"{s.lower()}\"," for s in sorted(word_set))
+    # string = "\t"+"\n\t".join(f"\"{s.lower()}\"," for s in sorted(word_set))
     #print(wtp["smoked"])
-    print(string)
+    # print(string)
+
+    print(wtp['bereft'])
 
 
 

@@ -90,7 +90,6 @@ var word_set : Array[StringName] = [
 	"bat",
 	"bed",
 	"beer",
-	"bereft of",
 	"biting",
 	"bleat",
 	"blender",
