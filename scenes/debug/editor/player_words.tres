@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=270 format=3 uid="uid://bjy7p5l7qmuju"]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=270 format=3]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_vq3su"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_fd0bj"]
@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_rjiht"]
 script = ExtResource("1_vq3su")
 text = "affinity"
-type = 0
+type = 1
 syllables = 4
 rhyme = 1
 alliteration = 3
@@ -16,117 +16,117 @@ group = 0
 [sub_resource type="Resource" id="Resource_7kri7"]
 script = ExtResource("1_vq3su")
 text = "amazing"
-type = 0
+type = 4
 syllables = 3
 rhyme = 2
 alliteration = 3
 assonance = 9
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_0bk6a"]
 script = ExtResource("1_vq3su")
 text = "ant"
-type = 0
+type = 1
 syllables = 1
 rhyme = 4
 alliteration = 2
 assonance = 2
-group = 0
+group = 17
 
 [sub_resource type="Resource" id="Resource_vnori"]
 script = ExtResource("1_vq3su")
 text = "anyone"
-type = 0
+type = 1
 syllables = 3
 rhyme = 5
 alliteration = 7
 assonance = 7
-group = 0
+group = 4
 
 [sub_resource type="Resource" id="Resource_pbmco"]
 script = ExtResource("1_vq3su")
 text = "awesome"
-type = 0
+type = 4
 syllables = 2
 rhyme = 7
 alliteration = 1
 assonance = 1
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_g8y7v"]
 script = ExtResource("1_vq3su")
 text = "awful"
-type = 0
+type = 4
 syllables = 2
 rhyme = 8
 alliteration = 1
 assonance = 1
-group = 0
+group = 2
 
 [sub_resource type="Resource" id="Resource_iokga"]
 script = ExtResource("1_vq3su")
 text = "bad"
-type = 0
+type = 4
 syllables = 1
 rhyme = 9
 alliteration = 16
 assonance = 2
-group = 0
+group = 2
 
 [sub_resource type="Resource" id="Resource_myh4x"]
 script = ExtResource("1_vq3su")
 text = "ball"
-type = 0
+type = 1
 syllables = 1
 rhyme = 10
 alliteration = 16
 assonance = 4
-group = 0
+group = 12
 
 [sub_resource type="Resource" id="Resource_58vyl"]
 script = ExtResource("1_vq3su")
 text = "balling"
-type = 0
+type = 4
 syllables = 2
 rhyme = 11
 alliteration = 16
 assonance = 4
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_oes8k"]
 script = ExtResource("1_vq3su")
 text = "ban"
-type = 0
+type = 2
 syllables = 1
 rhyme = 12
 alliteration = 16
 assonance = 2
-group = 0
+group = 15
 
 [sub_resource type="Resource" id="Resource_41hah"]
 script = ExtResource("1_vq3su")
 text = "band"
-type = 0
+type = 1
 syllables = 1
 rhyme = 13
 alliteration = 16
 assonance = 2
-group = 0
+group = 13
 
 [sub_resource type="Resource" id="Resource_2hvp6"]
 script = ExtResource("1_vq3su")
 text = "bars"
-type = 0
+type = 1
 syllables = 1
 rhyme = 14
 alliteration = 16
 assonance = 1
-group = 0
+group = 13
 
 [sub_resource type="Resource" id="Resource_wxev0"]
 script = ExtResource("1_vq3su")
 text = "base"
-type = 0
+type = 1
 syllables = 1
 rhyme = 15
 alliteration = 16
@@ -136,57 +136,57 @@ group = 0
 [sub_resource type="Resource" id="Resource_co8ks"]
 script = ExtResource("1_vq3su")
 text = "bat"
-type = 0
+type = 1
 syllables = 1
 rhyme = 16
 alliteration = 16
 assonance = 2
-group = 0
+group = 14
 
 [sub_resource type="Resource" id="Resource_mtvvd"]
 script = ExtResource("1_vq3su")
 text = "bed"
-type = 0
+type = 1
 syllables = 1
 rhyme = 17
 alliteration = 16
 assonance = 7
-group = 0
+group = 12
 
 [sub_resource type="Resource" id="Resource_4cc5n"]
 script = ExtResource("1_vq3su")
 text = "beer"
-type = 0
+type = 1
 syllables = 1
 rhyme = 18
 alliteration = 16
 assonance = 10
-group = 0
+group = 11
 
 [sub_resource type="Resource" id="Resource_qgeiy"]
 script = ExtResource("1_vq3su")
 text = "biting"
-type = 0
+type = 2
 syllables = 2
 rhyme = 20
 alliteration = 16
 assonance = 6
-group = 0
+group = 11
 
 [sub_resource type="Resource" id="Resource_ce8ck"]
 script = ExtResource("1_vq3su")
 text = "blender"
-type = 0
+type = 1
 syllables = 2
 rhyme = 21
 alliteration = 16
 assonance = 7
-group = 0
+group = 11
 
 [sub_resource type="Resource" id="Resource_cc1ss"]
 script = ExtResource("1_vq3su")
 text = "blossom"
-type = 0
+type = 1
 syllables = 2
 rhyme = 7
 alliteration = 16
@@ -196,22 +196,22 @@ group = 0
 [sub_resource type="Resource" id="Resource_s5yhl"]
 script = ExtResource("1_vq3su")
 text = "blues"
-type = 0
+type = 1
 syllables = 1
 rhyme = 22
 alliteration = 16
 assonance = 15
-group = 0
+group = 13
 
 [sub_resource type="Resource" id="Resource_61ix3"]
 script = ExtResource("1_vq3su")
 text = "boos"
-type = 0
+type = 1
 syllables = 1
 rhyme = 22
 alliteration = 16
 assonance = 15
-group = 0
+group = 2
 
 [sub_resource type="Resource" id="Resource_ije5s"]
 script = ExtResource("1_vq3su")
