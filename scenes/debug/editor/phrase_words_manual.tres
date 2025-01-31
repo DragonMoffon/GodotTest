@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_o7lj3"]
 script = ExtResource("1_kmwk2")
 text = "paparazzi'd"
-type = 0
+type = 2
 syllables = 4
 rhyme = 0
 alliteration = 29
@@ -16,12 +16,12 @@ group = 4
 [sub_resource type="Resource" id="Resource_qr0tm"]
 script = ExtResource("1_kmwk2")
 text = "stupider"
-type = 0
-syllables = 4
+type = 4
+syllables = 3
 rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+alliteration = 31
+assonance = 10
+group = 2
 
 [resource]
 script = ExtResource("2_1q7pa")
