@@ -68,7 +68,7 @@ func change_word(word: Word):
 	if current_word != null:
 		pass
 	current_word = word
-	word_name.text = current_word.text
+	word_name.text = "%s, %s / %s" % [ current_word.text, word_idx, word_list.list.size()]
 	
 	word_type.select(Word.Type.values().find(word.type))
 	word_syllables.select(word.syllables)
