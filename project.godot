@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="MightyWords"
+config/name="Mighty Words"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/markerting/cover.png"
 
 [audio]
 

@@ -353,7 +353,6 @@ var word_set : Array[StringName] = [
 	"sword",
 	"taste",
 	"tear",
-	"the",
 	"the man",
 	"try",
 	"wake",
