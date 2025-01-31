@@ -30,30 +30,15 @@ var condition_algo = {
 	Conditions.NONE: default
 }
 
-var condition : Conditions
-var syllable_factor : float = 1.0
-var alliteration_factor : float = 4.3
-var assonance_factor : float = 3.8
-var type_factor : float = 2.67
-var topic_factor : float = 1.7
-var internal_rhyme_factor : float = 5.5
+var condition : Conditions = Conditions.NONE
+var syllable_factor : float = 2.3
+var alliteration_factor : float = 6.3
+var assonance_factor : float = 7.1
+var type_factor : float = 5.67
+var topic_factor : float = 8.4
+var internal_rhyme_factor : float = 7.5
 var rhyme_factor : float = 1.0
 
-func _init(
-		condition_: Conditions = Conditions.NONE,
-		syllable: float = 1.0,
-		alliteration: float = 4.3,
-		assonance: float = 3.8,
-		internal: float = 5.5,
-		rhyme: float = 1.0
-):
-	condition = condition_
-	syllable_factor = syllable
-	alliteration_factor = alliteration
-	assonance_factor = assonance
-	internal_rhyme_factor = internal
-	rhyme_factor = rhyme
-	
 func get_verse_rhyme_group(verse: Verse) -> Array[int]:
 	# This assumes the last word is always the last in the bar
 	var words: Array[Word] = []

@@ -107,6 +107,7 @@ var words : Array[Word] = [
 	Word.new("gun", Word.Type.NOUN, 1, Word.Rhyme.UN, Word.Sounds.g, Word.Vowel.ʌ, Word.Group.VIOLENCE),
 	Word.new("knife", Word.Type.NOUN, 1, Word.Rhyme.IFE, Word.Sounds.n, Word.Vowel.aɪ, Word.Group.VIOLENCE),
 	Word.new("ball", Word.Type.NOUN, 1, Word.Rhyme.ALL, Word.Sounds.b, Word.Vowel.ɔː, Word.Group.OBJECT),
+	Word.new("all", Word.Type.NOUN, 1, Word.Rhyme.ALL, Word.Sounds.uː, Word.Vowel.uː, Word.Group.NONE),
 	Word.new("pizza", Word.Type.NOUN, 2, Word.Rhyme.IZZA, Word.Sounds.p, Word.Vowel.iː, Word.Group.FOOD),
 	Word.new("soda", Word.Type.NOUN, 2, Word.Rhyme.ODA, Word.Sounds.s, Word.Vowel.əʊ, Word.Group.FOOD),
 	Word.new("burger", Word.Type.NOUN, 2, Word.Rhyme.URGER, Word.Sounds.b, Word.Vowel.ɜː, Word.Group.FOOD),
@@ -170,39 +171,56 @@ var words : Array[Word] = [
 	Word.new("confusing", Word.Type.ADJ, 3, Word.Rhyme.USING, Word.Sounds.k, Word.Vowel.uː, Word.Group.YOU),
 	Word.new("mediocre", Word.Type.ADJ, 4, Word.Rhyme.OCRE, Word.Sounds.m, Word.Vowel.əʊ, Word.Group.YOU),
 	Word.new("mid", Word.Type.ADJ, 1, Word.Rhyme.ID, Word.Sounds.m, Word.Vowel.ɪ, Word.Group.YOU),
+
+	Word.new("die", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.d, Word.Vowel.aɪ, Word.Group.VIOLENCE),
+	Word.new("try", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.t, Word.Vowel.aɪ, Word.Group.ACTION),
+	Word.new("buy", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.b, Word.Vowel.aɪ, Word.Group.MONEY),
+	Word.new("money", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.m, Word.Vowel.ʌ, Word.Group.MONEY),
+	Word.new("cash", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.k, Word.Vowel.ɪ, Word.Group.MONEY),
+	Word.new("honey", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.h, Word.Vowel.ʌ, Word.Group.FOOD),
+	Word.new("lunch", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.l, Word.Vowel.ʌ, Word.Group.FOOD),
+	Word.new("crunch", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.k, Word.Vowel.ʌ, Word.Group.FOOD),
+	Word.new("munch", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.m, Word.Vowel.ʌ, Word.Group.FOOD),
+	Word.new("bunch", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.b, Word.Vowel.ʌ, Word.Group.NONE),
+	Word.new("scrunch", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.s, Word.Vowel.ʌ, Word.Group.NONE),
+	Word.new("smell", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.s, Word.Vowel.e, Word.Group.FOOD),
+	Word.new("taste", Word.Type.VERB, 1, Word.Rhyme.ID, Word.Sounds.t, Word.Vowel.eɪ, Word.Group.FOOD),
+	Word.new("sand", Word.Type.NOUN, 1, Word.Rhyme.ID, Word.Sounds.s, Word.Vowel.æ, Word.Group.NONE),
+	Word.new("canned", Word.Type.ADJ, 1, Word.Rhyme.ID, Word.Sounds.k, Word.Vowel.æ, Word.Group.FOOD),
+	Word.new("band", Word.Type.NOUN, 1, Word.Rhyme.AND, Word.Sounds.b, Word.Vowel.æ, Word.Group.RAP),
 ]
 
 
 var phrase_set : Array[Phrase] = [
-	Phrase.new("you look like a %s", [Blank.new(2)]),
-	Phrase.new("you smell like a %s", [Blank.new(2)]),
-	Phrase.new("i'd rather be %s", [Blank.new(1)]),
-	Phrase.new("you're taking the %s", [Blank.new(1)]),
-	Phrase.new("i'm better than %s", [Blank.new(2)]),
-	Phrase.new("i'm cooler than %s", [Blank.new(2)]),
-	Phrase.new("you're lamer than %s", [Blank.new(1)]),
-	Phrase.new("i'm smarter than %s", [Blank.new(1)]),
-	Phrase.new("you're stupider than %s", [Blank.new(1)]),
-	Phrase.new("where did you %s ?", [Blank.new(1)]),
-	Phrase.new("why are you %s ?", [Blank.new(1)]),
-	Phrase.new("stop being %s", [Blank.new(2)]),
-	Phrase.new("i'll %s you for real", [Blank.new(1)]),
-	Phrase.new("you cannot %s me", [Blank.new(1)]),
-	Phrase.new("take a %s %s", [Blank.new(1), Blank.new(1)]),
-	Phrase.new("you are %s %s", [Blank.new(2), Blank.new(2)]),
-	Phrase.new("you look like my %s", [Blank.new(1)]),
-	Phrase.new("your momma so %s", [Blank.new(1)]),
-	Phrase.new("%s", [Blank.new(2, Word.Type.NOUN | Word.Type.VERB | Word.Type.ADJ | Word.Type.ADV | Word.Type.OTHER)]),
-	Phrase.new("and those shoes ? %s", [Blank.new(2)]),
-	Phrase.new("only %s could be your fan", [Blank.new(1)]),
-	Phrase.new("you can't even %s", [Blank.new(1)]),
-	Phrase.new("you couldn't even afford %s", [Blank.new(1)]),
-	Phrase.new("you seem like a love child born of %s", [Blank.new(2)]),
-	Phrase.new("i see you drove here in a %s", [Blank.new(2)]),
-	Phrase.new("you're fake as hell you'll only ever be a %s", [Blank.new(1)]),
-	Phrase.new("you %s like a %s", [Blank.new(1), Blank.new(1)]),
-	Phrase.new("smoked by the %s", [Blank.new(1)]),
-	Phrase.new("fuck %s all my homies hate %s", [Blank.new(1), Blank.new(1)])
+	Phrase.new("you look like a %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("you smell like a %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("i'd rather be %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you're taking the %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("i'm better than %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("i'm cooler than %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("you're lamer than %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("i'm smarter than %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you're stupider than %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("where did you %s ?", [Blank.new(1, Word.Type.VERB)]),
+	Phrase.new("why are you %s ?", [Blank.new(1, Word.Type.ADJ)]),
+	Phrase.new("stop being %s", [Blank.new(2, Word.Type.ADJ)]),
+	Phrase.new("i'll %s you for real", [Blank.new(1, Word.Type.VERB)]),
+	Phrase.new("you cannot %s me", [Blank.new(1, Word.Type.VERB)]),
+	Phrase.new("take a %s %s", [Blank.new(1, Word.Type.ADJ), Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you are %s %s", [Blank.new(2, Word.Type.ADJ), Blank.new(2, Word.Type.ADJ)]),
+	Phrase.new("you look like my %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("your momma so %s", [Blank.new(1, Word.Type.ADJ)]),
+	Phrase.new("%s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("and those shoes ? %s", [Blank.new(2, Word.Type.ADJ)]),
+	Phrase.new("only %s could be your fan", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you can't even %s", [Blank.new(1, Word.Type.VERB)]),
+	Phrase.new("you couldn't even afford %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you seem like a love child born of %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("i see you drove here in a %s", [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("you're fake as hell you'll only ever be a %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("you %s like a %s", [Blank.new(1, Word.Type.VERB), Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("smoked by the %s", [Blank.new(1, Word.Type.NOUN)]),
+	Phrase.new("fuck %s all my homies hate %s", [Blank.new(1, Word.Type.NOUN), Blank.new(1, Word.Type.NOUN)])
 ]
 
 var word_set : Array[StringName] = [
@@ -309,17 +327,34 @@ var word_set : Array[StringName] = [
 	"Mediocre",
 	"So-so",
 	"Mid",
+	"Die",
+	"Try",
+	"Buy",
+	"Money",
+	"Cash",
+	"Honey",
+	"Lunch",
+	"Crunch",
+	"Munch",
+	"Bunch",
+	"Scrunch",
+	"Smell",
+	"Taste",
+	"Sand",
+	"Canned",
+	"Band",
+
 ]
 
 
 func _ready() -> void:
-	_find_amounts_group()
-	#var dict = DictData.new(words)
-	#ResourceSaver.save(dict, "res://data/dictionary.tres")
-	# var phrase_data = PhraseSet.new(phrase_set)
-	# ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
-	# var word_data = WordSet.new(word_set)
-	# ResourceSaver.save(word_data, "res://data/base_words.tres")
+	pass
+	# var dict = DictData.new(words)
+	# ResourceSaver.save(dict, "res://data/dictionary.tres")
+	#var phrase_data = PhraseSet.new(phrase_set)
+	#ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
+	#var word_data = WordSet.new(word_set)
+	#ResourceSaver.save(word_data, "res://data/base_words.tres")
 
 
 func _find_amounts_rhyme():

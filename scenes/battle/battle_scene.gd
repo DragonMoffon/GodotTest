@@ -47,6 +47,8 @@ var player_data : Character = null
 var enemy_data : Character = null
 var battle_data : Battle = null
 
+var showing_instructions: bool = false
+
 var player_score : int = 0
 var player_scores : Array[Score] = []
 var bout : int = 0
@@ -312,12 +314,14 @@ func _on_finished_winner() -> void:
 	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self, 1)
 	
 func _on_instructions_pressed():
-	if turn != Turn.INSTRUCTIONS:
+	if turn != Turn.INSTRUCTIONS and not showing_instructions:
 		return
 	
 	instructions.visible = false
-	start_turn(Turn.BATTLE_CALLOUT)
-
+	
+	if not showing_instructions:
+		start_turn(Turn.BATTLE_CALLOUT)
+	showing_instructions = false
 
 func _on_continue_pressed() -> void:
 	if turn != Turn.ENEMY_SING:
@@ -336,3 +340,12 @@ func _on_continue_pressed() -> void:
 		opponent_character.deselect()
 		start_turn(Turn.BOUT_CALLOUT)
 	
+
+
+func _on_info_pressed() -> void:
+	if turn != Turn.INSTRUCTIONS:
+		pass
+		
+	showing_instructions = true
+	instructions.visible = true
+	instructions.cont.disabled = false

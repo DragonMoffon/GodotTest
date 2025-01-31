@@ -1,10 +1,12 @@
-[gd_scene load_steps=34 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=36 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
 [ext_resource type="PackedScene" uid="uid://j154bka1btpo" path="res://scenes/battle/character/Character.tscn" id="2_8bbij"]
 [ext_resource type="Script" path="res://scenes/battle/opponent.gd" id="2_ekd0m"]
 [ext_resource type="PackedScene" uid="uid://0xafi4choxa8" path="res://scenes/battle/score_card.tscn" id="2_sawi2"]
+[ext_resource type="Texture2D" uid="uid://ckm5rotjlw22h" path="res://assets/gui/Info1Idle.png" id="3_ekahj"]
+[ext_resource type="Texture2D" uid="uid://blnt4p2tx6s7" path="res://assets/gui/Info1Hover.png" id="4_8q4a3"]
 [ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="4_y614f"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="5_vtqjp"]
 [ext_resource type="Texture2D" uid="uid://c1hwkmav76aqc" path="res://assets/gui/Instructions1.png" id="10_w7f7r"]
@@ -60,6 +62,16 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_0jstl")
 expand_mode = 3
+stretch_mode = 5
+
+[node name="Info" type="TextureButton" parent="."]
+offset_left = 1739.0
+offset_top = 20.0
+offset_right = 2139.0
+offset_bottom = 420.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("3_ekahj")
+texture_hover = ExtResource("4_8q4a3")
 stretch_mode = 5
 
 [node name="Opponent" type="Node" parent="."]
@@ -139,6 +151,7 @@ texture_normal = ExtResource("31_c540c")
 texture_hover = ExtResource("32_0ei7i")
 stretch_mode = 5
 
+[connection signal="pressed" from="Info" to="." method="_on_info_pressed"]
 [connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
 [connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]
 [connection signal="finished_line" from="Characters/Opponent" to="." method="_on_opponent_finished_line"]
