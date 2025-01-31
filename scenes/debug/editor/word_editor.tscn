@@ -1,0 +1,217 @@
+[gd_scene load_steps=4 format=3 uid="uid://5r460yjr5l2s"]
+
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="1_r0qnl"]
+[ext_resource type="Script" path="res://scenes/debug/editor/word_editor.gd" id="1_wrcmt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rl5fw"]
+font = ExtResource("1_r0qnl")
+font_size = 40
+
+[node name="WordEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrcmt")
+
+[node name="LstSelect" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PL" type="Button" parent="LstSelect"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "PLAYER LIST"
+
+[node name="PLM" type="Button" parent="LstSelect"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "PLAYER LIST MANUAL
+"
+
+[node name="PH" type="Button" parent="LstSelect"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "PHRASE LIST"
+
+[node name="PHM" type="Button" parent="LstSelect"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "PHRASE LIST MANUAL"
+
+[node name="WrdSelect" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lst" type="Label" parent="WrdSelect"]
+layout_mode = 2
+text = "CurrentList"
+label_settings = SubResource("LabelSettings_rl5fw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wrd" type="Label" parent="WrdSelect"]
+layout_mode = 2
+text = "CurrentWord"
+label_settings = SubResource("LabelSettings_rl5fw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="WrdSelect"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PrevWord" type="Button" parent="WrdSelect/Buttons"]
+layout_mode = 2
+text = "Prev Word
+"
+
+[node name="NextWord" type="Button" parent="WrdSelect/Buttons"]
+layout_mode = 2
+text = "Next Word"
+
+[node name="Edit" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Word Type
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 6
+popup/item_0/text = "NONE"
+popup/item_1/text = "NOUN"
+popup/item_1/id = 1
+popup/item_2/text = "VERB"
+popup/item_2/id = 2
+popup/item_3/text = "ADJECTIVE"
+popup/item_3/id = 3
+popup/item_4/text = "ADVERB"
+popup/item_4/id = 4
+popup/item_5/text = "OTHER"
+popup/item_5/id = 5
+
+[node name="Label2" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Syllable Count
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Syllables" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 6
+popup/item_0/text = "0"
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+
+[node name="Label3" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Rhyme Group"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rhyme" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "NONE"
+
+[node name="Label4" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Alliteration (First Sound)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Alliteration" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "NONE"
+
+[node name="Label5" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Assonance (most obvious vowel sound)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assonance" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "NONE"
+
+[node name="Label6" type="Label" parent="Edit"]
+layout_mode = 2
+text = "Word Group (Topic)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Group" type="OptionButton" parent="Edit"]
+layout_mode = 2
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "NONE"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Edit"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Edit"]
+layout_mode = 2
+text = "SAVE"
+
+[connection signal="pressed" from="LstSelect/PL" to="." method="_on_pl_pressed"]
+[connection signal="pressed" from="LstSelect/PLM" to="." method="_on_plm_pressed"]
+[connection signal="pressed" from="LstSelect/PH" to="." method="_on_ph_pressed"]
+[connection signal="pressed" from="LstSelect/PHM" to="." method="_on_phm_pressed"]
+[connection signal="pressed" from="WrdSelect/Buttons/PrevWord" to="." method="_on_prev_word_pressed"]
+[connection signal="pressed" from="WrdSelect/Buttons/NextWord" to="." method="_on_next_word_pressed"]
+[connection signal="item_selected" from="Edit/Type" to="." method="_on_type_item_selected"]
+[connection signal="item_selected" from="Edit/Syllables" to="." method="_on_syllables_item_selected"]
+[connection signal="item_selected" from="Edit/Rhyme" to="." method="_on_rhyme_item_selected"]
+[connection signal="item_selected" from="Edit/Alliteration" to="." method="_on_alliteration_item_selected"]
+[connection signal="item_selected" from="Edit/Assonance" to="." method="_on_assonance_item_selected"]
+[connection signal="item_selected" from="Edit/Group" to="." method="_on_group_item_selected"]
+[connection signal="pressed" from="Edit/Button" to="." method="_on_button_pressed"]

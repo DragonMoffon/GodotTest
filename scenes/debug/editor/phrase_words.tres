@@ -1,0 +1,1168 @@
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=119 format=3 uid="uid://gli6rp8kfbd1"]
+
+[ext_resource type="Script" path="res://data/word.gd" id="1_tyijx"]
+[ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_2677q"]
+
+[sub_resource type="Resource" id="Resource_koert"]
+script = ExtResource("1_tyijx")
+text = "and"
+type = 0
+syllables = 1
+rhyme = 3
+alliteration = 3
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_j04qj"]
+script = ExtResource("1_tyijx")
+text = "are"
+type = 0
+syllables = 1
+rhyme = 6
+alliteration = 1
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_yuk82"]
+script = ExtResource("1_tyijx")
+text = "bet"
+type = 0
+syllables = 1
+rhyme = 19
+alliteration = 16
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_d44cp"]
+script = ExtResource("1_tyijx")
+text = "don't"
+type = 0
+syllables = 1
+rhyme = 43
+alliteration = 18
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_2foj1"]
+script = ExtResource("1_tyijx")
+text = "drink"
+type = 0
+syllables = 1
+rhyme = 46
+alliteration = 18
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_ks6gb"]
+script = ExtResource("1_tyijx")
+text = "eat"
+type = 0
+syllables = 1
+rhyme = 30
+alliteration = 11
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_ny0hc"]
+script = ExtResource("1_tyijx")
+text = "i"
+type = 0
+syllables = 1
+rhyme = 68
+alliteration = 6
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_uppoa"]
+script = ExtResource("1_tyijx")
+text = "i'd"
+type = 0
+syllables = 1
+rhyme = 69
+alliteration = 6
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_o8brl"]
+script = ExtResource("1_tyijx")
+text = "i'll"
+type = 0
+syllables = 1
+rhyme = 70
+alliteration = 6
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_g4br5"]
+script = ExtResource("1_tyijx")
+text = "i'm"
+type = 0
+syllables = 1
+rhyme = 36
+alliteration = 6
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_5syui"]
+script = ExtResource("1_tyijx")
+text = "if"
+type = 0
+syllables = 1
+rhyme = 71
+alliteration = 10
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_f7v28"]
+script = ExtResource("1_tyijx")
+text = "keep"
+type = 0
+syllables = 1
+rhyme = 73
+alliteration = 24
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_rlsvv"]
+script = ExtResource("1_tyijx")
+text = "no"
+type = 0
+syllables = 1
+rhyme = 88
+alliteration = 27
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_tnm5c"]
+script = ExtResource("1_tyijx")
+text = "on"
+type = 0
+syllables = 1
+rhyme = 90
+alliteration = 1
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_3v32v"]
+script = ExtResource("1_tyijx")
+text = "only"
+type = 0
+syllables = 2
+rhyme = 91
+alliteration = 12
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_loery"]
+script = ExtResource("1_tyijx")
+text = "so"
+type = 0
+syllables = 1
+rhyme = 88
+alliteration = 31
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_ymsl6"]
+script = ExtResource("1_tyijx")
+text = "stop"
+type = 0
+syllables = 1
+rhyme = 115
+alliteration = 31
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_jp5sm"]
+script = ExtResource("1_tyijx")
+text = "take"
+type = 0
+syllables = 1
+rhyme = 117
+alliteration = 33
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_txvn0"]
+script = ExtResource("1_tyijx")
+text = "the"
+type = 0
+syllables = 1
+rhyme = 119
+alliteration = 19
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_yjxs3"]
+script = ExtResource("1_tyijx")
+text = "where"
+type = 0
+syllables = 1
+rhyme = 126
+alliteration = 36
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_5ke8a"]
+script = ExtResource("1_tyijx")
+text = "why"
+type = 0
+syllables = 1
+rhyme = 68
+alliteration = 36
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_amp5c"]
+script = ExtResource("1_tyijx")
+text = "you"
+type = 0
+syllables = 1
+rhyme = 129
+alliteration = 37
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_la5qe"]
+script = ExtResource("1_tyijx")
+text = "you'll"
+type = 0
+syllables = 1
+rhyme = 57
+alliteration = 37
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_o4hb8"]
+script = ExtResource("1_tyijx")
+text = "you're"
+type = 0
+syllables = 1
+rhyme = 130
+alliteration = 37
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_f5gu4"]
+script = ExtResource("1_tyijx")
+text = "your"
+type = 0
+syllables = 1
+rhyme = 131
+alliteration = 37
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_0qgdb"]
+script = ExtResource("1_tyijx")
+text = "a"
+type = 0
+syllables = 1
+rhyme = 132
+alliteration = 3
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_8y14s"]
+script = ExtResource("1_tyijx")
+text = "afford"
+type = 0
+syllables = 2
+rhyme = 133
+alliteration = 3
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_7tsyw"]
+script = ExtResource("1_tyijx")
+text = "all"
+type = 0
+syllables = 1
+rhyme = 10
+alliteration = 4
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_sslu3"]
+script = ExtResource("1_tyijx")
+text = "always"
+type = 0
+syllables = 2
+rhyme = 134
+alliteration = 4
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_tr6w3"]
+script = ExtResource("1_tyijx")
+text = "and"
+type = 0
+syllables = 1
+rhyme = 3
+alliteration = 3
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_wvftn"]
+script = ExtResource("1_tyijx")
+text = "anymore"
+type = 0
+syllables = 3
+rhyme = 131
+alliteration = 7
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_ac8wx"]
+script = ExtResource("1_tyijx")
+text = "are"
+type = 0
+syllables = 1
+rhyme = 6
+alliteration = 1
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_dn08j"]
+script = ExtResource("1_tyijx")
+text = "as"
+type = 0
+syllables = 1
+rhyme = 135
+alliteration = 2
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_w3pgo"]
+script = ExtResource("1_tyijx")
+text = "at"
+type = 0
+syllables = 1
+rhyme = 16
+alliteration = 2
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_m510a"]
+script = ExtResource("1_tyijx")
+text = "be"
+type = 0
+syllables = 1
+rhyme = 54
+alliteration = 16
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_wojka"]
+script = ExtResource("1_tyijx")
+text = "being"
+type = 0
+syllables = 2
+rhyme = 137
+alliteration = 16
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_c53ah"]
+script = ExtResource("1_tyijx")
+text = "better"
+type = 0
+syllables = 2
+rhyme = 138
+alliteration = 16
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_2xxel"]
+script = ExtResource("1_tyijx")
+text = "born"
+type = 0
+syllables = 1
+rhyme = 139
+alliteration = 16
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_qxslk"]
+script = ExtResource("1_tyijx")
+text = "broke"
+type = 0
+syllables = 1
+rhyme = 25
+alliteration = 16
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_yux3c"]
+script = ExtResource("1_tyijx")
+text = "call"
+type = 0
+syllables = 1
+rhyme = 10
+alliteration = 24
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_blvce"]
+script = ExtResource("1_tyijx")
+text = "can't"
+type = 0
+syllables = 1
+rhyme = 4
+alliteration = 24
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_13w0r"]
+script = ExtResource("1_tyijx")
+text = "cannot"
+type = 0
+syllables = 2
+rhyme = 141
+alliteration = 24
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_g7k7p"]
+script = ExtResource("1_tyijx")
+text = "child"
+type = 0
+syllables = 1
+rhyme = 142
+alliteration = 17
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_j87bj"]
+script = ExtResource("1_tyijx")
+text = "cooler"
+type = 0
+syllables = 2
+rhyme = 144
+alliteration = 24
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_pbtep"]
+script = ExtResource("1_tyijx")
+text = "could"
+type = 0
+syllables = 1
+rhyme = 63
+alliteration = 24
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_odsa7"]
+script = ExtResource("1_tyijx")
+text = "couldn't"
+type = 0
+syllables = 2
+rhyme = 145
+alliteration = 24
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_unvqv"]
+script = ExtResource("1_tyijx")
+text = "did"
+type = 0
+syllables = 1
+rhyme = 85
+alliteration = 18
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_bloqx"]
+script = ExtResource("1_tyijx")
+text = "die"
+type = 0
+syllables = 1
+rhyme = 68
+alliteration = 18
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_mynr0"]
+script = ExtResource("1_tyijx")
+text = "do"
+type = 0
+syllables = 1
+rhyme = 129
+alliteration = 18
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_iebrk"]
+script = ExtResource("1_tyijx")
+text = "don't"
+type = 0
+syllables = 1
+rhyme = 43
+alliteration = 18
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_ahyji"]
+script = ExtResource("1_tyijx")
+text = "drove"
+type = 0
+syllables = 1
+rhyme = 147
+alliteration = 18
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_3ba1j"]
+script = ExtResource("1_tyijx")
+text = "end"
+type = 0
+syllables = 1
+rhyme = 148
+alliteration = 7
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_dyun7"]
+script = ExtResource("1_tyijx")
+text = "even"
+type = 0
+syllables = 2
+rhyme = 149
+alliteration = 11
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_cimau"]
+script = ExtResource("1_tyijx")
+text = "ever"
+type = 0
+syllables = 2
+rhyme = 150
+alliteration = 7
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_da7y0"]
+script = ExtResource("1_tyijx")
+text = "fake"
+type = 0
+syllables = 1
+rhyme = 117
+alliteration = 20
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_0qaw3"]
+script = ExtResource("1_tyijx")
+text = "fan"
+type = 0
+syllables = 1
+rhyme = 12
+alliteration = 20
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_abnpl"]
+script = ExtResource("1_tyijx")
+text = "for"
+type = 0
+syllables = 1
+rhyme = 131
+alliteration = 20
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_hq0of"]
+script = ExtResource("1_tyijx")
+text = "give"
+type = 0
+syllables = 1
+rhyme = 151
+alliteration = 21
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_0hhk4"]
+script = ExtResource("1_tyijx")
+text = "goons"
+type = 0
+syllables = 1
+rhyme = 152
+alliteration = 21
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_he3ul"]
+script = ExtResource("1_tyijx")
+text = "had"
+type = 0
+syllables = 1
+rhyme = 9
+alliteration = 22
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_j7w6y"]
+script = ExtResource("1_tyijx")
+text = "haircut"
+type = 0
+syllables = 2
+rhyme = 154
+alliteration = 22
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_6chjc"]
+script = ExtResource("1_tyijx")
+text = "have"
+type = 0
+syllables = 1
+rhyme = 155
+alliteration = 22
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_vnf0d"]
+script = ExtResource("1_tyijx")
+text = "head"
+type = 0
+syllables = 1
+rhyme = 17
+alliteration = 22
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_rm4h1"]
+script = ExtResource("1_tyijx")
+text = "hell"
+type = 0
+syllables = 1
+rhyme = 29
+alliteration = 22
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_y4aq4"]
+script = ExtResource("1_tyijx")
+text = "here"
+type = 0
+syllables = 1
+rhyme = 156
+alliteration = 22
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_jeruv"]
+script = ExtResource("1_tyijx")
+text = "human"
+type = 0
+syllables = 2
+rhyme = 157
+alliteration = 22
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_vu0xi"]
+script = ExtResource("1_tyijx")
+text = "in"
+type = 0
+syllables = 1
+rhyme = 158
+alliteration = 10
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_8juta"]
+script = ExtResource("1_tyijx")
+text = "is"
+type = 0
+syllables = 1
+rhyme = 159
+alliteration = 10
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_c0gen"]
+script = ExtResource("1_tyijx")
+text = "it"
+type = 0
+syllables = 1
+rhyme = 160
+alliteration = 10
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_w6jib"]
+script = ExtResource("1_tyijx")
+text = "lamer"
+type = 0
+syllables = 2
+rhyme = 41
+alliteration = 25
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_dvk1v"]
+script = ExtResource("1_tyijx")
+text = "least"
+type = 0
+syllables = 1
+rhyme = 161
+alliteration = 25
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_73g63"]
+script = ExtResource("1_tyijx")
+text = "like"
+type = 0
+syllables = 1
+rhyme = 162
+alliteration = 25
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_tfw3a"]
+script = ExtResource("1_tyijx")
+text = "look"
+type = 0
+syllables = 1
+rhyme = 163
+alliteration = 25
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_vfatk"]
+script = ExtResource("1_tyijx")
+text = "looks"
+type = 0
+syllables = 1
+rhyme = 38
+alliteration = 25
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_d3aom"]
+script = ExtResource("1_tyijx")
+text = "love"
+type = 0
+syllables = 1
+rhyme = 44
+alliteration = 25
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_525d3"]
+script = ExtResource("1_tyijx")
+text = "lyrical"
+type = 0
+syllables = 3
+rhyme = 164
+alliteration = 25
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_rqrne"]
+script = ExtResource("1_tyijx")
+text = "make"
+type = 0
+syllables = 1
+rhyme = 117
+alliteration = 26
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_trfiq"]
+script = ExtResource("1_tyijx")
+text = "me"
+type = 0
+syllables = 1
+rhyme = 54
+alliteration = 26
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_tt82s"]
+script = ExtResource("1_tyijx")
+text = "momma"
+type = 0
+syllables = 2
+rhyme = 45
+alliteration = 26
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_emryq"]
+script = ExtResource("1_tyijx")
+text = "my"
+type = 0
+syllables = 1
+rhyme = 68
+alliteration = 26
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_gk5sr"]
+script = ExtResource("1_tyijx")
+text = "never"
+type = 0
+syllables = 2
+rhyme = 150
+alliteration = 27
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_7642h"]
+script = ExtResource("1_tyijx")
+text = "of"
+type = 0
+syllables = 1
+rhyme = 44
+alliteration = 3
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_7uors"]
+script = ExtResource("1_tyijx")
+text = "only"
+type = 0
+syllables = 2
+rhyme = 91
+alliteration = 12
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_orunw"]
+script = ExtResource("1_tyijx")
+text = "put"
+type = 0
+syllables = 1
+rhyme = 165
+alliteration = 29
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_ja7vx"]
+script = ExtResource("1_tyijx")
+text = "rather"
+type = 0
+syllables = 2
+rhyme = 166
+alliteration = 30
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_sughi"]
+script = ExtResource("1_tyijx")
+text = "real"
+type = 0
+syllables = 1
+rhyme = 82
+alliteration = 30
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_xr32q"]
+script = ExtResource("1_tyijx")
+text = "scared"
+type = 0
+syllables = 1
+rhyme = 167
+alliteration = 31
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_c7ypk"]
+script = ExtResource("1_tyijx")
+text = "see"
+type = 0
+syllables = 1
+rhyme = 54
+alliteration = 31
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_43oil"]
+script = ExtResource("1_tyijx")
+text = "seem"
+type = 0
+syllables = 1
+rhyme = 168
+alliteration = 31
+assonance = 11
+group = 0
+
+[sub_resource type="Resource" id="Resource_5jpaa"]
+script = ExtResource("1_tyijx")
+text = "shoes"
+type = 0
+syllables = 1
+rhyme = 22
+alliteration = 32
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_uh3xw"]
+script = ExtResource("1_tyijx")
+text = "smarter"
+type = 0
+syllables = 2
+rhyme = 81
+alliteration = 31
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_smad8"]
+script = ExtResource("1_tyijx")
+text = "smell"
+type = 0
+syllables = 1
+rhyme = 29
+alliteration = 31
+assonance = 7
+group = 0
+
+[sub_resource type="Resource" id="Resource_mc5pd"]
+script = ExtResource("1_tyijx")
+text = "so"
+type = 0
+syllables = 1
+rhyme = 88
+alliteration = 31
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_tt048"]
+script = ExtResource("1_tyijx")
+text = "take"
+type = 0
+syllables = 1
+rhyme = 117
+alliteration = 33
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_4m8ry"]
+script = ExtResource("1_tyijx")
+text = "taking"
+type = 0
+syllables = 2
+rhyme = 170
+alliteration = 33
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_f0s13"]
+script = ExtResource("1_tyijx")
+text = "than"
+type = 0
+syllables = 1
+rhyme = 12
+alliteration = 19
+assonance = 2
+group = 0
+
+[sub_resource type="Resource" id="Resource_illyb"]
+script = ExtResource("1_tyijx")
+text = "the"
+type = 0
+syllables = 1
+rhyme = 119
+alliteration = 19
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_psu1b"]
+script = ExtResource("1_tyijx")
+text = "they"
+type = 0
+syllables = 1
+rhyme = 98
+alliteration = 19
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_7m5g8"]
+script = ExtResource("1_tyijx")
+text = "they'd"
+type = 0
+syllables = 1
+rhyme = 172
+alliteration = 19
+assonance = 9
+group = 0
+
+[sub_resource type="Resource" id="Resource_ax3pu"]
+script = ExtResource("1_tyijx")
+text = "this"
+type = 0
+syllables = 1
+rhyme = 173
+alliteration = 19
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_0yfpr"]
+script = ExtResource("1_tyijx")
+text = "those"
+type = 0
+syllables = 1
+rhyme = 56
+alliteration = 19
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_32h5n"]
+script = ExtResource("1_tyijx")
+text = "thought"
+type = 0
+syllables = 1
+rhyme = 174
+alliteration = 34
+assonance = 4
+group = 0
+
+[sub_resource type="Resource" id="Resource_0upbd"]
+script = ExtResource("1_tyijx")
+text = "to"
+type = 0
+syllables = 1
+rhyme = 129
+alliteration = 33
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_7tsmn"]
+script = ExtResource("1_tyijx")
+text = "tomb"
+type = 0
+syllables = 1
+rhyme = 175
+alliteration = 33
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_qmk23"]
+script = ExtResource("1_tyijx")
+text = "up"
+type = 0
+syllables = 1
+rhyme = 176
+alliteration = 3
+assonance = 3
+group = 0
+
+[sub_resource type="Resource" id="Resource_fm467"]
+script = ExtResource("1_tyijx")
+text = "version"
+type = 0
+syllables = 2
+rhyme = 177
+alliteration = 35
+assonance = 8
+group = 0
+
+[sub_resource type="Resource" id="Resource_i8eml"]
+script = ExtResource("1_tyijx")
+text = "wanna"
+type = 0
+syllables = 2
+rhyme = 178
+alliteration = 36
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_7ptns"]
+script = ExtResource("1_tyijx")
+text = "want"
+type = 0
+syllables = 1
+rhyme = 179
+alliteration = 36
+assonance = 1
+group = 0
+
+[sub_resource type="Resource" id="Resource_2nnun"]
+script = ExtResource("1_tyijx")
+text = "with"
+type = 0
+syllables = 1
+rhyme = 180
+alliteration = 36
+assonance = 10
+group = 0
+
+[sub_resource type="Resource" id="Resource_v4hxw"]
+script = ExtResource("1_tyijx")
+text = "won't"
+type = 0
+syllables = 1
+rhyme = 43
+alliteration = 36
+assonance = 12
+group = 0
+
+[sub_resource type="Resource" id="Resource_4t5mg"]
+script = ExtResource("1_tyijx")
+text = "write"
+type = 0
+syllables = 1
+rhyme = 128
+alliteration = 30
+assonance = 6
+group = 0
+
+[sub_resource type="Resource" id="Resource_5m1ng"]
+script = ExtResource("1_tyijx")
+text = "you"
+type = 0
+syllables = 1
+rhyme = 129
+alliteration = 37
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_lgste"]
+script = ExtResource("1_tyijx")
+text = "you'd"
+type = 0
+syllables = 1
+rhyme = 182
+alliteration = 37
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_uv2qn"]
+script = ExtResource("1_tyijx")
+text = "you'll"
+type = 0
+syllables = 1
+rhyme = 57
+alliteration = 37
+assonance = 15
+group = 0
+
+[sub_resource type="Resource" id="Resource_6het5"]
+script = ExtResource("1_tyijx")
+text = "you're"
+type = 0
+syllables = 1
+rhyme = 130
+alliteration = 37
+assonance = 14
+group = 0
+
+[sub_resource type="Resource" id="Resource_evf1g"]
+script = ExtResource("1_tyijx")
+text = "your"
+type = 0
+syllables = 1
+rhyme = 131
+alliteration = 37
+assonance = 4
+group = 0
+
+[resource]
+script = ExtResource("2_2677q")
+list = Array[ExtResource("1_tyijx")]([SubResource("Resource_koert"), SubResource("Resource_j04qj"), SubResource("Resource_yuk82"), SubResource("Resource_d44cp"), SubResource("Resource_2foj1"), SubResource("Resource_ks6gb"), SubResource("Resource_ny0hc"), SubResource("Resource_uppoa"), SubResource("Resource_o8brl"), SubResource("Resource_g4br5"), SubResource("Resource_5syui"), SubResource("Resource_f7v28"), SubResource("Resource_rlsvv"), SubResource("Resource_tnm5c"), SubResource("Resource_3v32v"), SubResource("Resource_loery"), SubResource("Resource_ymsl6"), SubResource("Resource_jp5sm"), SubResource("Resource_txvn0"), SubResource("Resource_yjxs3"), SubResource("Resource_5ke8a"), SubResource("Resource_amp5c"), SubResource("Resource_la5qe"), SubResource("Resource_o4hb8"), SubResource("Resource_f5gu4"), SubResource("Resource_0qgdb"), SubResource("Resource_8y14s"), SubResource("Resource_7tsyw"), SubResource("Resource_sslu3"), SubResource("Resource_tr6w3"), SubResource("Resource_wvftn"), SubResource("Resource_ac8wx"), SubResource("Resource_dn08j"), SubResource("Resource_w3pgo"), SubResource("Resource_m510a"), SubResource("Resource_wojka"), SubResource("Resource_c53ah"), SubResource("Resource_2xxel"), SubResource("Resource_qxslk"), SubResource("Resource_yux3c"), SubResource("Resource_blvce"), SubResource("Resource_13w0r"), SubResource("Resource_g7k7p"), SubResource("Resource_j87bj"), SubResource("Resource_pbtep"), SubResource("Resource_odsa7"), SubResource("Resource_unvqv"), SubResource("Resource_bloqx"), SubResource("Resource_mynr0"), SubResource("Resource_iebrk"), SubResource("Resource_ahyji"), SubResource("Resource_3ba1j"), SubResource("Resource_dyun7"), SubResource("Resource_cimau"), SubResource("Resource_da7y0"), SubResource("Resource_0qaw3"), SubResource("Resource_abnpl"), SubResource("Resource_hq0of"), SubResource("Resource_0hhk4"), SubResource("Resource_he3ul"), SubResource("Resource_j7w6y"), SubResource("Resource_6chjc"), SubResource("Resource_vnf0d"), SubResource("Resource_rm4h1"), SubResource("Resource_y4aq4"), SubResource("Resource_jeruv"), SubResource("Resource_vu0xi"), SubResource("Resource_8juta"), SubResource("Resource_c0gen"), SubResource("Resource_w6jib"), SubResource("Resource_dvk1v"), SubResource("Resource_73g63"), SubResource("Resource_tfw3a"), SubResource("Resource_vfatk"), SubResource("Resource_d3aom"), SubResource("Resource_525d3"), SubResource("Resource_rqrne"), SubResource("Resource_trfiq"), SubResource("Resource_tt82s"), SubResource("Resource_emryq"), SubResource("Resource_gk5sr"), SubResource("Resource_7642h"), SubResource("Resource_7uors"), SubResource("Resource_orunw"), SubResource("Resource_ja7vx"), SubResource("Resource_sughi"), SubResource("Resource_xr32q"), SubResource("Resource_c7ypk"), SubResource("Resource_43oil"), SubResource("Resource_5jpaa"), SubResource("Resource_uh3xw"), SubResource("Resource_smad8"), SubResource("Resource_mc5pd"), SubResource("Resource_tt048"), SubResource("Resource_4m8ry"), SubResource("Resource_f0s13"), SubResource("Resource_illyb"), SubResource("Resource_psu1b"), SubResource("Resource_7m5g8"), SubResource("Resource_ax3pu"), SubResource("Resource_0yfpr"), SubResource("Resource_32h5n"), SubResource("Resource_0upbd"), SubResource("Resource_7tsmn"), SubResource("Resource_qmk23"), SubResource("Resource_fm467"), SubResource("Resource_i8eml"), SubResource("Resource_7ptns"), SubResource("Resource_2nnun"), SubResource("Resource_v4hxw"), SubResource("Resource_4t5mg"), SubResource("Resource_5m1ng"), SubResource("Resource_lgste"), SubResource("Resource_uv2qn"), SubResource("Resource_6het5"), SubResource("Resource_evf1g")])
