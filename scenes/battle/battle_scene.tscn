@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c83bxdcjre7ye"]
+[gd_scene load_steps=37 format=3 uid="uid://c83bxdcjre7ye"]
 
 [ext_resource type="PackedScene" uid="uid://vowoply3lfex" path="res://scenes/battle/player/player.tscn" id="1_5w4lb"]
 [ext_resource type="Script" path="res://scenes/battle/battle_scene.gd" id="1_kup78"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://scenes/battle/vs.gd" id="13_2obuc"]
 [ext_resource type="AudioStream" uid="uid://6elhexuqnu2d" path="res://assets/sfx/bout/bout_start_bot.ogg" id="13_qbqa1"]
 [ext_resource type="AudioStream" uid="uid://ckv65cj0h4eg5" path="res://assets/sfx/bout/1_bot.ogg" id="14_io8ye"]
+[ext_resource type="Texture2D" uid="uid://dyjj6v8j2qlul" path="res://assets/gui/Instructions4.png" id="15_a36vr"]
 [ext_resource type="AudioStream" uid="uid://cbmkaw1o6s06c" path="res://assets/sfx/bout/2_bot.ogg" id="15_yocr8"]
 [ext_resource type="AudioStream" uid="uid://cilejye8atanw" path="res://assets/sfx/bout/3_bot.ogg" id="16_u447f"]
 [ext_resource type="AudioStream" uid="uid://c5i5orag78o" path="res://assets/sfx/bout/4_bot.ogg" id="17_fvdrb"]
@@ -116,7 +117,7 @@ vertical_alignment = 1
 
 [node name="Instructions" parent="." instance=ExtResource("25_ouomb")]
 visible = false
-instructions = Array[Texture2D]([ExtResource("10_w7f7r"), ExtResource("11_1o5gf"), ExtResource("12_ncrq2")])
+instructions = Array[Texture2D]([ExtResource("10_w7f7r"), ExtResource("11_1o5gf"), ExtResource("12_ncrq2"), ExtResource("15_a36vr")])
 
 [node name="Audio" type="Node" parent="."]
 

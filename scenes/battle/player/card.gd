@@ -83,7 +83,7 @@ func create(content_) -> void:
 		
 		type_labels[0].text = Word.Group.keys()[content_.group]
 		type_labels[1].text = Word.Type.keys()[Word.Type.values().find(content_.type)]
-		type_labels[2].text = "-%s" % [Word.Rhyme.keys()[content_.rhyme]]
+		type_labels[2].text = "-%s" % [Word.RhymeRef[Word.Rhyme.keys()[content_.rhyme]]]
 		
 	base_BBCode_text = base_BBCode_text % [color, font.resource_path, size, "%s"]
 	content = content_
@@ -99,7 +99,6 @@ func update_text():
 		text = shake_BBCode_text % text
 	
 	if content is Phrase:
-		print(content.text)
 		var blanks_ = []
 		blanks_.resize(content.blanks.size())
 		blanks_.fill(blank_BBCode_text)

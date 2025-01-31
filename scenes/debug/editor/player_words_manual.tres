@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=29 format=3]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=29 format=3 uid="uid://nuvvc6qs4xfc"]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_57fh6"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_cs10t"]
@@ -101,7 +101,7 @@ syllables = 4
 rhyme = 45
 alliteration = 31
 assonance = 12
-group = 0
+group = 9
 
 [sub_resource type="Resource" id="Resource_4nc7k"]
 script = ExtResource("1_57fh6")
@@ -197,68 +197,68 @@ group = 12
 script = ExtResource("1_57fh6")
 text = "wet feet"
 type = 1
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+syllables = 2
+rhyme = 30
+alliteration = 36
+assonance = 7
+group = 2
 
 [sub_resource type="Resource" id="Resource_rv8vb"]
 script = ExtResource("1_57fh6")
 text = "willy-nilly"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 105
+alliteration = 36
+assonance = 10
+group = 2
 
 [sub_resource type="Resource" id="Resource_7yl7l"]
 script = ExtResource("1_57fh6")
 text = "cooky"
 type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+syllables = 2
+rhyme = 113
+alliteration = 24
+assonance = 14
+group = 2
 
 [sub_resource type="Resource" id="Resource_83tpy"]
 script = ExtResource("1_57fh6")
 text = "the man"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 12
+alliteration = 34
+assonance = 14
+group = 18
 
 [sub_resource type="Resource" id="Resource_6k545"]
 script = ExtResource("1_57fh6")
 text = "white collar criminal"
 type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+syllables = 5
+rhyme = 37
+alliteration = 36
+assonance = 10
+group = 4
 
 [sub_resource type="Resource" id="Resource_viwh0"]
 script = ExtResource("1_57fh6")
 text = "smoked"
 type = 2
 syllables = 1
-rhyme = 0
+rhyme = 143
 alliteration = 31
-assonance = 0
-group = 11
+assonance = 12
+group = 14
 
 [sub_resource type="Resource" id="Resource_wgpxd"]
 script = ExtResource("1_57fh6")
 text = "brain"
 type = 1
 syllables = 1
-rhyme = 0
+rhyme = 97
 alliteration = 16
 assonance = 6
 group = 12

@@ -50,16 +50,13 @@ func decompose_bar(bar: VerseBar):
 	var strings = (bar.phrase.text).split(" ")
 	var words: Array[Word] = [] 
 	for string in strings:
-		if string == "?" or string == "," or string == "." or string == "!" or string == "%s":
-			continue
 		var word = Dict.fetch(string)
 		if word == null:
-			word = Dict.fetch("by")
+			continue
 		words.append(word)
 	words.append_array(bar.words)
 	
 	var sounds : Array[AudioStream] = []
-	print(words)
 	for word in words:
 		for s in word.syllables:
 				sounds.append(data.voice.pick_random())

@@ -56,6 +56,6 @@ pitch = 1.0
 pitch_variation = 0.05
 phrase_deck = ExtResource("2_etp67")
 word_deck = ExtResource("4_ivd52")
-phrase_size = 30
+phrase_size = 8
 word_size = 8
 discard_count = 8

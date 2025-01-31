@@ -69,6 +69,7 @@ var phrase_set : Array[Phrase] = [
 	Phrase.new("you can't even %s",                                 [Blank.new(2, Word.Type.VERB)]),
 	Phrase.new("you cannot %s me",                                  [Blank.new(1, Word.Type.VERB)]),
 	Phrase.new("you end up with a %s",                              [Blank.new(2, Word.Type.NOUN)]),
+	Phrase.new("smoked by the %s",                                  [Blank.new(2, Word.Type.NOUN)]),
 ]
 
 var word_set : Array[StringName] = [
@@ -310,7 +311,6 @@ var word_set : Array[StringName] = [
 	"debtor",
 	"die",
 	"discord",
-	"drake",
 	"flake",
 	"flop",
 	"fly",
@@ -367,16 +367,17 @@ var word_set : Array[StringName] = [
 var groups = ["phrase_words", "phrase_words_manual", "player_words", "player_words_manual"]
 
 func _ready() -> void:
+	pass
 	# var words : Array[Word] = []
 	# for list in groups:
-	#	var debug_list = load("res://scenes/debug/editor/%s.tres" % [list])
+	# 	var debug_list = load("res://scenes/debug/editor/%s.tres" % [list])
 	#	words.append_array(debug_list.list)
 	# var dict = DictData.new(words)
 	# ResourceSaver.save(dict, "res://data/dictionary.tres")
-	var phrase_data = PhraseSet.new(phrase_set)
-	ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
-	var word_data = WordSet.new(word_set)
-	ResourceSaver.save(word_data, "res://data/base_words.tres")
+	#var phrase_data = PhraseSet.new(phrase_set)
+	#ResourceSaver.save(phrase_data, "res://data/base_phrases.tres")
+	#var word_data = WordSet.new(word_set)
+	#ResourceSaver.save(word_data, "res://data/base_words.tres")
 
 
 func _find_amounts_rhyme(words: Array[Word]):

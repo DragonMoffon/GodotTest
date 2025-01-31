@@ -32,11 +32,11 @@ var condition_algo = {
 
 var condition : Conditions = Conditions.NONE
 var syllable_factor : float = 2.3
-var alliteration_factor : float = 6.3
-var assonance_factor : float = 7.1
-var type_factor : float = 5.67
-var topic_factor : float = 8.4
-var internal_rhyme_factor : float = 7.5
+var alliteration_factor : float = 4.3
+var assonance_factor : float = 5.1
+var type_factor : float = 4.67
+var topic_factor : float = 6.4
+var internal_rhyme_factor : float = 6.5
 var rhyme_factor : float = 1.0
 
 func get_verse_rhyme_group(verse: Verse) -> Array[int]:
