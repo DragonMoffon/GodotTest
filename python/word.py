@@ -487,14 +487,14 @@ def main():
     # print("\n".join(f"  {p}," for p in vowels))
 
     # string = "\t"+"\n\t".join(f"\"{s.lower()}\"," for s in sorted(word_set))
-    print(wtp["percent"])
+    # print(wtp["percent"])
     # print(string)
 
-    # while True:
-    #     word = input(":")
-    #     if word not in wtp:
-    #         continue
-    #     print(wtp[word])
+    while True:
+        word = input(":")
+        if word not in wtp:
+            continue
+        print(wtp[word])
 
 
 

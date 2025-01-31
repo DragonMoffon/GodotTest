@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=29 format=3 uid="uid://nuvvc6qs4xfc"]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=29 format=3]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_57fh6"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_cs10t"]
@@ -66,137 +66,137 @@ group = 11
 [sub_resource type="Resource" id="Resource_wjxn0"]
 script = ExtResource("1_57fh6")
 text = "no cap"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 16
+syllables = 2
+rhyme = 102
+alliteration = 27
+assonance = 2
+group = 1
 
 [sub_resource type="Resource" id="Resource_020yg"]
 script = ExtResource("1_57fh6")
 text = "peeing"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 2
+syllables = 2
+rhyme = 107
+alliteration = 29
+assonance = 11
+group = 10
 
 [sub_resource type="Resource" id="Resource_jrxvy"]
 script = ExtResource("1_57fh6")
 text = "pooping"
 type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+syllables = 2
+rhyme = 107
+alliteration = 29
+assonance = 15
+group = 10
 
 [sub_resource type="Resource" id="Resource_dwpif"]
 script = ExtResource("1_57fh6")
 text = "psychodrama"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
+type = 1
+syllables = 4
+rhyme = 45
+alliteration = 31
+assonance = 12
 group = 0
 
 [sub_resource type="Resource" id="Resource_4nc7k"]
 script = ExtResource("1_57fh6")
 text = "rap sheet"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 30
+alliteration = 30
+assonance = 2
+group = 13
 
 [sub_resource type="Resource" id="Resource_6owm1"]
 script = ExtResource("1_57fh6")
 text = "self-love"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 44
+alliteration = 31
+assonance = 7
+group = 1
 
 [sub_resource type="Resource" id="Resource_7fkh8"]
 script = ExtResource("1_57fh6")
 text = "shmooze"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 2
+syllables = 1
+rhyme = 22
+alliteration = 32
+assonance = 15
+group = 15
 
 [sub_resource type="Resource" id="Resource_a8877"]
 script = ExtResource("1_57fh6")
 text = "silly-billy"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
+type = 1
+syllables = 2
+rhyme = 105
+alliteration = 31
+assonance = 10
 group = 0
 
 [sub_resource type="Resource" id="Resource_d62pk"]
 script = ExtResource("1_57fh6")
 text = "squee"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 2
+syllables = 1
+rhyme = 54
+alliteration = 31
+assonance = 11
+group = 15
 
 [sub_resource type="Resource" id="Resource_3gbbj"]
 script = ExtResource("1_57fh6")
 text = "stepfather "
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 3
+rhyme = 166
+alliteration = 31
+assonance = 1
+group = 4
 
 [sub_resource type="Resource" id="Resource_te4ip"]
 script = ExtResource("1_57fh6")
 text = "sugar mama"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 4
+rhyme = 132
+alliteration = 31
+assonance = 1
+group = 4
 
 [sub_resource type="Resource" id="Resource_utd6m"]
 script = ExtResource("1_57fh6")
 text = "take a seat"
 type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+syllables = 3
+rhyme = 30
+alliteration = 33
+assonance = 9
+group = 15
 
 [sub_resource type="Resource" id="Resource_64v45"]
 script = ExtResource("1_57fh6")
 text = "toilet seat"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 3
+rhyme = 30
+alliteration = 33
+assonance = 13
+group = 12
 
 [sub_resource type="Resource" id="Resource_un8kk"]
 script = ExtResource("1_57fh6")
 text = "wet feet"
-type = 0
+type = 1
 syllables = 0
 rhyme = 0
 alliteration = 0
