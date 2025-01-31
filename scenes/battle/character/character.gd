@@ -47,17 +47,19 @@ func sing_verse(verse: Verse):
 	voice.play()
 	
 func decompose_bar(bar: VerseBar):
-	var strings = (bar.phrase.text % bar.words.map(func(word): return word.text)).split(" ")
+	var strings = (bar.phrase.text).split(" ")
 	var words: Array[Word] = [] 
 	for string in strings:
-		if string == "?":
+		if string == "?" or string == "," or string == "." or string == "!" or string == "%s":
 			continue
 		var word = Dict.fetch(string)
 		if word == null:
 			word = Dict.fetch("by")
 		words.append(word)
+	words.append_array(bar.words)
 	
 	var sounds : Array[AudioStream] = []
+	print(words)
 	for word in words:
 		for s in word.syllables:
 				sounds.append(data.voice.pick_random())

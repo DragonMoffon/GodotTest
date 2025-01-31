@@ -99,6 +99,7 @@ func update_text():
 		text = shake_BBCode_text % text
 	
 	if content is Phrase:
+		print(content.text)
 		var blanks_ = []
 		blanks_.resize(content.blanks.size())
 		blanks_.fill(blank_BBCode_text)

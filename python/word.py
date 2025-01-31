@@ -454,13 +454,13 @@ def main():
 
     incomplete = []
 
-    # fp = open("output.txt", "w+")
-    # sys.stdout = fp
+    #fp = open("output.txt", "w+")
+    #sys.stdout = fp
 
-    # for phrase in phrase_set:
-    #     count = phrase.count("%s")
-    #     blanks = f"[{', '.join(f"{b_str}(1, {t_str}.NONE)" for _ in range(count))}]"
-    #     print(f"    {p_str}(\"{phrase}\",{" " * (max_length - len(phrase))} {blanks}),")
+    #for phrase in phrase_set:
+    #    count = phrase.count("%s")
+    #    blanks = f"[{', '.join(f"{b_str}(1, {t_str}.NONE)" for _ in range(count))}]"
+    #    print(f"    {p_str}(\"{phrase.lower()}\",{" " * (max_length - len(phrase))} {blanks}),")
 
     # for word in every:
     #     word = word.lower()
@@ -487,14 +487,14 @@ def main():
     # print("\n".join(f"  {p}," for p in vowels))
 
     # string = "\t"+"\n\t".join(f"\"{s.lower()}\"," for s in sorted(word_set))
-    #print(wtp["smoked"])
+    print(wtp["percent"])
     # print(string)
 
-    while True:
-        word = input(":")
-        if word not in wtp:
-            continue
-        print(wtp[word])
+    # while True:
+    #     word = input(":")
+    #     if word not in wtp:
+    #         continue
+    #     print(wtp[word])
 
 
 

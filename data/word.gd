@@ -186,7 +186,8 @@ const RhymeRef = {
 	  "AA1_R_N" : "yarn",
 	  "UW1_D" : "you'd",
 	"UW1_P_AH0_D_IH1_R": "stupider",
-	"AO1_Z_IY0_D": "paparazzi'd"
+	"AO1_Z_IY0_D": "paparazzi'd",
+  "EH1_N_T": "end",
 }
 
 enum Type { NONE = 0, NOUN = 1, VERB = 2, ADJ = 4, ADV = 8, OTHER = 16, EXTRA = 32 }
@@ -395,7 +396,8 @@ enum Rhyme {
 	AA1_R_N,
 	UW1_D,
   UW1_P_AH0_D_IH1_R,
-  AO1_Z_IY0_D
+  AO1_Z_IY0_D,
+	EH1_N_T
 }
 
 enum Sounds {

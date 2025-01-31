@@ -1,352 +1,817 @@
-[gd_resource type="Resource" script_class="PhraseSet" load_steps=66 format=3 uid="uid://b8uab5y5uu0vp"]
+[gd_resource type="Resource" script_class="PhraseSet" load_steps=150 format=3 uid="uid://b8uab5y5uu0vp"]
 
-[ext_resource type="Script" path="res://data/phrase.gd" id="1_qe0p0"]
-[ext_resource type="Script" path="res://data/blank.gd" id="2_hidl7"]
-[ext_resource type="Script" path="res://data/phrase_set.gd" id="3_wsbft"]
+[ext_resource type="Script" path="res://data/phrase.gd" id="1_dmk66"]
+[ext_resource type="Script" path="res://data/blank.gd" id="2_0b2fe"]
+[ext_resource type="Script" path="res://data/phrase_set.gd" id="3_aymmh"]
 
-[sub_resource type="Resource" id="Resource_bpauq"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_18axw"]
-script = ExtResource("1_qe0p0")
-text = "you look like a %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_bpauq")])
-
-[sub_resource type="Resource" id="Resource_asy34"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_w5ka4"]
-script = ExtResource("1_qe0p0")
-text = "you smell like a %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_asy34")])
-
-[sub_resource type="Resource" id="Resource_v7fi1"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_jkxuf"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_dqamv"]
-script = ExtResource("1_qe0p0")
-text = "i'd rather be %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_v7fi1")])
+[sub_resource type="Resource" id="Resource_qbjt4"]
+script = ExtResource("1_dmk66")
+text = "are you %s ?"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_jkxuf")])
 
-[sub_resource type="Resource" id="Resource_tdog8"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_wttln"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_uahmh"]
-script = ExtResource("1_qe0p0")
-text = "you're taking the %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_tdog8")])
-
-[sub_resource type="Resource" id="Resource_ji28e"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_15h5r"]
-script = ExtResource("1_qe0p0")
-text = "i'm better than %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_ji28e")])
-
-[sub_resource type="Resource" id="Resource_d2w05"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_2r17c"]
-script = ExtResource("1_qe0p0")
-text = "i'm cooler than %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_d2w05")])
-
-[sub_resource type="Resource" id="Resource_xbtx7"]
-script = ExtResource("2_hidl7")
-syllables = 1
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_typ7t"]
-script = ExtResource("1_qe0p0")
-text = "you're lamer than %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_xbtx7")])
-
-[sub_resource type="Resource" id="Resource_h3s72"]
-script = ExtResource("2_hidl7")
-syllables = 1
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_jj2i2"]
-script = ExtResource("1_qe0p0")
-text = "i'm smarter than %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_h3s72")])
-
-[sub_resource type="Resource" id="Resource_kl8as"]
-script = ExtResource("2_hidl7")
-syllables = 1
-types = 1
-group = 0
-
-[sub_resource type="Resource" id="Resource_kqi5b"]
-script = ExtResource("1_qe0p0")
-text = "you're stupider than %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_kl8as")])
-
-[sub_resource type="Resource" id="Resource_wgi1u"]
-script = ExtResource("2_hidl7")
-syllables = 1
-types = 2
-group = 0
-
-[sub_resource type="Resource" id="Resource_xkhcn"]
-script = ExtResource("1_qe0p0")
-text = "where did you %s ?"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_wgi1u")])
-
-[sub_resource type="Resource" id="Resource_6a55f"]
-script = ExtResource("2_hidl7")
-syllables = 1
-types = 4
-group = 0
-
-[sub_resource type="Resource" id="Resource_on0ky"]
-script = ExtResource("1_qe0p0")
-text = "why are you %s ?"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_6a55f")])
-
-[sub_resource type="Resource" id="Resource_novdr"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 4
-group = 0
-
-[sub_resource type="Resource" id="Resource_m48sj"]
-script = ExtResource("1_qe0p0")
+[sub_resource type="Resource" id="Resource_egvev"]
+script = ExtResource("1_dmk66")
 text = "stop being %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_novdr")])
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_wttln")])
 
-[sub_resource type="Resource" id="Resource_mkcyp"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_ki2pw"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 2
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_3hxc6"]
-script = ExtResource("1_qe0p0")
-text = "i'll %s you for real"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_mkcyp")])
+[sub_resource type="Resource" id="Resource_pkj78"]
+script = ExtResource("1_dmk66")
+text = "i'm cooler than %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_ki2pw")])
 
-[sub_resource type="Resource" id="Resource_vslwo"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_c5hol"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 2
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_3ntgn"]
-script = ExtResource("1_qe0p0")
-text = "you cannot %s me"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_vslwo")])
+[sub_resource type="Resource" id="Resource_b3aif"]
+script = ExtResource("1_dmk66")
+text = "you're fake as hell , you'll only ever be a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_c5hol")])
 
-[sub_resource type="Resource" id="Resource_iwvjy"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_v44u0"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 4
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_wp6be"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_8i541"]
+script = ExtResource("1_dmk66")
+text = "i'm smarter than %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_v44u0")])
+
+[sub_resource type="Resource" id="Resource_4emws"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_tahs8"]
-script = ExtResource("1_qe0p0")
-text = "take a %s %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_iwvjy"), SubResource("Resource_wp6be")])
+[sub_resource type="Resource" id="Resource_c5yej"]
+script = ExtResource("1_dmk66")
+text = "i'll put you in a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_4emws")])
 
-[sub_resource type="Resource" id="Resource_15egf"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 4
-group = 0
-
-[sub_resource type="Resource" id="Resource_hf23m"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 4
-group = 0
-
-[sub_resource type="Resource" id="Resource_vdhwa"]
-script = ExtResource("1_qe0p0")
-text = "you are %s %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_15egf"), SubResource("Resource_hf23m")])
-
-[sub_resource type="Resource" id="Resource_3rkfh"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_52mgq"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_g3c5e"]
-script = ExtResource("1_qe0p0")
-text = "you look like my %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_3rkfh")])
+[sub_resource type="Resource" id="Resource_tmxpy"]
+script = ExtResource("1_dmk66")
+text = "why are you %s ?"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_52mgq")])
 
-[sub_resource type="Resource" id="Resource_gd6v4"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_bn23n"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 4
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_4d8wb"]
-script = ExtResource("1_qe0p0")
-text = "your momma so %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_gd6v4")])
-
-[sub_resource type="Resource" id="Resource_e38u1"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
+[sub_resource type="Resource" id="Resource_3mpek"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_jdiq8"]
-script = ExtResource("1_qe0p0")
-text = "%s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_e38u1")])
+[sub_resource type="Resource" id="Resource_1x6og"]
+script = ExtResource("1_dmk66")
+text = "eat your %s , %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_bn23n"), SubResource("Resource_3mpek")])
 
-[sub_resource type="Resource" id="Resource_yhup1"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 4
+[sub_resource type="Resource" id="Resource_ao8ey"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_nlkak"]
-script = ExtResource("1_qe0p0")
+[sub_resource type="Resource" id="Resource_dkjaw"]
+script = ExtResource("1_dmk66")
 text = "and those shoes ? %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_yhup1")])
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_ao8ey")])
 
-[sub_resource type="Resource" id="Resource_4y067"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_armaq"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_ncc4u"]
-script = ExtResource("1_qe0p0")
-text = "only %s could be your fan"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_4y067")])
-
-[sub_resource type="Resource" id="Resource_6e3i5"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_23b4j"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 2
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_yupt4"]
-script = ExtResource("1_qe0p0")
-text = "you can't even %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_6e3i5")])
+[sub_resource type="Resource" id="Resource_5l4xa"]
+script = ExtResource("1_dmk66")
+text = "you're the love child of %s and %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_armaq"), SubResource("Resource_23b4j")])
 
-[sub_resource type="Resource" id="Resource_e65pu"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_vyqbr"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_wlglg"]
-script = ExtResource("1_qe0p0")
-text = "you couldn't even afford %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_e65pu")])
+[sub_resource type="Resource" id="Resource_32dfm"]
+script = ExtResource("1_dmk66")
+text = "on your tomb , they write %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_vyqbr")])
 
-[sub_resource type="Resource" id="Resource_yxjq7"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
+[sub_resource type="Resource" id="Resource_lfqi7"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_p51k4"]
-script = ExtResource("1_qe0p0")
-text = "you seem like a love child born of %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_yxjq7")])
-
-[sub_resource type="Resource" id="Resource_qc60x"]
-script = ExtResource("2_hidl7")
-syllables = 2
-types = 1
+[sub_resource type="Resource" id="Resource_hyhjl"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_hce5x"]
-script = ExtResource("1_qe0p0")
+[sub_resource type="Resource" id="Resource_fd4kq"]
+script = ExtResource("1_dmk66")
+text = "take a %s and %s it"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_lfqi7"), SubResource("Resource_hyhjl")])
+
+[sub_resource type="Resource" id="Resource_jf3ox"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_b5k5r"]
+script = ExtResource("1_dmk66")
+text = "%s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_jf3ox")])
+
+[sub_resource type="Resource" id="Resource_xxuu5"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_id6v4"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ps6or"]
+script = ExtResource("1_dmk66")
+text = "i'm like %s , you're like %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_xxuu5"), SubResource("Resource_id6v4")])
+
+[sub_resource type="Resource" id="Resource_dcgf5"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_si4yk"]
+script = ExtResource("1_dmk66")
+text = "you're the human version of %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_dcgf5")])
+
+[sub_resource type="Resource" id="Resource_3t8oh"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_l7552"]
+script = ExtResource("1_dmk66")
+text = "you're taking the %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_3t8oh")])
+
+[sub_resource type="Resource" id="Resource_bewwj"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_iwvwd"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_pyoin"]
+script = ExtResource("1_dmk66")
+text = "you are %s %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_bewwj"), SubResource("Resource_iwvwd")])
+
+[sub_resource type="Resource" id="Resource_wb5to"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_kwxmm"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_8s4kn"]
+script = ExtResource("1_dmk66")
+text = "take a %s %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_wb5to"), SubResource("Resource_kwxmm")])
+
+[sub_resource type="Resource" id="Resource_8wqai"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_m2c7q"]
+script = ExtResource("1_dmk66")
+text = "your head looks like a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_8wqai")])
+
+[sub_resource type="Resource" id="Resource_twock"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_lyxt0"]
+script = ExtResource("1_dmk66")
+text = "your haircut look %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_twock")])
+
+[sub_resource type="Resource" id="Resource_s4hx8"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_4egn0"]
+script = ExtResource("1_dmk66")
 text = "i see you drove here in a %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_qc60x")])
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_s4hx8")])
 
-[sub_resource type="Resource" id="Resource_e3o7d"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_m67dh"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_4dlna"]
-script = ExtResource("1_qe0p0")
-text = "you're fake as hell you'll only ever be a %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_e3o7d")])
+[sub_resource type="Resource" id="Resource_7t0bd"]
+script = ExtResource("1_dmk66")
+text = "i'm 100% %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_m67dh")])
 
-[sub_resource type="Resource" id="Resource_w54s7"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_oj8og"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 2
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_80b17"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_g1nat"]
+script = ExtResource("1_dmk66")
+text = "you look like you'd die to a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_oj8og")])
+
+[sub_resource type="Resource" id="Resource_qorqg"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_onxr7"]
-script = ExtResource("1_qe0p0")
+[sub_resource type="Resource" id="Resource_5kam6"]
+script = ExtResource("1_dmk66")
+text = "i'd rather be %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_qorqg")])
+
+[sub_resource type="Resource" id="Resource_apdyf"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_l1oyj"]
+script = ExtResource("1_dmk66")
+text = "you won't be %s anymore"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_apdyf")])
+
+[sub_resource type="Resource" id="Resource_ailqi"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_nah6i"]
+script = ExtResource("1_dmk66")
+text = "you're stupider than %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_ailqi")])
+
+[sub_resource type="Resource" id="Resource_hys72"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ryxoa"]
+script = ExtResource("1_dmk66")
+text = "don't make me %s you"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_hys72")])
+
+[sub_resource type="Resource" id="Resource_wmjam"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_53rp7"]
+script = ExtResource("1_dmk66")
+text = "bet you couldn't even take a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_wmjam")])
+
+[sub_resource type="Resource" id="Resource_66omb"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ooyc1"]
+script = ExtResource("1_dmk66")
+text = "you look like my %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_66omb")])
+
+[sub_resource type="Resource" id="Resource_ysfj0"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_t3iw7"]
+script = ExtResource("1_dmk66")
+text = "i'll end up with a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_ysfj0")])
+
+[sub_resource type="Resource" id="Resource_xkwa7"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_owm8p"]
+script = ExtResource("1_dmk66")
+text = "bet your %s thought you could do better than this"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_xkwa7")])
+
+[sub_resource type="Resource" id="Resource_bgre6"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_purw1"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_2a10e"]
+script = ExtResource("1_dmk66")
+text = "drink a %s , %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_bgre6"), SubResource("Resource_purw1")])
+
+[sub_resource type="Resource" id="Resource_rii7s"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ibjed"]
+script = ExtResource("1_dmk66")
+text = "you'll end up in a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_rii7s")])
+
+[sub_resource type="Resource" id="Resource_p2yxg"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_v6dey"]
+script = ExtResource("1_dmk66")
+text = "no %s ?"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_p2yxg")])
+
+[sub_resource type="Resource" id="Resource_5ixpe"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_tsab6"]
+script = ExtResource("1_dmk66")
+text = "you're scared of %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_5ixpe")])
+
+[sub_resource type="Resource" id="Resource_fdtwe"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_hcvsn"]
+script = ExtResource("1_dmk66")
+text = "i never wanna see you %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_fdtwe")])
+
+[sub_resource type="Resource" id="Resource_sck8y"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_tye3t"]
+script = ExtResource("1_dmk66")
+text = "keep your head up , at least you %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_sck8y")])
+
+[sub_resource type="Resource" id="Resource_osoqi"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_r2hfe"]
+script = ExtResource("1_dmk66")
+text = "i'll take your %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_osoqi")])
+
+[sub_resource type="Resource" id="Resource_hqsa6"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_orpwa"]
+script = ExtResource("1_dmk66")
+text = "you'll never be %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_hqsa6")])
+
+[sub_resource type="Resource" id="Resource_5rx8m"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_wa8oh"]
+script = ExtResource("1_dmk66")
+text = "i see you have a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_5rx8m")])
+
+[sub_resource type="Resource" id="Resource_oty1g"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_es1rx"]
+script = ExtResource("1_dmk66")
+text = "you couldn't even afford %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_oty1g")])
+
+[sub_resource type="Resource" id="Resource_yef5b"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_shly2"]
+script = ExtResource("1_dmk66")
+text = "i'm a lyrical %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_yef5b")])
+
+[sub_resource type="Resource" id="Resource_cnjci"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_7166l"]
+script = ExtResource("1_dmk66")
+text = "only %s could be your fan"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_cnjci")])
+
+[sub_resource type="Resource" id="Resource_mml8q"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_gee3j"]
+script = ExtResource("1_dmk66")
+text = "your momma so %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_mml8q")])
+
+[sub_resource type="Resource" id="Resource_05won"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ejybw"]
+script = ExtResource("1_dmk66")
+text = "you make me wanna %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_05won")])
+
+[sub_resource type="Resource" id="Resource_o0qwo"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_0v7p0"]
+script = ExtResource("1_dmk66")
+text = "you don't want to see me %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_o0qwo")])
+
+[sub_resource type="Resource" id="Resource_bu564"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_pu4vc"]
+script = ExtResource("1_dmk66")
+text = "you look like a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_bu564")])
+
+[sub_resource type="Resource" id="Resource_5fhsw"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_mcocq"]
+script = ExtResource("1_dmk66")
+text = "you're 100% %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_5fhsw")])
+
+[sub_resource type="Resource" id="Resource_fp8cy"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_025yh"]
+script = ExtResource("1_dmk66")
+text = "you're lamer than %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_fp8cy")])
+
+[sub_resource type="Resource" id="Resource_cfowh"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_ijlep"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_fyye4"]
+script = ExtResource("1_dmk66")
 text = "you %s like a %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_w54s7"), SubResource("Resource_80b17")])
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_cfowh"), SubResource("Resource_ijlep")])
 
-[sub_resource type="Resource" id="Resource_rdvxu"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_pvosl"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_u31kv"]
-script = ExtResource("1_qe0p0")
-text = "smoked by the %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_rdvxu")])
+[sub_resource type="Resource" id="Resource_vtbsc"]
+script = ExtResource("1_dmk66")
+text = "you smell like a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_pvosl")])
 
-[sub_resource type="Resource" id="Resource_c7b8s"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_0nsss"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_3lmm8"]
-script = ExtResource("2_hidl7")
+[sub_resource type="Resource" id="Resource_qh1e1"]
+script = ExtResource("1_dmk66")
+text = "if you had goons , they'd all be %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_0nsss")])
+
+[sub_resource type="Resource" id="Resource_jf84b"]
+script = ExtResource("2_0b2fe")
 syllables = 1
-types = 1
+types = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_w244k"]
-script = ExtResource("1_qe0p0")
-text = "fuck %s all my homies hate %s"
-blanks = Array[ExtResource("2_hidl7")]([SubResource("Resource_c7b8s"), SubResource("Resource_3lmm8")])
+[sub_resource type="Resource" id="Resource_6owm8"]
+script = ExtResource("1_dmk66")
+text = "so broke , so %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_jf84b")])
+
+[sub_resource type="Resource" id="Resource_7wqty"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_7urw7"]
+script = ExtResource("1_dmk66")
+text = "i'll %s you for real"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_7wqty")])
+
+[sub_resource type="Resource" id="Resource_64qpv"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_y57gf"]
+script = ExtResource("1_dmk66")
+text = "i'll always be %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_64qpv")])
+
+[sub_resource type="Resource" id="Resource_vlt7a"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_4vjwx"]
+script = ExtResource("1_dmk66")
+text = "i'm better than %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_vlt7a")])
+
+[sub_resource type="Resource" id="Resource_pvr76"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_rldsx"]
+script = ExtResource("1_dmk66")
+text = "you're like a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_pvr76")])
+
+[sub_resource type="Resource" id="Resource_gdokd"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_dcogr"]
+script = ExtResource("1_dmk66")
+text = "i'm %s you for real"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_gdokd")])
+
+[sub_resource type="Resource" id="Resource_opgty"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_hrsq2"]
+script = ExtResource("1_dmk66")
+text = "the paparazzi'd call you %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_opgty")])
+
+[sub_resource type="Resource" id="Resource_w4xvv"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_aue1m"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_1nw5q"]
+script = ExtResource("1_dmk66")
+text = "your %s is a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_w4xvv"), SubResource("Resource_aue1m")])
+
+[sub_resource type="Resource" id="Resource_40oob"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_2e8rv"]
+script = ExtResource("1_dmk66")
+text = "you seem a love child born of %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_40oob")])
+
+[sub_resource type="Resource" id="Resource_tv6vp"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_l05dt"]
+script = ExtResource("1_dmk66")
+text = "eat my %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_tv6vp")])
+
+[sub_resource type="Resource" id="Resource_rw8xi"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_8k2u5"]
+script = ExtResource("1_dmk66")
+text = "where did you %s ?"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_rw8xi")])
+
+[sub_resource type="Resource" id="Resource_l076d"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_8683i"]
+script = ExtResource("1_dmk66")
+text = "i'll give you a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_l076d")])
+
+[sub_resource type="Resource" id="Resource_oclwv"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_mu7km"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_7tv50"]
+script = ExtResource("1_dmk66")
+text = "you're like a %s , %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_oclwv"), SubResource("Resource_mu7km")])
+
+[sub_resource type="Resource" id="Resource_oge6l"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_j2dad"]
+script = ExtResource("1_dmk66")
+text = "you can't even %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_oge6l")])
+
+[sub_resource type="Resource" id="Resource_b6v12"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_1wc43"]
+script = ExtResource("1_dmk66")
+text = "you cannot %s me"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_b6v12")])
+
+[sub_resource type="Resource" id="Resource_70e0g"]
+script = ExtResource("2_0b2fe")
+syllables = 1
+types = 0
+group = 0
+
+[sub_resource type="Resource" id="Resource_rfqsc"]
+script = ExtResource("1_dmk66")
+text = "you end up with a %s"
+blanks = Array[ExtResource("2_0b2fe")]([SubResource("Resource_70e0g")])
 
 [resource]
-script = ExtResource("3_wsbft")
-phrases = Array[ExtResource("1_qe0p0")]([SubResource("Resource_18axw"), SubResource("Resource_w5ka4"), SubResource("Resource_dqamv"), SubResource("Resource_uahmh"), SubResource("Resource_15h5r"), SubResource("Resource_2r17c"), SubResource("Resource_typ7t"), SubResource("Resource_jj2i2"), SubResource("Resource_kqi5b"), SubResource("Resource_xkhcn"), SubResource("Resource_on0ky"), SubResource("Resource_m48sj"), SubResource("Resource_3hxc6"), SubResource("Resource_3ntgn"), SubResource("Resource_tahs8"), SubResource("Resource_vdhwa"), SubResource("Resource_g3c5e"), SubResource("Resource_4d8wb"), SubResource("Resource_jdiq8"), SubResource("Resource_nlkak"), SubResource("Resource_ncc4u"), SubResource("Resource_yupt4"), SubResource("Resource_wlglg"), SubResource("Resource_p51k4"), SubResource("Resource_hce5x"), SubResource("Resource_4dlna"), SubResource("Resource_onxr7"), SubResource("Resource_u31kv"), SubResource("Resource_w244k")])
+script = ExtResource("3_aymmh")
+phrases = Array[ExtResource("1_dmk66")]([SubResource("Resource_qbjt4"), SubResource("Resource_egvev"), SubResource("Resource_pkj78"), SubResource("Resource_b3aif"), SubResource("Resource_8i541"), SubResource("Resource_c5yej"), SubResource("Resource_tmxpy"), SubResource("Resource_1x6og"), SubResource("Resource_dkjaw"), SubResource("Resource_5l4xa"), SubResource("Resource_32dfm"), SubResource("Resource_fd4kq"), SubResource("Resource_b5k5r"), SubResource("Resource_ps6or"), SubResource("Resource_si4yk"), SubResource("Resource_l7552"), SubResource("Resource_pyoin"), SubResource("Resource_8s4kn"), SubResource("Resource_m2c7q"), SubResource("Resource_lyxt0"), SubResource("Resource_4egn0"), SubResource("Resource_7t0bd"), SubResource("Resource_g1nat"), SubResource("Resource_5kam6"), SubResource("Resource_l1oyj"), SubResource("Resource_nah6i"), SubResource("Resource_ryxoa"), SubResource("Resource_53rp7"), SubResource("Resource_ooyc1"), SubResource("Resource_t3iw7"), SubResource("Resource_owm8p"), SubResource("Resource_2a10e"), SubResource("Resource_ibjed"), SubResource("Resource_v6dey"), SubResource("Resource_tsab6"), SubResource("Resource_hcvsn"), SubResource("Resource_tye3t"), SubResource("Resource_r2hfe"), SubResource("Resource_orpwa"), SubResource("Resource_wa8oh"), SubResource("Resource_es1rx"), SubResource("Resource_shly2"), SubResource("Resource_7166l"), SubResource("Resource_gee3j"), SubResource("Resource_ejybw"), SubResource("Resource_0v7p0"), SubResource("Resource_pu4vc"), SubResource("Resource_mcocq"), SubResource("Resource_025yh"), SubResource("Resource_fyye4"), SubResource("Resource_vtbsc"), SubResource("Resource_qh1e1"), SubResource("Resource_6owm8"), SubResource("Resource_7urw7"), SubResource("Resource_y57gf"), SubResource("Resource_4vjwx"), SubResource("Resource_rldsx"), SubResource("Resource_dcogr"), SubResource("Resource_hrsq2"), SubResource("Resource_1nw5q"), SubResource("Resource_2e8rv"), SubResource("Resource_l05dt"), SubResource("Resource_8k2u5"), SubResource("Resource_8683i"), SubResource("Resource_7tv50"), SubResource("Resource_j2dad"), SubResource("Resource_1wc43"), SubResource("Resource_rfqsc")])

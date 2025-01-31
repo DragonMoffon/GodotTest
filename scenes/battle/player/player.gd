@@ -30,6 +30,8 @@ var disabled : bool = false
 var player_data: Character
 
 var discards: int = 0
+
+var word_source: Array[Word] = []
 var word_pool: Array[Word] = []
 var phrase_pool: Array[Phrase] = []
 var verses: Array[Verse] = []
@@ -37,7 +39,19 @@ var verses: Array[Verse] = []
 func set_player(data : Character):
 	player_data = data
 	
-	word_pool = data.word_deck.words.duplicate()
+	var rhyme_mapping = {}
+	for word in data.word_deck.words:
+		if word.rhyme not in rhyme_mapping:
+			rhyme_mapping[word.rhyme] = []
+		rhyme_mapping[word.rhyme].append(word)
+	word_source = []	
+	
+	while word_source.size() < 80:
+		var pick = rhyme_mapping.keys().pick_random()
+		word_source.append_array(rhyme_mapping[pick])
+		rhyme_mapping.erase(pick)
+	
+	word_pool = word_source.duplicate()
 	word_pool.shuffle()
 	phrase_pool = data.phrase_deck.phrases.duplicate()
 	phrase_pool.shuffle()
@@ -121,14 +135,14 @@ func draw_words(count: int):
 	if count > word_pool.size():
 		var sub = word_pool.size()
 		draw_words(sub)
-		word_pool = player_data.word_deck.words.duplicate()
+		word_pool = word_source.duplicate()
 		word_pool.shuffle()
 		draw_words(count - sub)
 		return
 	word_hand.draw_cards(word_pool.slice(0, count))
 	word_pool = word_pool.slice(count)
 	if word_pool.size() == 0:
-		word_pool = player_data.word_deck.words.duplicate()
+		word_pool = word_source.duplicate()
 		word_pool.shuffle()
 
 func draw_phrase():
