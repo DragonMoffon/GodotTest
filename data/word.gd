@@ -209,7 +209,9 @@ enum Group {
 	VIOLENCE,
 	ACTION,
 	QUESTION,
-	ANIMAL
+	ANIMAL,
+	CONCEPT,
+	OTHER
 }
 enum Rhyme {
 	NONE,

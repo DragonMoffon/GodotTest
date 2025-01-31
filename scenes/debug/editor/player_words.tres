@@ -241,7 +241,7 @@ syllables = 1
 rhyme = 25
 alliteration = 16
 assonance = 12
-group = 0
+group = 3
 
 [sub_resource type="Resource" id="Resource_ifmhs"]
 script = ExtResource("1_vq3su")
