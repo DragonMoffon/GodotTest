@@ -51,6 +51,7 @@ phonemes = ['NONE', 'AA', 'AE', 'AH', 'AO', 'AW', 'AY', 'EH', 'ER', 'EY', 'IH', 
 # ZH      seizure S IY ZH ER
 
 word_set = {
+
 "Truck",
 "Duck",
 "Brick",
@@ -363,6 +364,8 @@ word_set = {
 "Face",
 "Base",
 "Erase",
+"smoked",
+"brain"
 }
 
 phrase_set = {
@@ -439,12 +442,16 @@ phrase_set = {
 # words =  list(word.lower() for word in word_set.union( set(" ".join(phrase_set).split(" ")) ).difference( {"?", ",", ".", " ", "!", "%s", "%si"} ) )
 # words.sort()
 
-phrase = "Word.new"
+# phrase = "Word.new"
+# t_str = "Word.Type"
+# g_str = "Word.Group"
+# r_str = "Word.Rhyme"
+# all_str = "Word.Sounds"
+# ass_str = "Word.Vowels"
+
+p_str = "Phrase.new"
+b_str = "Blank.new"
 t_str = "Word.Type"
-g_str = "Word.Group"
-r_str = "Word.Rhyme"
-all_str = "Word.Sounds"
-ass_str = "Word.Vowels"
 
 def main():
     with open("ptr.json") as fp:
@@ -463,33 +470,34 @@ def main():
 
     every = sorted(words[:] + others[:])
 
+    max_length = max(len(phrase) for phrase in phrase_set)
+
     incomplete = []
 
     fp = open("output.txt", "w+")
     sys.stdout = fp
 
-    for word in every:
-        word = word.lower()
-        if word not in wtp:
-            incomplete.append(word)
-            continue
-        p = wtp[word][0]
-        assonance = [s for s in p.split("_") if "1" in s]
-        if not assonance:
-            assonance = [s for s in p.split("_") if "0" in s]
-        ass = assonance[0].strip("1").strip("0")
-        all = p.split("_")[0].strip("0").strip("1").strip("2")
-        r = ptr[p]
-        if r not in rhyme_ref:
-            rhyme_ref[r] = word
-        s = len(syllabify(p.split("_")))
-        # print(f"    {phrase}(\"{word}\", {t_str}.NONE, {s}, {r_str}.{r}, {all_str}.{all}, {ass_str}.{ass}, {g_str}.NONE),")
+    # for phrase in phrase_set:
+    #     count = phrase.count("%s")
+    #     blanks = f"[{', '.join(f"{b_str}(1, {t_str}.NONE)" for _ in range(count))}]"
+    #     print(f"    {p_str}(\"{phrase}\",{" " * (max_length - len(phrase))} {blanks}),")
 
-    print(wtp['paparazzi'])
-    print(wtp['need'])
-    print(wtp['stupid'])
-    print(wtp['deer'])
-
+    # for word in every:
+    #     word = word.lower()
+    #     if word not in wtp:
+    #         incomplete.append(word)
+    #         continue
+    #     p = wtp[word][0]
+    #     assonance = [s for s in p.split("_") if "1" in s]
+    #     if not assonance:
+    #         assonance = [s for s in p.split("_") if "0" in s]
+    #     ass = assonance[0].strip("1").strip("0")
+    #     all = p.split("_")[0].strip("0").strip("1").strip("2")
+    #     r = ptr[p]
+    #     if r not in rhyme_ref:
+    #         rhyme_ref[r] = word
+    #     s = len(syllabify(p.split("_")))
+    #     # print(f"    {phrase}(\"{word}\", {t_str}.NONE, {s}, {r_str}.{r}, {all_str}.{all}, {ass_str}.{ass}, {g_str}.NONE),")
 
     # print("incomplete words:")
     # print("\n".join(f"{phrase}(\"{word}\", {t_str}.NONE, {0}, {r_str}.NONE, {all_str}.NONE, {ass_str}.NONE, {g_str}.NONE)," for word in incomplete))
@@ -497,6 +505,10 @@ def main():
     # print("\n".join(f"      \"{rhyme}\" : \"{ref}\"," for rhyme, ref in rhyme_ref.items()))
     # print("\n".join(f"  {rhyme}" for rhyme in rhyme_ref))
     # print("\n".join(f"  {p}," for p in vowels))
+
+    string = "\t"+"\n\t".join(f"\"{s.lower()}\"," for s in sorted(word_set))
+    #print(wtp["smoked"])
+    print(string)
 
 
 
