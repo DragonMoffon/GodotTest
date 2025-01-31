@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=48 format=3]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=48 format=3 uid="uid://nuvvc6qs4xfc"]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_57fh6"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_cs10t"]

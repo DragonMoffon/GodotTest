@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=119 format=3 uid="uid://gli6rp8kfbd1"]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=119 format=3]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_tyijx"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_2677q"]
@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_koert"]
 script = ExtResource("1_tyijx")
 text = "and"
-type = 0
+type = 16
 syllables = 1
 rhyme = 3
 alliteration = 3
@@ -16,7 +16,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_j04qj"]
 script = ExtResource("1_tyijx")
 text = "are"
-type = 0
+type = 16
 syllables = 1
 rhyme = 6
 alliteration = 1
@@ -26,17 +26,17 @@ group = 0
 [sub_resource type="Resource" id="Resource_yuk82"]
 script = ExtResource("1_tyijx")
 text = "bet"
-type = 0
+type = 2
 syllables = 1
 rhyme = 19
 alliteration = 16
 assonance = 7
-group = 0
+group = 15
 
 [sub_resource type="Resource" id="Resource_d44cp"]
 script = ExtResource("1_tyijx")
 text = "don't"
-type = 0
+type = 16
 syllables = 1
 rhyme = 43
 alliteration = 18
@@ -46,67 +46,67 @@ group = 0
 [sub_resource type="Resource" id="Resource_2foj1"]
 script = ExtResource("1_tyijx")
 text = "drink"
-type = 0
+type = 2
 syllables = 1
 rhyme = 46
 alliteration = 18
 assonance = 10
-group = 0
+group = 11
 
 [sub_resource type="Resource" id="Resource_ks6gb"]
 script = ExtResource("1_tyijx")
 text = "eat"
-type = 0
+type = 2
 syllables = 1
 rhyme = 30
 alliteration = 11
 assonance = 11
-group = 0
+group = 11
 
 [sub_resource type="Resource" id="Resource_ny0hc"]
 script = ExtResource("1_tyijx")
 text = "i"
-type = 0
+type = 1
 syllables = 1
 rhyme = 68
 alliteration = 6
 assonance = 6
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_uppoa"]
 script = ExtResource("1_tyijx")
 text = "i'd"
-type = 0
+type = 2
 syllables = 1
 rhyme = 69
 alliteration = 6
 assonance = 6
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_o8brl"]
 script = ExtResource("1_tyijx")
 text = "i'll"
-type = 0
+type = 2
 syllables = 1
 rhyme = 70
 alliteration = 6
 assonance = 6
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_g4br5"]
 script = ExtResource("1_tyijx")
 text = "i'm"
-type = 0
+type = 2
 syllables = 1
 rhyme = 36
 alliteration = 6
 assonance = 6
-group = 0
+group = 1
 
 [sub_resource type="Resource" id="Resource_5syui"]
 script = ExtResource("1_tyijx")
 text = "if"
-type = 0
+type = 16
 syllables = 1
 rhyme = 71
 alliteration = 10
@@ -116,7 +116,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_f7v28"]
 script = ExtResource("1_tyijx")
 text = "keep"
-type = 0
+type = 2
 syllables = 1
 rhyme = 73
 alliteration = 24
@@ -126,7 +126,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_rlsvv"]
 script = ExtResource("1_tyijx")
 text = "no"
-type = 0
+type = 16
 syllables = 1
 rhyme = 88
 alliteration = 27
@@ -136,7 +136,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_tnm5c"]
 script = ExtResource("1_tyijx")
 text = "on"
-type = 0
+type = 16
 syllables = 1
 rhyme = 90
 alliteration = 1
@@ -146,7 +146,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_3v32v"]
 script = ExtResource("1_tyijx")
 text = "only"
-type = 0
+type = 4
 syllables = 2
 rhyme = 91
 alliteration = 12
@@ -156,7 +156,7 @@ group = 0
 [sub_resource type="Resource" id="Resource_loery"]
 script = ExtResource("1_tyijx")
 text = "so"
-type = 0
+type = 8
 syllables = 1
 rhyme = 88
 alliteration = 31

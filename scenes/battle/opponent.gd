@@ -35,7 +35,7 @@ func refil_maps():
 	for all in Word.Sounds.values():
 		all_map[all] = []
 	ass_map = {}
-	for ass in Word.Vowel.values():
+	for ass in Word.Vowels.values():
 		ass_map[ass] = []
 	
 	for word in word_pool:
