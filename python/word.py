@@ -134,7 +134,6 @@ word_set = {
 "Smelly",
 "Awesome",
 "Greatest",
-"Lamest",
 "Great",
 "Lame",
 "Stupid",
@@ -205,7 +204,6 @@ word_set = {
 "tear",
 "glare",
 "lair",
-"foreswear",
 "boor",
 "lure",
 "pore",
@@ -230,15 +228,11 @@ word_set = {
 "woke",
 "bloke",
 "mild",
-"hog wild",
 "stepchild",
 "ruler",
-"crueller",
-"mewler",
 "white collar criminal",
 "skid",
 "forbid",
-"ferrofluid",
 "Control",
 "Dove",
 "Butt",
@@ -496,7 +490,11 @@ def main():
     #print(wtp["smoked"])
     # print(string)
 
-    print(wtp['bereft'])
+    while True:
+        word = input(":")
+        if word not in wtp:
+            continue
+        print(wtp[word])
 
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DebugWordList" load_steps=35 format=3]
+[gd_resource type="Resource" script_class="DebugWordList" load_steps=29 format=3]
 
 [ext_resource type="Script" path="res://data/word.gd" id="1_57fh6"]
 [ext_resource type="Script" path="res://scenes/debug/editor/word_list.gd" id="2_cs10t"]
@@ -8,7 +8,7 @@ script = ExtResource("1_57fh6")
 text = "back seat"
 type = 1
 syllables = 2
-rhyme = 0
+rhyme = 89
 alliteration = 16
 assonance = 2
 group = 5
@@ -18,60 +18,50 @@ script = ExtResource("1_57fh6")
 text = "bleat"
 type = 0
 syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+rhyme = 89
+alliteration = 16
+assonance = 11
+group = 15
 
 [sub_resource type="Resource" id="Resource_fqmor"]
 script = ExtResource("1_57fh6")
 text = "cash flow"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 88
+alliteration = 24
+assonance = 2
+group = 3
 
 [sub_resource type="Resource" id="Resource_85xm0"]
 script = ExtResource("1_57fh6")
 text = "dead meat"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 89
+alliteration = 18
+assonance = 11
+group = 14
 
 [sub_resource type="Resource" id="Resource_etly2"]
 script = ExtResource("1_57fh6")
 text = "jo-schmo"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
-[sub_resource type="Resource" id="Resource_qffqr"]
-script = ExtResource("1_57fh6")
-text = "lamest"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 88
+alliteration = 23
+assonance = 12
+group = 2
 
 [sub_resource type="Resource" id="Resource_f3pkd"]
 script = ExtResource("1_57fh6")
 text = "meat hooks"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
+type = 1
+syllables = 2
+rhyme = 38
+alliteration = 26
+assonance = 11
+group = 11
 
 [sub_resource type="Resource" id="Resource_wjxn0"]
 script = ExtResource("1_57fh6")
@@ -233,56 +223,6 @@ alliteration = 0
 assonance = 0
 group = 0
 
-[sub_resource type="Resource" id="Resource_s5aab"]
-script = ExtResource("1_57fh6")
-text = "crueller"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
-[sub_resource type="Resource" id="Resource_flfqv"]
-script = ExtResource("1_57fh6")
-text = "ferrofluid"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
-[sub_resource type="Resource" id="Resource_x6aa3"]
-script = ExtResource("1_57fh6")
-text = "foreswear"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
-[sub_resource type="Resource" id="Resource_76k5b"]
-script = ExtResource("1_57fh6")
-text = "hog wild"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
-[sub_resource type="Resource" id="Resource_dly8v"]
-script = ExtResource("1_57fh6")
-text = "mewler"
-type = 0
-syllables = 0
-rhyme = 0
-alliteration = 0
-assonance = 0
-group = 0
-
 [sub_resource type="Resource" id="Resource_83tpy"]
 script = ExtResource("1_57fh6")
 text = "the man"
@@ -325,4 +265,4 @@ group = 12
 
 [resource]
 script = ExtResource("2_cs10t")
-list = Array[ExtResource("1_57fh6")]([SubResource("Resource_rrljf"), SubResource("Resource_83slb"), SubResource("Resource_fqmor"), SubResource("Resource_85xm0"), SubResource("Resource_etly2"), SubResource("Resource_qffqr"), SubResource("Resource_f3pkd"), SubResource("Resource_wjxn0"), SubResource("Resource_020yg"), SubResource("Resource_jrxvy"), SubResource("Resource_dwpif"), SubResource("Resource_4nc7k"), SubResource("Resource_6owm1"), SubResource("Resource_7fkh8"), SubResource("Resource_a8877"), SubResource("Resource_d62pk"), SubResource("Resource_3gbbj"), SubResource("Resource_te4ip"), SubResource("Resource_utd6m"), SubResource("Resource_64v45"), SubResource("Resource_un8kk"), SubResource("Resource_rv8vb"), SubResource("Resource_7yl7l"), SubResource("Resource_s5aab"), SubResource("Resource_flfqv"), SubResource("Resource_x6aa3"), SubResource("Resource_76k5b"), SubResource("Resource_dly8v"), SubResource("Resource_83tpy"), SubResource("Resource_6k545"), SubResource("Resource_viwh0"), SubResource("Resource_wgpxd")])
+list = Array[ExtResource("1_57fh6")]([SubResource("Resource_rrljf"), SubResource("Resource_83slb"), SubResource("Resource_fqmor"), SubResource("Resource_85xm0"), SubResource("Resource_etly2"), SubResource("Resource_f3pkd"), SubResource("Resource_wjxn0"), SubResource("Resource_020yg"), SubResource("Resource_jrxvy"), SubResource("Resource_dwpif"), SubResource("Resource_4nc7k"), SubResource("Resource_6owm1"), SubResource("Resource_7fkh8"), SubResource("Resource_a8877"), SubResource("Resource_d62pk"), SubResource("Resource_3gbbj"), SubResource("Resource_te4ip"), SubResource("Resource_utd6m"), SubResource("Resource_64v45"), SubResource("Resource_un8kk"), SubResource("Resource_rv8vb"), SubResource("Resource_7yl7l"), SubResource("Resource_83tpy"), SubResource("Resource_6k545"), SubResource("Resource_viwh0"), SubResource("Resource_wgpxd")])
