@@ -7,3 +7,5 @@ temp/
 
 # Dev specific
 .vscode/
+.libs/
+__pycache__/

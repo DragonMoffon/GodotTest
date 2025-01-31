@@ -34,8 +34,8 @@ var condition : Conditions
 var syllable_factor : float = 1.0
 var alliteration_factor : float = 4.3
 var assonance_factor : float = 3.8
-var type_factor : float = 0.0
-var topic_factor : float = 0.0
+var type_factor : float = 2.67
+var topic_factor : float = 1.7
 var internal_rhyme_factor : float = 5.5
 var rhyme_factor : float = 1.0
 
@@ -138,7 +138,7 @@ func score_verse(verse: Verse) -> Score:
 		score.group = rhyme_labels[grouping[idx]]
 		total += score.score
 	for topic in relevancy:
-		if topic > 2:
+		if topic >= 2:
 			total += topic * topic_factor
 	total += rhyme_groupings["%s%s%s%s" % grouping] * rhyme_factor
 	return Score.new(int(total), scores)

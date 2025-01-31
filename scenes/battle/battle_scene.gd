@@ -260,7 +260,7 @@ func _on_player_finished_singing() -> void:
 	lyrics.set_score(player_scores[-1])
 	
 	var score = player_scores[-1].total
-	var frac = float(score) / float(battle_data.target_score)
+	var frac = 4 * float(score) / float(battle_data.target_score)
 	if frac <= 0.05:
 		hype_audio.play_level(0)
 	elif frac <= 0.25:
@@ -308,8 +308,8 @@ func _on_finished_callout() -> void:
 func _on_finished_winner() -> void:
 	if not (turn == Turn.PLAYER_WIN or turn == Turn.PLAYER_LOSE):
 		return
-	
-	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self)
+
+	$/root/Main.change_scene(load("res://scenes/end_scene.tscn"), self, 1)
 	
 func _on_instructions_pressed():
 	if turn != Turn.INSTRUCTIONS:

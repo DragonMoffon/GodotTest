@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://xpkjd1a8313t"]
+[gd_scene load_steps=18 format=3 uid="uid://xpkjd1a8313t"]
 
 [ext_resource type="Script" path="res://scenes/battle/player/card.gd" id="1_irm6f"]
 [ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="2_50p13"]
@@ -14,6 +14,38 @@
 [ext_resource type="AudioStream" uid="uid://d1qtqh1dpe0r1" path="res://assets/sfx/HIT_select.ogg" id="7_5nsvl"]
 [ext_resource type="Texture2D" uid="uid://duma7cysyugf1" path="res://assets/gui/TextPatch2Highlight.png" id="7_ge7ji"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pgmd"]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibvwg"]
+font = ExtResource("2_50p13")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_motcf"]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color(1, 0, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnuuc"]
+content_margin_left = 9.0
+content_margin_right = 9.0
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="Card" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_irm6f")
@@ -22,9 +54,9 @@ rate = 5.0
 hovers = Array[AudioStream]([ExtResource("2_q3n6g"), ExtResource("3_ov8fv"), ExtResource("4_jst3x"), ExtResource("5_0jghc"), ExtResource("6_u8gmh")])
 click = Array[AudioStream]([ExtResource("7_5nsvl")])
 phrase_font = ExtResource("2_50p13")
-phrase_size = 20
+phrase_size = 16
 word_font = ExtResource("3_xclhr")
-word_size = 48
+word_size = 32
 inline_font = ExtResource("3_xclhr")
 inline_size = 28
 
@@ -56,26 +88,70 @@ grow_vertical = 2
 pivot_offset = Vector2(135, 25)
 mouse_default_cursor_shape = 2
 
-[node name="Label" type="RichTextLabel" parent="Hover"]
+[node name="Control" type="Control" parent="Hover"]
+anchors_preset = 0
+offset_left = -80.0
+offset_top = 125.0
+offset_right = 180.0
+offset_bottom = 225.0
+rotation = -0.174533
+pivot_offset = Vector2(130, 50)
+mouse_filter = 2
+
+[node name="Label" type="RichTextLabel" parent="Hover/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -77.0
-offset_top = 139.0
-offset_right = 83.0
-offset_bottom = -136.0
+offset_top = 12.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.174533
 pivot_offset = Vector2(162, 60)
 mouse_filter = 2
 bbcode_enabled = true
+text = "[center][color=blac k][font n=\"res://assets/gui/AllRightsReserved.ttf\" s=32]fuck you mf[/font][/color]"
 fit_content = true
 scroll_active = false
 
+[node name="Bwomp" type="HBoxContainer" parent="Hover/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Label1" type="Label" parent="Hover/Control/Bwomp"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pgmd")
+text = "fuck"
+label_settings = SubResource("LabelSettings_ibvwg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Hover/Control/Bwomp"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_motcf")
+text = "fuck"
+label_settings = SubResource("LabelSettings_ibvwg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Hover/Control/Bwomp"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fnuuc")
+text = "fuck"
+label_settings = SubResource("LabelSettings_ibvwg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FlipSound" type="AudioStreamPlayer2D" parent="."]
-volume_db = -10.0
+volume_db = -5.0
 bus = &"SFX"
 
 [connection signal="gui_input" from="Hover" to="." method="_on_gui_input"]

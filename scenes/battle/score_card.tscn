@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_2frke"]
 font = ExtResource("2_owrnv")
-font_size = 60
+font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_2mmcj"]
 font = ExtResource("2_owrnv")
@@ -33,17 +33,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Target" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.490431
-anchor_top = 0.468116
-anchor_right = 0.490431
-anchor_bottom = 0.468116
+anchor_left = 0.425837
+anchor_top = 0.502899
+anchor_right = 0.425837
+anchor_bottom = 0.502899
 offset_left = 77.0
 offset_top = 5.5
 offset_right = 277.0
 offset_bottom = 140.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.493928
+rotation = 0.335103
 label_settings = SubResource("LabelSettings_2frke")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -69,10 +69,10 @@ text = "[right][/right]"
 [node name="Seperator" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.468899
-anchor_top = 0.494203
-anchor_right = 0.4689
-anchor_bottom = 0.494203
+anchor_left = 0.437799
+anchor_top = 0.517391
+anchor_right = 0.437803
+anchor_bottom = 0.517391
 offset_left = 55.0
 offset_top = -120.5
 offset_right = 205.0

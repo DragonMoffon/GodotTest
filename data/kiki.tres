@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://data/character.gd" id="1_afgug"]
 [ext_resource type="SpriteFrames" uid="uid://bqi4mwo47mg14" path="res://data/kiki_animation.tres" id="1_t622k"]
-[ext_resource type="Resource" uid="uid://du7eprb1ws78m" path="res://data/base_phrases.tres" id="2_5xo32"]
+[ext_resource type="Resource" uid="uid://b8uab5y5uu0vp" path="res://data/base_phrases.tres" id="2_5xo32"]
 [ext_resource type="AudioStream" uid="uid://cl5dqjm2oxw2c" path="res://assets/sfx/kiki.ogg" id="2_mxwf5"]
 [ext_resource type="AudioStream" uid="uid://87hiw6y070y4" path="res://assets/sfx/kiki/rhyme/rhyme_1.ogg" id="4_enu51"]
-[ext_resource type="Resource" uid="uid://e874jdlf3w5e" path="res://data/base_words.tres" id="4_qp2t6"]
+[ext_resource type="Resource" uid="uid://difwv1qbgrw8t" path="res://data/base_words.tres" id="4_qp2t6"]
 [ext_resource type="AudioStream" uid="uid://7q43ix78j0qe" path="res://assets/sfx/kiki/rhyme/rhyme_2.ogg" id="5_u0igx"]
 [ext_resource type="AudioStream" uid="uid://ds0xpmy6l8qtt" path="res://assets/sfx/kiki/rhyme/rhyme_3.ogg" id="6_xgphu"]
 [ext_resource type="AudioStream" uid="uid://cqjq1ctw0cpqf" path="res://assets/sfx/kiki/rhyme/rhyme_4.ogg" id="7_ogi77"]

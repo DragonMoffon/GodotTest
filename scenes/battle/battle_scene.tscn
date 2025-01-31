@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://0xafi4choxa8" path="res://scenes/battle/score_card.tscn" id="2_sawi2"]
 [ext_resource type="PackedScene" uid="uid://dfp04b2gnqthc" path="res://scenes/battle/lyrics.tscn" id="4_y614f"]
 [ext_resource type="FontFile" uid="uid://bib8foqwe6yk0" path="res://assets/gui/AllRightsReserved.ttf" id="5_vtqjp"]
+[ext_resource type="Texture2D" uid="uid://c1hwkmav76aqc" path="res://assets/gui/Instructions1.png" id="10_w7f7r"]
 [ext_resource type="Texture2D" uid="uid://dbh8ljxan7kw6" path="res://assets/textures/Background01.png" id="11_0jstl"]
+[ext_resource type="Texture2D" uid="uid://33uqx0smrqde" path="res://assets/gui/Instructions2.png" id="11_1o5gf"]
 [ext_resource type="Script" path="res://scenes/battle/bout.gd" id="12_ahgql"]
+[ext_resource type="Texture2D" uid="uid://dhjn0q2wqs88x" path="res://assets/gui/Instructions3.png" id="12_ncrq2"]
 [ext_resource type="Script" path="res://scenes/battle/vs.gd" id="13_2obuc"]
 [ext_resource type="AudioStream" uid="uid://6elhexuqnu2d" path="res://assets/sfx/bout/bout_start_bot.ogg" id="13_qbqa1"]
 [ext_resource type="AudioStream" uid="uid://ckv65cj0h4eg5" path="res://assets/sfx/bout/1_bot.ogg" id="14_io8ye"]
@@ -22,16 +25,13 @@
 [ext_resource type="AudioStream" uid="uid://2ux5b83hs843" path="res://assets/sfx/versus.ogg" id="23_g7s6g"]
 [ext_resource type="AudioStream" uid="uid://dehjac3lgxl4j" path="res://assets/sfx/wins.ogg" id="24_s2r75"]
 [ext_resource type="PackedScene" uid="uid://ovgkdyqcoylo" path="res://scenes/battle/instructions.tscn" id="25_ouomb"]
-[ext_resource type="Texture2D" uid="uid://dteedhddcx78r" path="res://assets/gui/Arrow1Idle.png" id="26_5g1qg"]
 [ext_resource type="Script" path="res://scenes/battle/hype.gd" id="26_bf4u6"]
-[ext_resource type="Texture2D" uid="uid://c0h8rcm4lpn2m" path="res://assets/textures/deubug.png" id="26_du2au"]
 [ext_resource type="AudioStream" uid="uid://dfwub4byy8cit" path="res://assets/sfx/crowd_bad.ogg" id="27_klimt"]
-[ext_resource type="Texture2D" uid="uid://dpchd4ojt1tdi" path="res://assets/gui/Arrow1Hover.png" id="27_v1baa"]
-[ext_resource type="Texture2D" uid="uid://bw0b4sgb1hnlp" path="res://assets/gui/DeckPatch1.png" id="27_xilmh"]
-[ext_resource type="Texture2D" uid="uid://dxxevbn3vwcp3" path="res://assets/gui/ScoreBackground1.png" id="28_e3o5y"]
 [ext_resource type="AudioStream" uid="uid://cjhs4poxbrrlo" path="res://assets/sfx/crowd_ok.ogg" id="28_v7veo"]
 [ext_resource type="AudioStream" uid="uid://blq6om35s3byb" path="res://assets/sfx/crowd_good.ogg" id="29_3pqwh"]
 [ext_resource type="AudioStream" uid="uid://ds7bus002j4ks" path="res://assets/sfx/crowd_great.ogg" id="30_pw5vo"]
+[ext_resource type="Texture2D" uid="uid://cq3hwv1raks0l" path="res://assets/gui/Continue1Idle.png" id="31_c540c"]
+[ext_resource type="Texture2D" uid="uid://ur6wyu2ue1ie" path="res://assets/gui/Continue1hover.png" id="32_0ei7i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5toyo"]
 font = ExtResource("5_vtqjp")
@@ -104,11 +104,12 @@ vertical_alignment = 1
 
 [node name="Instructions" parent="." instance=ExtResource("25_ouomb")]
 visible = false
-instructions = Array[Texture2D]([ExtResource("26_du2au"), ExtResource("27_xilmh"), ExtResource("28_e3o5y")])
+instructions = Array[Texture2D]([ExtResource("10_w7f7r"), ExtResource("11_1o5gf"), ExtResource("12_ncrq2")])
 
 [node name="Audio" type="Node" parent="."]
 
 [node name="Bout" type="AudioStreamPlayer2D" parent="Audio"]
+volume_db = 6.0
 panning_strength = 0.0
 bus = &"Voice"
 script = ExtResource("12_ahgql")
@@ -116,7 +117,7 @@ start = ExtResource("13_qbqa1")
 numbers = Array[AudioStream]([ExtResource("14_io8ye"), ExtResource("15_yocr8"), ExtResource("16_u447f"), ExtResource("17_fvdrb"), ExtResource("18_ssp82"), ExtResource("19_sia2j"), ExtResource("20_pgxi3"), ExtResource("21_1gngw")])
 
 [node name="Vs" type="AudioStreamPlayer2D" parent="Audio"]
-volume_db = 12.0
+volume_db = 6.0
 panning_strength = 0.0
 bus = &"Voice"
 script = ExtResource("13_2obuc")
@@ -129,12 +130,14 @@ levels = Array[AudioStream]([ExtResource("27_klimt"), ExtResource("28_v7veo"), E
 
 [node name="Continue" type="TextureButton" parent="."]
 visible = false
-offset_left = 810.0
-offset_top = 693.0
-offset_right = 1110.0
-offset_bottom = 893.0
-texture_normal = ExtResource("26_5g1qg")
-texture_hover = ExtResource("27_v1baa")
+offset_left = 794.0
+offset_top = 751.0
+offset_right = 1394.0
+offset_bottom = 991.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("31_c540c")
+texture_hover = ExtResource("32_0ei7i")
+stretch_mode = 5
 
 [connection signal="finished_line" from="Characters/Player" to="." method="_on_player_finished_line"]
 [connection signal="finished_singing" from="Characters/Player" to="." method="_on_player_finished_singing"]

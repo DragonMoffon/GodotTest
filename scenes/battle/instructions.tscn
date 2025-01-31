@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dw0t53ppvf0h6" path="res://assets/gui/PopUpPatch1.png" id="2_w7451"]
 [ext_resource type="Texture2D" uid="uid://dteedhddcx78r" path="res://assets/gui/Arrow1Idle.png" id="3_ifjm2"]
 [ext_resource type="Texture2D" uid="uid://dpchd4ojt1tdi" path="res://assets/gui/Arrow1Hover.png" id="4_5pddb"]
-[ext_resource type="Texture2D" uid="uid://b36cjwb6474pr" path="res://assets/textures/PlayPatch1Normal.png" id="4_khm66"]
-[ext_resource type="Texture2D" uid="uid://cqa3qr7mow5mp" path="res://assets/textures/PlayPatch1Click.png" id="5_jcjf0"]
-[ext_resource type="Texture2D" uid="uid://c2pdn5juw0f8f" path="res://assets/textures/PlayPatch1hover.png" id="6_hj8rl"]
-[ext_resource type="Texture2D" uid="uid://n0l5f1d50kav" path="res://assets/textures/PlayPatch1Disable.png" id="7_g1mtw"]
+[ext_resource type="Texture2D" uid="uid://cq3hwv1raks0l" path="res://assets/gui/Continue1Idle.png" id="5_vbkuo"]
+[ext_resource type="Texture2D" uid="uid://ur6wyu2ue1ie" path="res://assets/gui/Continue1hover.png" id="6_vje85"]
+[ext_resource type="FontFile" uid="uid://g3y2p3jvdanf" path="res://assets/gui/ARIALBD.TTF" id="7_ea82k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e37t3"]
+font = ExtResource("7_ea82k")
+font_size = 32
 
 [node name="Instructions" type="Node2D"]
 z_index = 4000
@@ -33,35 +36,41 @@ texture = ExtResource("2_w7451")
 position = Vector2(960, 540)
 
 [node name="Prev" type="TextureButton" parent="."]
-offset_left = 350.0
-offset_top = 400.0
-offset_right = 650.0
-offset_bottom = 600.0
+offset_left = 631.0
+offset_top = 801.0
+offset_right = 931.0
+offset_bottom = 1001.0
 texture_normal = ExtResource("3_ifjm2")
 texture_hover = ExtResource("4_5pddb")
 stretch_mode = 3
 flip_h = true
 
 [node name="Next" type="TextureButton" parent="."]
-offset_left = 1300.0
-offset_top = 400.0
-offset_right = 1600.0
-offset_bottom = 600.0
+offset_left = 1043.0
+offset_top = 807.0
+offset_right = 1343.0
+offset_bottom = 1007.0
 texture_normal = ExtResource("3_ifjm2")
 texture_hover = ExtResource("4_5pddb")
 stretch_mode = 5
 
 [node name="Continue" type="TextureButton" parent="."]
-offset_left = 864.0
-offset_top = 807.0
-offset_right = 1078.0
-offset_bottom = 958.0
-texture_normal = ExtResource("4_khm66")
-texture_pressed = ExtResource("5_jcjf0")
-texture_hover = ExtResource("6_hj8rl")
-texture_disabled = ExtResource("7_g1mtw")
+offset_left = 875.0
+offset_top = 109.0
+offset_right = 1089.0
+offset_bottom = 260.0
+texture_normal = ExtResource("5_vbkuo")
+texture_hover = ExtResource("6_vje85")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+offset_left = 960.0
+offset_top = 886.0
+offset_right = 1004.0
+offset_bottom = 922.0
+text = "1/3"
+label_settings = SubResource("LabelSettings_e37t3")
 
 [connection signal="pressed" from="Prev" to="." method="_on_prev_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
