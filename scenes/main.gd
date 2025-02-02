@@ -6,7 +6,7 @@ var cover = $Cover
 @onready
 var audio = $Audio
 
-var best_score = 120
+var best_score = 250
 
 func _ready():
 	change_scene(load("res://scenes/main_menu.tscn"), null, -1)
@@ -29,4 +29,4 @@ func update_best_score(new: int):
 	
 func get_next_score():
 	var random = RandomNumberGenerator.new()
-	return random.randi_range(best_score - 10, best_score + 90)
+	return random.randi_range(best_score, best_score + 150)
